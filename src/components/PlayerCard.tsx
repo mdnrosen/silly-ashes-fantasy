@@ -1,11 +1,12 @@
 import type { JSX } from "react";
 import { Player } from "../types";
-
+import { Link } from "react-router-dom";
+import { getBgColor, getBorderColor } from "../lib/helpers";
 
 const PlayerCard: React.FC<{ player: Player }> = ({ player }): JSX.Element => {
     return (
-
-        <div className="bg-blue shadow-md rounded-lg m-2 w-85 border-4 border-dark-blue hover:opacity-80 hover:cursor-pointer transition-all duration-300">
+        <Link to={`/player/${player.id}`} className="no-underline">
+        <div className={` ${getBgColor(player.team)} shadow-md rounded-lg m-2 w-85 border-6 ${getBorderColor(player.team)} hover:opacity-80 hover:cursor-pointer transition-all duration-300`}>
             <img
                 src={player.imageUrl}
                 alt={player.name}
@@ -22,6 +23,7 @@ const PlayerCard: React.FC<{ player: Player }> = ({ player }): JSX.Element => {
               <p className="text-off-white">{player.points} pts</p>
             </div>
         </div>
+        </Link>
     )
 };
 

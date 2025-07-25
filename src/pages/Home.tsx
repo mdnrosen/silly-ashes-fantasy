@@ -1,5 +1,5 @@
 import { JSX } from "react";
-
+import { Link } from "react-router-dom";
 const Home: React.FC = (): JSX.Element => {
   return (
     <div className="p-4">
@@ -10,6 +10,9 @@ const Home: React.FC = (): JSX.Element => {
             <p className="text-center text-lg">
             Welcome to the Silly Ashes Fantasy League! Select players to build your team and compete for the highest score.
             </p>
+            <Link to="/players" className="block text-center mt-4 text-dark-blue hover:underline">
+                View Players
+            </Link>
         </main>
     </div>
   );
