@@ -1,26 +1,17 @@
-import { useState, useEffect } from 'react';
-import { Player } from '../types';
-import PlayerCard from '../components/PlayerCard';
-import playersMock from '../assets/ashes23-firebasemock.json'
+import { useContext } from 'react';
+import { PlayersContext } from '../context/PlayersContext';
 import { sortByPoints } from '../lib/helpers';
-// import { getPlayers } from '../firebase';
+import PlayerCard from '../components/PlayerCard';
 
 
 const ListPlayers = () => {
-    const [ players, setPlayers ] = useState<Player[]>([]);
-
-    useEffect(() => {
-        const fetchPlayers = async () => {
-            // const players = await getPlayers();
-            // console.log(players)
-            setPlayers(sortByPoints(playersMock));
-        };
-        fetchPlayers();
-    }, []);
+    const players = useContext(PlayersContext)
+    const sortedPlayers = sortByPoints(players);
+ 
     return (
         <div className="flex flex-wrap justify-center items-center p-4">
-            {!!players.length && (
-                players.map((player) => (
+            {!!sortedPlayers.length && (
+                sortedPlayers.map((player) => (
                     <PlayerCard 
                         key={player.id} 
                         player={player} 
@@ -28,7 +19,7 @@ const ListPlayers = () => {
                 ))
             )}
         </div>
-    )
+    );
 };
 
-export default ListPlayers
+export default ListPlayers;

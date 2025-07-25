@@ -1,7 +1,7 @@
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom' 
 import Home from './pages/Home';
-import PlayerSummary from './pages/PlayersSummary';
+import PlayerProfile from './pages/PlayerProfile';
 import ListPlayers from './pages/ListPlayers';
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/players" element={<ListPlayers />} />
-          <Route path="/player/:playerId" element={<PlayerSummary />} />
+          <Route path="/player/:playerId" element={<PlayerProfile />} />
         </Routes>
       </Router>
     </div>

@@ -1,6 +1,7 @@
 import { JSX } from 'react';
 
-const PlayerSummary = (): JSX.Element => {
+
+const PlayerProfile = (): JSX.Element => {
     return (
         <div className="flex flex-wrap justify-center items-center p-4">
             <p>this is the player summary of one guy</p>
@@ -8,4 +9,4 @@ const PlayerSummary = (): JSX.Element => {
     )
 };
 
-export default PlayerSummary;
+export default PlayerProfile;
