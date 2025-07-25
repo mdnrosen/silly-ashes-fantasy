@@ -1,5 +1,5 @@
 export interface Player {
-    id?: string; // unique identifier for the player
+    id?: string | number; // unique identifier for the player
   name: string;
   imageUrl: string;
   role: string;
