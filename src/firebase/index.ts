@@ -2,6 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore, addDoc, collection, getDocs } from "firebase/firestore";
 import { Player } from "../types";
 import data from "../assets/ashes23.json";
+import { calculatePlayerScore } from "../lib/helpers";
 
 // help us out here
 const firebaseConfig = {
@@ -45,7 +46,8 @@ export const getPlayers = async (): Promise<Player[]> => {
     querySnapshot.forEach((doc) => {
       players.push(doc.data() as Player);
     });
-    return players;
+    // calculate scores for players
+    return players.map((player) => calculatePlayerScore(player));
   } catch (error) {
     console.error("Error getting players: ", error);
     return [];

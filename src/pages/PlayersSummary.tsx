@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Player } from '../types';
 import PlayerCard from '../components/PlayerCard';
-
-import { getPlayers } from '../firebase';
+import playersMock from '../assets/ashes23-firebasemock.json'
+import { sortByPoints } from '../lib/helpers';
+// import { getPlayers } from '../firebase';
 
 
 const PlayerSummary = () => {
@@ -10,13 +11,14 @@ const PlayerSummary = () => {
 
     useEffect(() => {
         const fetchPlayers = async () => {
-            const players = await getPlayers();
-            setPlayers(players);
+            // const players = await getPlayers();
+            // console.log(players)
+            setPlayers(sortByPoints(playersMock));
         };
         fetchPlayers();
     }, []);
     return (
-        <div>
+        <div className="flex flex-wrap justify-center items-center p-4">
             {!!players.length && (
                 players.map((player) => (
                     <PlayerCard 
