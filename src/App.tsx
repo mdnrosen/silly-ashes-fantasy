@@ -1,13 +1,17 @@
 
 import './App.css'
+import PlayerSummary from './pages/PlayersSummary';
+
 
 function App() {
-
   return (
-    <>
-      <h1 className="bg-amber-500 text-3xl font-bold underline">Hello world!</h1>
-    </>
+    <PlayerSummary />
   )
-}
+};
+
+
+
+
+
 
 export default App
