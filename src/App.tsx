@@ -1,23 +1,22 @@
 
-import './App.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom' 
+import Home from './pages/Home';
 import PlayerSummary from './pages/PlayersSummary';
-
+import ListPlayers from './pages/ListPlayers';
 
 function App() {
   return (
-    // mobile friendly width please
-    <div className="max-w-4xl mx-auto">
-      <header className="bg-gray-800 text-white p-4 text-center">
-        <h1 className="text-2xl font-bold">Silly Ashes Fantasy</h1>
-        </header>
-      <PlayerSummary />
+    <div className="max-w-5xl mx-auto bg-light-blue min-h-screen">
+      <Router>
+        {/* Navbar will go here */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/players" element={<ListPlayers />} />
+          <Route path="/player/:playerId" element={<PlayerSummary />} />
+        </Routes>
+      </Router>
     </div>
   )
 };
-
-
-
-
-
 
 export default App
