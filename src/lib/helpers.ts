@@ -15,3 +15,11 @@ export const calculatePlayerScore = (player: Player): Player => {
 export const sortByPoints = (players: Player[]): Player[] => {
   return players.sort((a, b) => (b.points || 0) - (a.points || 0));
 };
+
+export const getBgColor = (team: string): string => {
+  return team === "AUS" ? "bg-aus-green" : "bg-dark-blue";
+};
+
+export const getBorderColor = (team: string): string => {
+  return team === "AUS" ? "border-aus-green" : "border-dark-blue";
+};

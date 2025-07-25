@@ -3,7 +3,6 @@ import { PlayersContext } from '../context/PlayersContext';
 import { sortByPoints } from '../lib/helpers';
 import PlayerCard from '../components/PlayerCard';
 
-
 const ListPlayers = () => {
     const players = useContext(PlayersContext)
     const sortedPlayers = sortByPoints(players);

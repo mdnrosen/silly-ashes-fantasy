@@ -3,11 +3,13 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home';
 import PlayerProfile from './pages/PlayerProfile';
 import ListPlayers from './pages/ListPlayers';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
-    <div className="max-w-5xl mx-auto bg-light-blue min-h-screen">
+    <div className="max-w-5xl mx-auto bg-off-white min-h-screen">
       <Router>
+        <ScrollToTop />
         {/* Navbar will go here */}
         <Routes>
           <Route path="/" element={<Home />} />
