@@ -31,18 +31,17 @@ const PlayerProfile = (): JSX.Element => {
         style={{ backgroundImage: `url(${player.imageUrl})` }}
       >
         <div className="text-left p-2">
-          <h2 className="font-medium text-xl">{first}</h2>
-          <h1 className="font-bold text-2xl">{last.toUpperCase()}</h1>
-          <small className="font-extralight">
-            {player.role} - {player.team}
-          </small>
+          <h2 className="font-medium text-lg">{first}</h2>
+          <h1 className="font-bold text-xl">{last.toUpperCase()}</h1>
+          <small className="font-extralight">{player.role}</small>
+          <h2 className="font-light">$25</h2>
         </div>
         <div className="text-right p-2">
-          <h2 className="font-bold text-4xl">{player.points}</h2>
-          <small>POINTS</small>
+          <h2 className="font-bold text-2xl">{player.points}</h2>
+          <small className="font-extralight">POINTS</small>
         </div>
       </div>
-      <div className={`${getBgColor(player.team)} h-120`}>
+      <div className={`${getBgColor(player.team)} h-100`}>
         <StatRow statName="RUNS" statValue={player.runs} />
         <StatRow statName="WICKETS" statValue={player.wickets} />
         <StatRow statName="CATCHES" statValue={player.catches} />
