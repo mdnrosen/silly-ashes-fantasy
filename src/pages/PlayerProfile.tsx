@@ -1,82 +1,60 @@
-import { JSX } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { useContext } from 'react';
-import { PlayersContext } from '../context/PlayersContext';
-import { getBgColor, getBorderColor } from '../lib/helpers';
+import { JSX, useContext } from "react";
+import { useParams, Link } from "react-router-dom";
+import { PlayersContext } from "../context/PlayersContext";
+import { getBgColor, firstName, lastName, getTextColor } from "../lib/helpers";
+import ProfileSubNav from "../components/ProfileSubNav";
+import StatRow from "../components/StatRow";
 
 const PlayerProfile = (): JSX.Element => {
-    const { playerId } = useParams<{ playerId: string }>();
-    const players = useContext(PlayersContext);
-    console.log(players)
-    const player = players.find((p) => p.id?.toString() === playerId);
-    console.log(player);
-    if (!player) {
-        return (
-            <div className="h-full flex flex-col justify-center align-middle my-auto"> 
-            Player not found
-            <Link to="/players">Go back</Link>
-            </div>
-        );
-    }
+  const { playerId } = useParams<{ playerId: string }>();
+  const players = useContext(PlayersContext);
+  const player = players.find((p) => p.id?.toString() === playerId);
+  const first = firstName(player?.name || "");
+  const last = lastName(player?.name || "");
 
+  if (!player) {
     return (
-        <div className="p-2 flex flex-col mx-auto pt-10 w-full md:w-3/4 lg:w-1/2">
-            <div className={`border-6 ${getBorderColor(player.team)} rounded-2xl bg-white`}>
+      <div className="h-full flex flex-col justify-center align-middle my-auto">
+        Player not found
+        <Link to="/players">Go back</Link>
+      </div>
+    );
+  }
 
-            <div className="flex justify-between h-120 p-4" style={{ backgroundImage: `url(${player.imageUrl})`, backgroundSize: 'cover', objectPosition: 'bottom' }}>
-                
-                <div className="flex flex-col">
-                    <h1 className="text-xl md:text-2xl">{player.name.split(' ')[0]}</h1>
-                    <strong><h1 className="text-xl md:text-2xl">{player.name.split(' ')[1].toUpperCase()}</h1></strong>
-                    <small>{player.role}</small>
-                </div>
-                <div>
-                    <h1 className="text-2xl md:text-4xl">{player.points}pts</h1>
-
-                </div>
-            </div>
-           <div className={`p-4 ${getBgColor(player.team)} text-off-white`}>
-                <div className="flex mb-3">
-                    <div className="flex flex-col justify-center w-1/3 text-center">
-                        <h1 className="text-3xl">{player.runs}</h1>
-                        <small>RUNS</small>
-                    </div>
-                    <div className="flex flex-col justify-center w-1/3 text-center">
-                        <h1 className="text-3xl">{player.centuries}</h1>
-                        <small>{player.centuries === 1 ? 'CENTURY' : 'CENTURIES'}</small>
-                    </div>
-                    <div className="flex flex-col justify-center w-1/3 text-center">
-                        <h1 className="text-3xl">{player.catches}</h1>
-                        <small>{player.catches === 1 ? 'CATCH' : 'CATCHES'}</small>
-                    </div>
-                </div>
-                                <div className="flex">
-                    <div className="flex flex-col justify-center w-1/3 text-center">
-                        <h1 className="text-2xl">{player.wickets}</h1>
-                        <small>{player.wickets === 1 ? 'WICKET' : 'WICKETS'}</small>
-                    </div>
-                    <div className="flex flex-col justify-center w-1/3 text-center">
-                        <h1 className="text-2xl">{player.runouts}</h1>
-                        <small>{player.runouts === 1 ? 'RUN OUT' : 'RUN OUTS'}</small>
-                    </div>
-                    <div className="flex flex-col justify-center w-1/3 text-center">
-                        <h1 className="text-2xl">{player.fivewickets}</h1>
-                        <small>{player.fivewickets === 1 ? 'FIVE-FOR' : 'FIVE-FORS'}</small>
-                    </div>
-                    {/* <div className="flex flex-col justify-center w-1/4 text-center">
-                        <h1 className="text-2xl">{player.stumpings}</h1>
-                        <small>STUMPINGS</small>
-                    </div> */}
-                </div>
-                <div className="div">
-                </div>
-            </div>
-            <div className={`p-4 ${getBgColor(player.team)} text-off-white`}>
-                <Link to="/players">{`<-`}</Link>
-            </div>
-            </div>
+  return (
+    <div className="w-full">
+      <ProfileSubNav bgColor={getBgColor(player.team)} />
+      <div
+        className={`h-120 flex justify-between p-4 bg-white bg-contain bg-no-repeat bg-bottom ${getTextColor(
+          player.team
+        )}`}
+        style={{ backgroundImage: `url(${player.imageUrl})` }}
+      >
+        <div className="text-left p-2">
+          <h2 className="font-medium text-xl">{first}</h2>
+          <h1 className="font-bold text-2xl">{last.toUpperCase()}</h1>
+          <small className="font-extralight">
+            {player.role} - {player.team}
+          </small>
         </div>
-    )
+        <div className="text-right p-2">
+          <h2 className="font-bold text-4xl">{player.points}</h2>
+          <small>POINTS</small>
+        </div>
+      </div>
+      <div className={`${getBgColor(player.team)} h-120`}>
+        <StatRow statName="RUNS" statValue={player.runs} />
+        <StatRow statName="WICKETS" statValue={player.wickets} />
+        <StatRow statName="CATCHES" statValue={player.catches} />
+        <StatRow statName="5-FERS" statValue={player.fivewickets} />
+        <StatRow statName="CENTURIES" statValue={player.centuries} />
+        <StatRow statName="RUN OUTS" statValue={player.runouts} />
+        {player.role === "KEEPER" && (
+          <StatRow statName="STUMPINGS" statValue={player.stumpings} />
+        )}
+      </div>
+    </div>
+  );
 };
 
 export default PlayerProfile;

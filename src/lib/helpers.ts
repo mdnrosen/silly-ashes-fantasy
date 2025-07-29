@@ -20,6 +20,14 @@ export const getBgColor = (team: string): string => {
   return team === "AUS" ? "bg-aus-green" : "bg-dark-blue";
 };
 
+export const getTextColor = (team: string): string => {
+  return team === "AUS" ? "text-aus-green" : "text-dark-blue";
+};
+
 export const getBorderColor = (team: string): string => {
   return team === "AUS" ? "border-aus-green" : "border-dark-blue";
 };
+
+export const firstName = (name: string): string => name.split(" ")[0];
+
+export const lastName = (name: string): string => name.split(" ")[1];
