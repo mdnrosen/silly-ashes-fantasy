@@ -12,7 +12,7 @@ export interface Player {
   fivewickets: number;
   stumpings: number;
   points?: number;
-  price?: number; // to be used later when we figure out fantasy teams
+  cost?: number; 
 };
 
 

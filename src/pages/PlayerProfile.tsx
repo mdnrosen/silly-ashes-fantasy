@@ -1,6 +1,6 @@
 import { JSX, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
-import { PlayersContext } from "../context/PlayersContext";
+import { PlayersContext } from "../context/PlayersContext.tsx";
 import { getBgColor, firstName, lastName, getTextColor } from "../lib/helpers";
 import ProfileSubNav from "../components/ProfileSubNav";
 import StatRow from "../components/StatRow";
@@ -34,7 +34,7 @@ const PlayerProfile = (): JSX.Element => {
           <h2 className="font-medium text-lg">{first}</h2>
           <h1 className="font-bold text-xl">{last.toUpperCase()}</h1>
           <small className="font-extralight">{player.role}</small>
-          <h2 className="font-light">$25</h2>
+          <h2 className="font-light">${player.cost}</h2>
         </div>
         <div className="text-right p-2">
           <h2 className="font-bold text-2xl">{player.points}</h2>

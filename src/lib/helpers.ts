@@ -3,10 +3,10 @@ import { Player } from "../types";
 export const calculatePlayerScore = (player: Player): Player => {
   let score = 0;
   score += player.runs;
-  score += player.centuries * 25;
+  score += player.centuries * 50;
   score += player.wickets * 20;
   score += player.fivewickets * 50;
-  score += player.catches * 10;
+  score += player.catches * 5;
   score += player.runouts * 20;
   score += player.stumpings * 20;
   return { ...player, points: score };

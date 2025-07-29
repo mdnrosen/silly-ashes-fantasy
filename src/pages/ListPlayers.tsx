@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { PlayersContext } from "../context/PlayersContext";
+import { PlayersContext } from "../context/PlayersContext.tsx";
 import { sortByPoints } from "../lib/helpers";
 import PlayerCard from "../components/PlayerCard";
 

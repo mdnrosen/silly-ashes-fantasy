@@ -12,7 +12,8 @@
     "team": "ENG",
     "role": "BOWLER",
     "imageUrl": "https://resources.ecb.co.uk/player-photos/test/800x800/967.png",
-    "points": 519
+    "points": 519,
+    "cost": 20
   },
   {
     "id": 2,
@@ -27,7 +28,8 @@
     "role": "ALLROUNDER",
     "imageUrl": "https://static-files.cricket-australia.pulselive.com/headshots/440/722-camedia.png",
     "catches": 2,
-    "points": 355
+    "points": 316,
+    "cost": 19
   },
   {
     "id": 3,
@@ -42,7 +44,8 @@
     "imageUrl": "https://static-files.cricket-australia.pulselive.com/headshots/440/2941-camedia.png",
     "centuries": 0,
     "catches": 0,
-    "points": 216
+    "points": 216,
+    "cost": 12
   },
   {
     "id": 4,
@@ -57,7 +60,8 @@
     "centuries": 0,
     "imageUrl": "https://static-files.cricket-australia.pulselive.com/headshots/440/1185-camedia.png",
     "fivewickets": 1,
-    "points": 410
+    "points": 390,
+    "cost": 29
   },
   {
     "id": 5,
@@ -72,7 +76,8 @@
     "catches": 4,
     "name": "Cam Green",
     "centuries": 0,
-    "points": 243
+    "points": 243,
+    "cost": 21
   },
   {
     "id": 6,
@@ -87,7 +92,8 @@
     "team": "ENG",
     "stumpings": 1,
     "runouts": 0,
-    "points": 572
+    "points": 457,
+    "cost": 28
   },
   {
     "id": 7,
@@ -102,7 +108,8 @@
     "centuries": 0,
     "runouts": 0,
     "catches": 0,
-    "points": 259
+    "points": 259,
+    "cost": 26
   },
   {
     "id": 8,
@@ -117,7 +124,8 @@
     "runs": 82,
     "name": "Mitchell Starc",
     "catches": 1,
-    "points": 602
+    "points": 623,
+    "cost": 30
   },
   {
     "id": 9,
@@ -132,7 +140,8 @@
     "runouts": 0,
     "fivewickets": 0,
     "centuries": 0,
-    "points": 360
+    "points": 360,
+    "cost": 22
   },
   {
     "id": 10,
@@ -147,7 +156,8 @@
     "runouts": 0,
     "imageUrl": "https://resources.ecb.co.uk/player-photos/test/800x800/1154.png",
     "wickets": 3,
-    "points": 550
+    "points": 523,
+    "cost": 35
   },
   {
     "id": 11,
@@ -162,7 +172,8 @@
     "runouts": 0,
     "centuries": 0,
     "catches": 1,
-    "points": 138
+    "points": 129,
+    "cost": 29
   },
   {
     "id": 12,
@@ -177,7 +188,8 @@
     "wickets": 0,
     "team": "AUS",
     "centuries": 1,
-    "points": 363
+    "points": 378,
+    "cost": 27
   },
   {
     "id": 13,
@@ -192,7 +204,8 @@
     "stumpings": 0,
     "name": "Zak Crawley",
     "runouts": 0,
-    "points": 595
+    "points": 575,
+    "cost": 22
   },
   {
     "id": 14,
@@ -207,7 +220,8 @@
     "team": "AUS",
     "imageUrl": "https://static-files.cricket-australia.pulselive.com/headshots/440/1075-camedia.png",
     "runs": 373,
-    "points": 508
+    "points": 438,
+    "cost": 32
   },
   {
     "id": 15,
@@ -222,7 +236,8 @@
     "runs": 200,
     "runouts": 0,
     "role": "KEEPER",
-    "points": 510
+    "points": 345,
+    "cost": 27
   },
   {
     "id": 16,
@@ -237,7 +252,8 @@
     "stumpings": 0,
     "role": "BOWLER",
     "team": "ENG",
-    "points": 130
+    "points": 121,
+    "cost": 14
   },
   {
     "id": 17,
@@ -252,7 +268,8 @@
     "role": "BATTER",
     "runouts": 0,
     "stumpings": 0,
-    "points": 541
+    "points": 556,
+    "cost": 23
   },
   {
     "id": 18,
@@ -267,7 +284,8 @@
     "catches": 0,
     "imageUrl": "https://resources.ecb.co.uk/player-photos/test/480x480/photo-missing.png",
     "team": "ENG",
-    "points": 518
+    "points": 518,
+    "cost": 28
   },
   {
     "id": 19,
@@ -282,7 +300,8 @@
     "runs": 321,
     "name": "Ben Duckett",
     "team": "ENG",
-    "points": 411
+    "points": 366,
+    "cost": 23
   },
   {
     "id": 20,
@@ -297,7 +316,8 @@
     "wickets": 0,
     "role": "BATTER",
     "name": "Harry Brook",
-    "points": 393
+    "points": 378,
+    "cost": 27
   },
   {
     "id": 21,
@@ -312,7 +332,8 @@
     "role": "BOWLER",
     "wickets": 18,
     "name": "Pat Cummins",
-    "points": 612
+    "points": 572,
+    "cost": 34
   },
   {
     "id": 22,
@@ -327,7 +348,8 @@
     "imageUrl": "https://resources.ecb.co.uk/player-photos/test/480x480/photo-missing.png",
     "fivewickets": 1,
     "runouts": 0,
-    "points": 413
+    "points": 423,
+    "cost": 25
   },
   {
     "id": 23,
@@ -342,7 +364,8 @@
     "fivewickets": 0,
     "name": "Scott Boland",
     "catches": 0,
-    "points": 60
+    "points": 60,
+    "cost": 15
   },
   {
     "id": 24,
@@ -357,7 +380,8 @@
     "imageUrl": "https://static-files.cricket-australia.pulselive.com/headshots/440/288-camedia.png",
     "runouts": 0,
     "wickets": 2,
-    "points": 422
+    "points": 372,
+    "cost": 21
   },
   {
     "id": 25,
@@ -372,7 +396,8 @@
     "runouts": 0,
     "stumpings": 0,
     "catches": 4,
-    "points": 325
+    "points": 305,
+    "cost": 24
   },
   {
     "id": 26,
@@ -387,7 +412,8 @@
     "team": "AUS",
     "catches": 0,
     "runouts": 0,
-    "points": 208
+    "points": 208,
+    "cost": 27
   },
   {
     "id": 27,
@@ -402,7 +428,8 @@
     "wickets": 6,
     "fivewickets": 0,
     "role": "BATTER",
-    "points": 667
+    "points": 634,
+    "cost": 35
   },
   {
     "id": 28,
@@ -417,6 +444,39 @@
     "stumpings": 0,
     "team": "ENG",
     "runouts": 0,
-    "points": 100
+    "points": 95,
+    "cost": 19
+  },
+  {
+    "id": 29,
+    "imageUrl": "https://live-production.wcms.abc-cdn.net.au/604ebe3dde4509152b1d599e268f0db8?impolicy=wcms_crop_resize&cropH=2639&cropW=1979&xPos=0&yPos=0&width=862&height=1149",
+    "fivewickets": 3,
+    "centuries": 0,
+    "runs": 249,
+    "wickets": 40,
+    "catches": 5,
+    "name": "Shane Warne",
+    "role": "ALLROUNDER",
+    "stumpings": 0,
+    "team": "AUS",
+    "runouts": 0,
+    "points": 1224,
+    "cost": 40
+  },
+  {
+    "id": 30,
+    "imageUrl": "https://static-files.cricket-australia.pulselive.com/headshots/288/191-camedia.png",
+    "fivewickets": 0,
+    "centuries": 3,
+    "runs": 766,
+    "wickets": 0,
+    "catches": 5,
+    "name": "Alastair Cook",
+    "role": "Batter",
+    "stumpings": 0,
+    "team": "ENG",
+    "runouts": 0,
+    "points": 941,
+    "cost": 40
   }
 ]
