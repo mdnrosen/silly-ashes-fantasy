@@ -4,11 +4,13 @@ import Home from './pages/Home';
 import PlayerProfile from './pages/PlayerProfile';
 import ListPlayers from './pages/ListPlayers';
 import ScrollToTop from './components/ScrollToTop';
+import Navbar from './modules/Navbar';
 
 function App() {
   return (
     <div className="max-w-5xl mx-auto bg-off-white min-h-screen">
       <Router>
+        <Navbar />
         <ScrollToTop />
         {/* Navbar will go here */}
         <Routes>
