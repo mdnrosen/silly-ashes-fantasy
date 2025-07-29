@@ -1,9 +1,8 @@
 import { JSX } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { PlayersContext } from '../context/PlayersContext';
 import { getBgColor, getBorderColor } from '../lib/helpers';
-
 
 const PlayerProfile = (): JSX.Element => {
     const { playerId } = useParams<{ playerId: string }>();
@@ -12,22 +11,27 @@ const PlayerProfile = (): JSX.Element => {
     const player = players.find((p) => p.id?.toString() === playerId);
     console.log(player);
     if (!player) {
-        return <div>Player not found</div>;
+        return (
+            <div className="h-full flex flex-col justify-center align-middle my-auto"> 
+            Player not found
+            <Link to="/players">Go back</Link>
+            </div>
+        );
     }
 
     return (
-        <div className="p-2 flex flex-col w-xl mx-auto pt-10">
+        <div className="p-2 flex flex-col mx-auto pt-10 w-full md:w-3/4 lg:w-1/2">
             <div className={`border-6 ${getBorderColor(player.team)} rounded-2xl bg-white`}>
 
-            <div className=" flex justify-between h-150 p-4" style={{ backgroundImage: `url(${player.imageUrl})`, backgroundSize: 'cover', objectPosition: 'top' }}>
+            <div className="flex justify-between h-120 p-4" style={{ backgroundImage: `url(${player.imageUrl})`, backgroundSize: 'cover', objectPosition: 'bottom' }}>
                 
                 <div className="flex flex-col">
-                    <h1 className="text-2xl">{player.name.split(' ')[0]}</h1>
-                    <strong><h1 className="text-2xl">{player.name.split(' ')[1].toUpperCase()}</h1></strong>
+                    <h1 className="text-xl md:text-2xl">{player.name.split(' ')[0]}</h1>
+                    <strong><h1 className="text-xl md:text-2xl">{player.name.split(' ')[1].toUpperCase()}</h1></strong>
                     <small>{player.role}</small>
                 </div>
                 <div>
-                    <h1 className="text-4xl">{player.points}pts</h1>
+                    <h1 className="text-2xl md:text-4xl">{player.points}pts</h1>
 
                 </div>
             </div>
@@ -66,6 +70,9 @@ const PlayerProfile = (): JSX.Element => {
                 </div>
                 <div className="div">
                 </div>
+            </div>
+            <div className={`p-4 ${getBgColor(player.team)} text-off-white`}>
+                <Link to="/players">{`<-`}</Link>
             </div>
             </div>
         </div>
