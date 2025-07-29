@@ -1,12 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
 /* ignore - TS is wrong */
 @theme {
-  --color-dark-blue: #0D1B2A;
-  --color-blue: #1B263B;
-  --color-mid-blue: #415A77;
-  --color-light-blue: #778DA9;
-  --color-mid-light-blue: #A4B6C9;
-  --color-off-white: #E0E1DD;
-  --color-aus-green: #02582A;
+  --color-dark-blue: #0d1b2a;
+  --color-blue: #1b263b;
+  --color-mid-blue: #415a77;
+  --color-light-blue: #778da9;
+  --color-mid-light-blue: #a4b6c9;
+  --color-off-white: #f1f7ed;
+  --color-aus-green: #0d2a1b;
+  --font-roboto: "Roboto", sans-serif;
 }
