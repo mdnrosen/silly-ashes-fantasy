@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="flex justify-between items-center h-15 md:h-20 w-full mx-auto p-4 bg-off-white border-b-4 border-off-white text-dark-blue relative z-50">
+      <div className="flex justify-between items-center h-15 md:h-20 w-full mx-auto p-4 bg-off-white text-dark-blue relative z-50 border-b-2">
         LOGO
         <button
           onClick={toggleMenu}

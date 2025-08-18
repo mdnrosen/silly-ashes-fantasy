@@ -1,5 +1,5 @@
 export interface Player {
-    id?: string | number; // unique identifier for the player
+  id?: string | number; // unique identifier for the player
   name: string;
   imageUrl: string;
   role: string;
@@ -12,17 +12,19 @@ export interface Player {
   fivewickets: number;
   stumpings: number;
   points?: number;
-  cost?: number; 
-};
-
+  cost?: number;
+}
 
 export interface Team {
-    user_name: string;
-    teamname: string;
-    batters: Player[];
-    bowlers: Player[];
-    allrounders: Player[];
-    keepers: Player[];
-    total_points: number;
-    total_cost: number;
-};
+  user_name: string;
+  teamname: string;
+  total_points: number;
+}
+
+export interface FullTeam extends Team {
+  batters: Player[];
+  bowlers: Player[];
+  allrounders: Player[];
+  keepers: Player[];
+  total_cost: number;
+}
