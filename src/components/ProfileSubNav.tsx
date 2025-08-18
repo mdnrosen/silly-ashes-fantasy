@@ -8,7 +8,7 @@ type ProfileSubNavProps = {
 const ProfileSubNav = ({ bgColor }: ProfileSubNavProps) => {
   return (
     <nav
-      className={`w-full h-15 text-off-white flex justify-between items-center px-4 ${bgColor}`}
+      className={`w-full h-12 text-off-white flex justify-between items-center px-4 ${bgColor}`}
     >
       <span className="">
         <Link

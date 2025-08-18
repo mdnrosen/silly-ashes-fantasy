@@ -8,7 +8,7 @@ const ListPlayers = () => {
   const sortedPlayers = sortByPoints(players);
 
   return (
-    <div className="flex flex-wrap justify-center items-center p-4">
+    <div className="flex flex-wrap justify-center items-center p-4 mb-10">
       {!!sortedPlayers.length &&
         sortedPlayers.map((player) => (
           <PlayerCard key={player.id} player={player} />
