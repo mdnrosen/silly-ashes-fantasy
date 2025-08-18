@@ -448,22 +448,6 @@
     "cost": 19
   },
   {
-    "id": 29,
-    "imageUrl": "https://live-production.wcms.abc-cdn.net.au/604ebe3dde4509152b1d599e268f0db8?impolicy=wcms_crop_resize&cropH=2639&cropW=1979&xPos=0&yPos=0&width=862&height=1149",
-    "fivewickets": 3,
-    "centuries": 0,
-    "runs": 249,
-    "wickets": 40,
-    "catches": 5,
-    "name": "Shane Warne",
-    "role": "ALLROUNDER",
-    "stumpings": 0,
-    "team": "AUS",
-    "runouts": 0,
-    "points": 1224,
-    "cost": 40
-  },
-  {
     "id": 30,
     "imageUrl": "https://static-files.cricket-australia.pulselive.com/headshots/288/191-camedia.png",
     "fivewickets": 0,
@@ -472,7 +456,7 @@
     "wickets": 0,
     "catches": 5,
     "name": "Alastair Cook",
-    "role": "Batter",
+    "role": "BATTER",
     "stumpings": 0,
     "team": "ENG",
     "runouts": 0,

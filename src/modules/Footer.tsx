@@ -3,8 +3,9 @@ const Footer = () => {
     // stick to bottom of page
     <footer className="fixed bottom-0 left-0 w-full bg-off-white text-center p-4">
       <p className="text-sm text-gray-600">
-        Like it? Buy me a coffee at{" "}
+        Like it?{" "}
         <a
+          className="hover:underline"
           href="https://www.buymeacoffee.com/"
           target="_blank"
           rel="noopener noreferrer"
