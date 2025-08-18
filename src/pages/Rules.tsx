@@ -24,7 +24,6 @@ const Rules = () => {
                 <li>• 1 All-rounder</li>
                 <li>• 1 Wicket-keeper</li>
                 <li>• 1 Wildcard (any position)</li>
-                <li className="font-bold text-aus-green">Total: 7 players</li>
               </ul>
             </div>
           </div>
