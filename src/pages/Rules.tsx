@@ -2,13 +2,6 @@ const Rules = () => {
   return (
     <div className="min-h-screen bg-off-white text-dark-blue px-4 py-8 pb-20">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold text-center mb-8">
-          THE RULES
-        </h1>
-
-        {/* Important Notice */}
-
-        {/* Team Selection Rules */}
         <div className="bg-dark-blue p-6 rounded-lg mb-8 text-off-white">
           <h2 className="text-3xl font-bold mb-6 text-center">
             TEAM SELECTION
@@ -31,10 +24,10 @@ const Rules = () => {
 
         <div className="bg-aus-green p-6 rounded-lg mb-8 border-2 border-dark-blue text-off-white">
           <h2 className="text-2xl font-bold mb-4 text-center">⚠️ IMPORTANT</h2>
-          <p className="text-xl text-center font-semibold">NO TRANSFERS</p>
+          <p className="text-xl text-center font-semibold">FIVE TRANSFERS</p>
           <p className="text-center mt-2">
-            Once you select your team, you cannot make any changes. If someone
-            goes down injured, tough luck. Choose your players carefully!
+            At any point (except during a Test) you can use a transfer. But you
+            only have 5 total over the whole tournament. Use them wisely
           </p>
         </div>
 

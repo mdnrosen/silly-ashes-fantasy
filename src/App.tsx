@@ -5,6 +5,7 @@ import PlayerProfile from "./pages/PlayerProfile";
 import ListPlayers from "./pages/ListPlayers";
 import Team from "./pages/Team";
 import Rules from "./pages/Rules";
+import Leaderboard from "./pages/Leaderboard";
 
 import Footer from "./modules/Footer";
 import Navbar from "./modules/Navbar";
@@ -23,6 +24,7 @@ function App() {
           <Route path="/players" element={<ListPlayers />} />
           <Route path="/myteam" element={<Team />} />
           <Route path="/rules" element={<Rules />} />
+          <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="/player/:playerId" element={<PlayerProfile />} />
         </Routes>
         <Footer />
