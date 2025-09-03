@@ -2,7 +2,7 @@ import { AiFillCheckCircle, AiOutlineClose, AiFillExclamationCircle  } from "rea
 import { useEffect } from "react";
 import { useToast } from "../hooks/useToast";
 
-import { Toast } from "../types";
+// import { Toast } from "../types";
 const toastTypes = {
   success: {
     type: "Success",
