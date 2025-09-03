@@ -28,3 +28,10 @@ export interface FullTeam extends Team {
   keepers: Player[];
   total_cost: number;
 }
+
+
+export interface Toast {
+  type: string;
+  color: string;
+  icon: string
+}
