@@ -1,11 +1,25 @@
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
 import { useState } from "react";
+import { useAuth } from "../hooks/useAuth";
+import { useToast } from "../hooks/useToast";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const _toast = useToast();
+  const navigate = useNavigate();
 
+  const _auth = useAuth();
+  
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleLogout = async () => {
+    if (_auth?.logout) {
+      await _auth.logout();
+      navigate("/");
+      _toast?.success("Logged out successfully");
+    }
   };
 
   return (
@@ -74,8 +88,7 @@ const Navbar = () => {
               className="block text-lg hover:text-light-blue transition-colors duration-200 pt-6 border-t border-mid-blue w-full text-left uppercase"
               onClick={() => {
                 setIsMenuOpen(false);
-                // TODO: Add sign out logic
-                console.log("Sign out clicked");
+                handleLogout();
               }}
             >
               Sign Out
