@@ -5,18 +5,20 @@ import ListPlayers from "./pages/ListPlayers";
 import Team from "./pages/Team";
 import Rules from "./pages/Rules";
 import Leaderboard from "./pages/Leaderboard";
+import NotFound from "./pages/NotFound";
+import Home from "./pages/Home";
 
 import Footer from "./modules/Footer";
 import Navbar from "./modules/Navbar";
 
 import ScrollToTop from "./components/ScrollToTop";
-import Register from "./pages/Register";
+import Auth from "./pages/Auth";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 import { Amplify } from "aws-amplify";
 import outputs from "./lib/config";
 import "@aws-amplify/ui-react/styles.css";
-Amplify.configure(outputs)
+Amplify.configure(outputs);
 
 function App() {
   return (
@@ -26,33 +28,50 @@ function App() {
         <ScrollToTop />
         {/* Navbar will go here */}
         <Routes>
-          <Route path="/" element={<Register />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/players" element={
-            <ProtectedRoute>
-              <ListPlayers />
-            </ProtectedRoute>
-          } />
-          <Route path="/myteam" element={
-            <ProtectedRoute>
-              <Team />
-            </ProtectedRoute>
-          } />
-          <Route path="/rules" element={
-            <ProtectedRoute>
-              <Rules />
-            </ProtectedRoute>
-          } />
-          <Route path="/leaderboard" element={
-            <ProtectedRoute>
-              <Leaderboard />
-            </ProtectedRoute>
-          } />
-          <Route path="/player/:playerId" element={
-            <ProtectedRoute>
-              <PlayerProfile />
-            </ProtectedRoute>
-          } />
+          <Route path="/" element={<Home />} />
+          <Route path="/register" element={<Auth />} />
+          <Route
+            path="/players"
+            element={
+              <ProtectedRoute>
+                <ListPlayers />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/myteam"
+            element={
+              <ProtectedRoute>
+                <Team />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/rules"
+            element={
+              <ProtectedRoute>
+                <Rules />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/leaderboard"
+            element={
+              <ProtectedRoute>
+                <Leaderboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/player/:playerId"
+            element={
+              <ProtectedRoute>
+                <PlayerProfile />
+              </ProtectedRoute>
+            }
+          />
+          {/* add 404 route */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </Router>

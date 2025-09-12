@@ -1,4 +1,4 @@
-import { Link , useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useAuth } from "../hooks/useAuth";
 import { useToast } from "../hooks/useToast";
@@ -9,14 +9,15 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const _auth = useAuth();
-  
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   const handleLogout = async () => {
-    if (_auth?.logout) {
-      await _auth.logout();
+    console.log("TRYING TO LOG OUT", _auth?.user);
+    if (_auth?.signOut) {
+      await _auth.signOut();
       navigate("/");
       _toast?.success("Logged out successfully");
     }

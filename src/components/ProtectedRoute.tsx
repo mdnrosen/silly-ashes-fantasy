@@ -1,32 +1,29 @@
-import { Navigate, useLocation } from 'react-router-dom';
-import { useAuth } from '../hooks/useAuth';
+import { Navigate, useLocation } from "react-router-dom";
+import { useAuth } from "../hooks/useAuth";
 
 type Props = {
-    children: React.ReactNode;
-}
+  children: React.ReactNode;
+};
 
 const ProtectedRoute = ({ children }: Props) => {
-    const auth = useAuth();
-    const location = useLocation();
+  const { user, isLoading, isAuthenticated } = useAuth();
+  const location = useLocation();
 
-    // If auth context is not available, redirect to register
-    if (!auth) {
-        return <Navigate to="/register" replace state={{ from: location }} />;
-    }
+  // Still loading auth state
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-dark-blue">Loading...</div>
+      </div>
+    );
+  }
 
-    const { user, loading } = auth;
+  // User not authenticated
+  if (!isAuthenticated || !user) {
+    return <Navigate to="/register" replace state={{ from: location }} />;
+  }
 
-    // Still loading auth state
-    if (loading) {
-        return <div>Loading...</div>; // or your loading component
-    }
-
-    // User not authenticated
-    if (!user) {
-        return <Navigate to="/register" replace state={{ from: location }} />;
-    }
-
-    return <>{children}</>;
+  return <>{children}</>;
 };
 
 export default ProtectedRoute;
