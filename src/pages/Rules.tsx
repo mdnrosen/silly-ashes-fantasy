@@ -1,6 +1,6 @@
 const Rules = () => {
   return (
-    <div className="min-h-screen bg-off-white text-dark-blue px-4 py-8 pb-20">
+    <div className="animate-fade-in min-h-screen bg-off-white text-dark-blue px-4 py-8 pb-20">
       <div className="max-w-4xl mx-auto">
         <div className="bg-dark-blue p-6 rounded-lg mb-8 text-off-white">
           <h2 className="text-3xl font-bold mb-6 text-center">

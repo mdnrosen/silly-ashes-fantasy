@@ -4,26 +4,20 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 import { useToast } from "../hooks/useToast";
 import { useEffect } from "react";
+import { useLoading } from "../hooks/useLoading";
 
 const Auth = () => {
   const navigate = useNavigate();
   const toast = useToast();
+  const loading = useLoading();
   const { user, isLoading, isAuthenticated } = useAuth();
 
   useEffect(() => {
     if (isAuthenticated && user) {
-      navigate("/", { replace: true });
       toast?.success(`Welcome back to Silly Ashes - Fantasy`);
+      navigate("/", { replace: true });
     }
   }, [isAuthenticated]);
-
-  if (isLoading) {
-    return (
-      <div className="animate-fadein mt-10 text-center">
-        <div className="text-dark-blue">Loading...</div>
-      </div>
-    );
-  }
 
   if (isAuthenticated) {
     return (

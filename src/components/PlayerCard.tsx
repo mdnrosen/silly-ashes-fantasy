@@ -12,7 +12,7 @@ const PlayerCard: React.FC<{ player: Player }> = ({ player }): JSX.Element => {
   return (
     <Link to={`/player/${player.id}`} className="no-underline w-full block">
       <div
-        className={`w-full min-h-32 md:min-h-36 grid grid-cols-4 border-2 ${getBorderColor(
+        className={`animate-fade-in w-full min-h-32 md:min-h-36 grid grid-cols-4 border-2 ${getBorderColor(
           player.team
         )} rounded-lg shadow-md mb-4 md:mb-6 ${getBgColor(player.team)}`}
       >
