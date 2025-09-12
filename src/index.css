@@ -11,4 +11,26 @@
   --color-off-white: #f1f7ed;
   --color-aus-green: #0d2a1b;
   --font-roboto: "Roboto", sans-serif;
+  --animate-slide-in: slide-in 0.3s ease-out;
+  --animate-fade-in: fade-in 0.3s linear;
+
+  @keyframes slide-in {
+    0% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 }

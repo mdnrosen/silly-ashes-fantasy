@@ -85,15 +85,17 @@ const Navbar = () => {
             >
               The Rules
             </Link>
-            <button
-              className="block text-lg hover:text-light-blue transition-colors duration-200 pt-6 border-t border-mid-blue w-full text-left uppercase"
-              onClick={() => {
-                setIsMenuOpen(false);
-                handleLogout();
-              }}
-            >
-              Sign Out
-            </button>
+            {_auth.user && (
+              <button
+                className="block text-lg hover:text-light-blue transition-colors duration-200 pt-6 border-t border-mid-blue w-full text-left uppercase"
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  handleLogout();
+                }}
+              >
+                Sign Out
+              </button>
+            )}
           </nav>
         </div>
       </div>
