@@ -39,7 +39,7 @@ function App() {
             }
           />
           <Route
-            path="/myteam"
+            path="/team"
             element={
               <ProtectedRoute>
                 <Team />

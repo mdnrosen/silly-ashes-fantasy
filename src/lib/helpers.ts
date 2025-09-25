@@ -1,6 +1,10 @@
-import { Player } from "../types";
+import { FullPlayer } from "../types";
 
-export const calculatePlayerScore = (player: Player): Player => {
+export const getImageURL = (path: string) => {
+  return new URL(path, import.meta.url).href;
+};
+
+export const calculatePlayerScore = (player: FullPlayer): FullPlayer => {
   let score = 0;
   score += player.runs;
   score += player.centuries * 50;
@@ -12,7 +16,7 @@ export const calculatePlayerScore = (player: Player): Player => {
   return { ...player, points: score };
 };
 
-export const sortByPoints = (players: Player[]): Player[] => {
+export const sortByPoints = (players: FullPlayer[]): FullPlayer[] => {
   return players.sort((a, b) => (b.points || 0) - (a.points || 0));
 };
 

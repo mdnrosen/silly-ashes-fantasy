@@ -1,70 +1,79 @@
-import { useState } from "react";
+import { useState, useEffect } from 'react';
 
-const alreadyHasTeam = false; // Placeholder for team check logic
-const user = {
-  id: "12345", // Placeholder for user ID
-  username: "John Doe Cricket", // Placeholder for user name
+import { Player } from '../types';
+import unpickedImage from '../assets/unpicked.jpg'; // Add this import
+
+
+type MyPlayers = {
+  batter1: Player | null;
+  batter2: Player | null;
+  bowler1: Player | null;
+  bowler2: Player | null;
+  allrounder: Player | null;
+  wicketkeeper: Player | null;
+  wildcard: Player | null;
 };
 
+
 const Team = () => {
-  const [teamName, setTeamName] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // TODO: Submit team creation logic
-    console.log("Creating team:", { teamName, username: user.username });
-  };
+  const [myPlayers, setMyPlayers] = useState<MyPlayers>({
+    batter1: null,
+    batter2: null,
+    bowler1: null,
+    bowler2: null,
+    allrounder: null,
+    wicketkeeper: null,
+    wildcard: null
+  });
 
-  if (!alreadyHasTeam) {
-    return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-dark-blue px-4">
-        <div className="bg-off-white p-8 rounded-lg shadow-md max-w-md w-full">
-          <h1 className="text-3xl font-bold mb-4 text-center text-dark-blue">
-            Silly Ashes - Fantasy!
-          </h1>
-          <p className="text-blue mb-6 text-center">
-            Hello{" "}
-            <span className="font-semibold text-dark-blue">
-              {user.username}
-            </span>
-            ! Let's set up your fantasy cricket team to get started.
-          </p>
+    useEffect(() => {
+    setMyPlayers({...myPlayers, batter1: {id: 12, name: 'Marnus Labuschagne', cost: 17, team: 'AUS', role: 'BATTER', imageUrl: 'https://static-files.cricket-australia.pulselive.com/headshots/440/348-camedia.png'}})
+  },[])
 
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label
-                htmlFor="teamName"
-                className="block text-sm font-medium text-blue mb-2"
-              >
-                Team Name
-              </label>
-              <input
-                type="text"
-                id="teamName"
-                value={teamName}
-                onChange={(e) => setTeamName(e.target.value)}
-                className="w-full px-3 py-2 border border-mid-blue rounded-md focus:outline-none focus:ring-2 focus:ring-light-blue focus:border-transparent bg-off-white text-dark-blue"
-                placeholder="Enter your team name"
-                required
-              />
-            </div>
 
-            <button
-              type="submit"
-              className="w-full bg-aus-green text-off-white py-2 px-4 rounded-md hover:bg-dark-blue focus:outline-none focus:ring-2 focus:ring-light-blue focus:ring-offset-2 transition duration-200"
-            >
-              Create Team
-            </button>
-          </form>
-        </div>
-      </div>
-    );
-  }
+
+  const {
+    batter1,
+    batter2,
+  } = myPlayers;
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-dark-blue">
-      <h1 className="text-3xl font-bold mb-6 text-off-white">Team Page</h1>
-      <p className="text-lg text-light-blue">This is the team page content.</p>
+    <div className="p-4">
+      <h1>Team Page</h1>
+
+      <div className="div">
+        <h2>Batters</h2>
+        <div className="grid grid-cols-2 gap-4">
+          <button className="border p-2 h-60 flex flex-col items-center">
+            <img src={batter1 ? batter1.imageUrl : unpickedImage} alt="Batter 1" />
+            <div className="py-2">
+              <div>
+                {batter1 ? (
+                  <div className="text-lg">{batter1.name}</div>
+                ) : (
+                  <div className="text-lg">BATTER 1</div>
+                )}
+              </div>
+              {!batter1 ? (
+                <div className="flex">
+                  <small className="text-sm">Please select a batter</small>
+                </div>
+              ): (
+                <div className="flex justify-between">
+                  <p className="text-md">{batter1?.cost}</p>
+                  <p className="text-md">{batter1?.team}</p>
+
+                </div>
+              )}
+            </div>
+          </button>
+          <button className="border p-2 h-60 flex flex-col items-center bg-amber-300">
+            <img src={myPlayers.batter2 ? myPlayers.batter2.imageUrl : unpickedImage} alt="Batter 2" />
+          </button>
+        </div>
+
+      </div>
     </div>
   );
 };
