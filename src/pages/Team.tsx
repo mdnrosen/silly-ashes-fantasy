@@ -1,21 +1,24 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 
 import { Player } from '../types';
-import unpickedImage from '../assets/unpicked.jpg'; // Add this import
 
+import PlayerSelection from '../modules/PlayerSelection';
+import SelectPlayer from '../components/SelectPlayer'
 
-type MyPlayers = {
+import { PlayersContext } from '../context/PlayersContext';
+
+export type MyPlayers = {
   batter1: Player | null;
   batter2: Player | null;
   bowler1: Player | null;
   bowler2: Player | null;
   allrounder: Player | null;
-  wicketkeeper: Player | null;
+  keeper: Player | null;
   wildcard: Player | null;
 };
 
-
 const Team = () => {
+  const playersList = useContext(PlayersContext)
 
   const [myPlayers, setMyPlayers] = useState<MyPlayers>({
     batter1: null,
@@ -23,58 +26,97 @@ const Team = () => {
     bowler1: null,
     bowler2: null,
     allrounder: null,
-    wicketkeeper: null,
+    keeper: null,
     wildcard: null
   });
 
-    useEffect(() => {
-    setMyPlayers({...myPlayers, batter1: {id: 12, name: 'Marnus Labuschagne', cost: 17, team: 'AUS', role: 'BATTER', imageUrl: 'https://static-files.cricket-australia.pulselive.com/headshots/440/348-camedia.png'}})
-  },[])
+  const [selected, setSelected] = useState<string[]>([]);
+  const [teamName, setTeamName] = useState<string>('');
+  const [selectionModalOpen, setSelectionModalOpen] = useState<boolean>(false);
+  const [budget, setBudget] = useState<number>(100);
+  const [selection, setSelection] = useState<string>('');
+  //   useEffect(() => {
+  //   setMyPlayers({...myPlayers, batter1: {id: 12, name: 'Marnus Labuschagne', cost: 17, team: 'AUS', role: 'BATTER', imageUrl: 'https://static-files.cricket-australia.pulselive.com/headshots/440/348-camedia.png'}})
+  // },[])
+
+
+  useEffect(() => {
+    setSelected(Object.values(myPlayers).filter(p => p !== null).map(p => p!.id!.toString()));
+  }, [myPlayers]);
+
+  const openSelectionModal = (selection: string) => {
+    setSelection(selection);
+    setSelectionModalOpen(true);
+  };
+  const closeSelectionModal = () => setSelectionModalOpen(false);
 
 
 
-  const {
-    batter1,
-    batter2,
-  } = myPlayers;
+const batterRoles: (keyof MyPlayers)[] = ['batter1', 'batter2'];
+const bowlerRoles: (keyof MyPlayers)[] = ['bowler1', 'bowler2'];
+const keeperAllrounderRoles: (keyof MyPlayers)[] = ['allrounder', 'keeper'];
+
 
   return (
+    <>
     <div className="p-4">
-      <h1>Team Page</h1>
-
-      <div className="div">
-        <h2>Batters</h2>
-        <div className="grid grid-cols-2 gap-4">
-          <button className="border p-2 h-60 flex flex-col items-center">
-            <img src={batter1 ? batter1.imageUrl : unpickedImage} alt="Batter 1" />
-            <div className="py-2">
-              <div>
-                {batter1 ? (
-                  <div className="text-lg">{batter1.name}</div>
-                ) : (
-                  <div className="text-lg">BATTER 1</div>
-                )}
-              </div>
-              {!batter1 ? (
-                <div className="flex">
-                  <small className="text-sm">Please select a batter</small>
-                </div>
-              ): (
-                <div className="flex justify-between">
-                  <p className="text-md">{batter1?.cost}</p>
-                  <p className="text-md">{batter1?.team}</p>
-
-                </div>
-              )}
-            </div>
-          </button>
-          <button className="border p-2 h-60 flex flex-col items-center bg-amber-300">
-            <img src={myPlayers.batter2 ? myPlayers.batter2.imageUrl : unpickedImage} alt="Batter 2" />
-          </button>
+      <input type="text" className="outline-1 w-full my-4 h-10 px-2" placeholder="Team name" onChange={(e) => setTeamName(e.target.value)} />
+        <div className="grid grid-cols-2 gap-4 my-2">
+          {batterRoles.map((role) => (
+            <SelectPlayer 
+              role={role}
+              myPlayers={myPlayers}
+              openSelectionModal={openSelectionModal}
+            />
+          ))}
+        </div>
+          <hr />
+          <div className="grid grid-cols-2 gap-4 my-2">
+          {bowlerRoles.map((role) => (
+          <SelectPlayer 
+              role={role}
+              myPlayers={myPlayers}
+              openSelectionModal={openSelectionModal}
+            />
+          ))}
         </div>
 
-      </div>
+          <hr />
+          <div className="grid grid-cols-2 gap-4 my-2">
+          {keeperAllrounderRoles.map((role) => (
+          <SelectPlayer 
+              role={role}
+              myPlayers={myPlayers}
+              openSelectionModal={openSelectionModal}
+            />
+          ))}
+        </div>
+          
+          <div>
+            <SelectPlayer 
+              role={'wildcard'}
+              myPlayers={myPlayers}
+              openSelectionModal={openSelectionModal}
+            />
+          </div>
+
     </div>
+    {selectionModalOpen && (
+      <PlayerSelection
+        isOpen={selectionModalOpen}
+        role={selection.replace(/[0-9]/g, '').toUpperCase()}
+        players={playersList}
+        selected={selected}
+        selection={selection}
+        budget={budget}
+        savePlayer={(player, selection) => {
+          setMyPlayers({ ...myPlayers, [selection]: player });
+          closeSelectionModal();
+        }}
+        closeModal={closeSelectionModal}
+      />
+    )}
+    </>
   );
 };
 
