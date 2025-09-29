@@ -1,16 +1,15 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
-import { Player } from "../types";
+import { FullPlayer } from "../types";
 import playersData from "../assets/ashes23-firebasemock.json";
 // import { useLoading } from "../hooks/useLoading";
 
-export const PlayersContext = createContext<Player[]>([]);
+export const PlayersContext = createContext<FullPlayer[]>([]);
 
 export const PlayersProvider = ({ children }: { children: ReactNode }) => {
-  // const _loading = useLoading();
-  const [players, setPlayers] = useState<Player[]>([]);
+  const [players, setPlayers] = useState<FullPlayer[]>([]);
 
   useEffect(() => {
-    setPlayers(playersData as Player[]);
+    setPlayers(playersData as FullPlayer[]);
   }, []);
 
   return (

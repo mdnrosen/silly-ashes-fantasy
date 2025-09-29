@@ -1,71 +1,159 @@
-import { useState } from "react";
+import { useState, useEffect, useContext } from "react";
 
-const alreadyHasTeam = false; // Placeholder for team check logic
-const user = {
-  id: "12345", // Placeholder for user ID
-  username: "John Doe Cricket", // Placeholder for user name
+import { Player } from "../types";
+
+import PlayerSelection from "../modules/PlayerSelection";
+import SelectPlayer from "../components/SelectPlayer";
+
+import { PlayersContext } from "../context/PlayersContext";
+
+export type MyPlayers = {
+  batter1: Player | null;
+  batter2: Player | null;
+  bowler1: Player | null;
+  bowler2: Player | null;
+  allrounder: Player | null;
+  keeper: Player | null;
+  wildcard: Player | null;
 };
 
 const Team = () => {
-  const [teamName, setTeamName] = useState("");
+  const playersList = useContext(PlayersContext);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // TODO: Submit team creation logic
-    console.log("Creating team:", { teamName, username: user.username });
+  const [myPlayers, setMyPlayers] = useState<MyPlayers>({
+    batter1: null,
+    batter2: null,
+    bowler1: null,
+    bowler2: null,
+    allrounder: null,
+    keeper: null,
+    wildcard: null,
+  });
+
+  const [selected, setSelected] = useState<string[]>([]);
+  const [teamName, setTeamName] = useState<string>("");
+  const [selectionModalOpen, setSelectionModalOpen] = useState<boolean>(false);
+  const [selection, setSelection] = useState<string>("");
+
+  // Calculate budget remaining based on selected players
+  const totalSpent = Object.values(myPlayers)
+    .filter((player) => player !== null)
+    .reduce((sum, player) => sum + (player?.cost || 0), 0);
+
+  const budgetRemaining = 100 - totalSpent;
+
+  //   useEffect(() => {
+  //   setMyPlayers({...myPlayers, batter1: {id: 12, name: 'Marnus Labuschagne', cost: 17, team: 'AUS', role: 'BATTER', imageUrl: 'https://static-files.cricket-australia.pulselive.com/headshots/440/348-camedia.png'}})
+  // },[])
+
+  useEffect(() => {
+    setSelected(
+      Object.values(myPlayers)
+        .filter((p) => p !== null)
+        .map((p) => p!.id!.toString())
+    );
+  }, [myPlayers]);
+
+  const openSelectionModal = (selection: string) => {
+    setSelection(selection);
+    setSelectionModalOpen(true);
+  };
+  const closeSelectionModal = () => setSelectionModalOpen(false);
+
+  const deselectPlayer = (role: string) => {
+    setMyPlayers({ ...myPlayers, [role as keyof MyPlayers]: null });
   };
 
-  if (!alreadyHasTeam) {
-    return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-dark-blue px-4">
-        <div className="bg-off-white p-8 rounded-lg shadow-md max-w-md w-full">
-          <h1 className="text-3xl font-bold mb-4 text-center text-dark-blue">
-            Silly Ashes - Fantasy!
-          </h1>
-          <p className="text-blue mb-6 text-center">
-            Hello{" "}
-            <span className="font-semibold text-dark-blue">
-              {user.username}
-            </span>
-            ! Let's set up your fantasy cricket team to get started.
-          </p>
-
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label
-                htmlFor="teamName"
-                className="block text-sm font-medium text-blue mb-2"
-              >
-                Team Name
-              </label>
-              <input
-                type="text"
-                id="teamName"
-                value={teamName}
-                onChange={(e) => setTeamName(e.target.value)}
-                className="w-full px-3 py-2 border border-mid-blue rounded-md focus:outline-none focus:ring-2 focus:ring-light-blue focus:border-transparent bg-off-white text-dark-blue"
-                placeholder="Enter your team name"
-                required
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="w-full bg-aus-green text-off-white py-2 px-4 rounded-md hover:bg-dark-blue focus:outline-none focus:ring-2 focus:ring-light-blue focus:ring-offset-2 transition duration-200"
-            >
-              Create Team
-            </button>
-          </form>
-        </div>
-      </div>
-    );
-  }
+  const batterRoles: (keyof MyPlayers)[] = ["batter1", "batter2"];
+  const bowlerRoles: (keyof MyPlayers)[] = ["bowler1", "bowler2"];
+  const keeperAllrounderRoles: (keyof MyPlayers)[] = ["allrounder", "keeper"];
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-dark-blue">
-      <h1 className="text-3xl font-bold mb-6 text-off-white">Team Page</h1>
-      <p className="text-lg text-light-blue">This is the team page content.</p>
-    </div>
+    <>
+      <div className="p-2 h-screen flex flex-col pb-16">
+        <input
+          type="text"
+          value={teamName}
+          className="outline-1 w-full mb-2 h-8 px-2 text-sm border border-mid-blue rounded"
+          placeholder="Team name"
+          onChange={(e) => setTeamName(e.target.value)}
+        />
+
+        <div className="flex justify-between mb-2 text-xs text-dark-blue">
+          <span>Budget Remaining: ${budgetRemaining}</span>
+          <span>Team Score: 0</span>
+        </div>
+
+        <div className="flex-1 flex flex-col space-y-1">
+          {/* Batters */}
+          <div className="grid grid-cols-2 gap-1 flex-1">
+            {batterRoles.map((role, i) => (
+              <SelectPlayer
+                key={i}
+                role={role}
+                myPlayers={myPlayers}
+                openSelectionModal={openSelectionModal}
+              />
+            ))}
+          </div>
+
+          {/* Bowlers */}
+          <div className="grid grid-cols-2 gap-1 flex-1">
+            {bowlerRoles.map((role, i) => (
+              <SelectPlayer
+                key={i}
+                role={role}
+                myPlayers={myPlayers}
+                openSelectionModal={openSelectionModal}
+              />
+            ))}
+          </div>
+
+          {/* Keeper & Allrounder */}
+          <div className="grid grid-cols-2 gap-1 flex-1">
+            {keeperAllrounderRoles.map((role, i) => (
+              <SelectPlayer
+                key={i}
+                role={role}
+                myPlayers={myPlayers}
+                openSelectionModal={openSelectionModal}
+              />
+            ))}
+          </div>
+
+          {/* Wildcard */}
+          <div className="grid grid-cols-1 flex-1">
+            <SelectPlayer
+              role={"wildcard"}
+              myPlayers={myPlayers}
+              openSelectionModal={openSelectionModal}
+            />
+          </div>
+        </div>
+
+        {/* Submit Button - Fixed at bottom */}
+        <button className="w-full bg-aus-green text-off-white py-2 mt-2 rounded font-semibold text-sm">
+          Submit Team
+        </button>
+      </div>
+      {selectionModalOpen && (
+        <PlayerSelection
+          isOpen={selectionModalOpen}
+          role={selection.replace(/[0-9]/g, "").toUpperCase()}
+          players={playersList}
+          selected={selected}
+          selection={selection}
+          budget={budgetRemaining}
+          currentPlayer={myPlayers[selection as keyof MyPlayers]}
+          savePlayer={(player, selection) => {
+            setMyPlayers({ ...myPlayers, [selection]: player });
+            closeSelectionModal();
+          }}
+          deselectPlayer={deselectPlayer}
+          closeModal={closeSelectionModal}
+        />
+      )}
+    </>
   );
 };
 

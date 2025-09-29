@@ -1,5 +1,5 @@
 import type { JSX } from "react";
-import { Player } from "../types";
+import { FullPlayer } from "../types";
 import { Link } from "react-router-dom";
 import {
   firstName,
@@ -8,7 +8,7 @@ import {
   lastName,
 } from "../lib/helpers";
 
-const PlayerCard: React.FC<{ player: Player }> = ({ player }): JSX.Element => {
+const PlayerCard: React.FC<{ player: FullPlayer }> = ({ player }): JSX.Element => {
   return (
     <Link to={`/player/${player.id}`} className="no-underline w-full block">
       <div
@@ -20,7 +20,7 @@ const PlayerCard: React.FC<{ player: Player }> = ({ player }): JSX.Element => {
           <img
             src={player.imageUrl}
             alt={player.name}
-            className="w-full h-full object-cover rounded-l-lg"
+            className="w-full h-full object-cover rounded-l-md"
           />
         </div>
         <div

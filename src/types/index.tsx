@@ -4,6 +4,11 @@ export interface Player {
   imageUrl: string;
   role: string;
   team: string;
+  cost: number;
+  points: number;
+}
+
+export interface FullPlayer extends Player {
   runs: number;
   centuries: number;
   runouts: number;
@@ -11,8 +16,6 @@ export interface Player {
   wickets: number;
   fivewickets: number;
   stumpings: number;
-  points?: number;
-  cost?: number;
 }
 
 export interface Team {
