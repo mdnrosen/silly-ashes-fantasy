@@ -1,5 +1,6 @@
 import { Player } from "../types";
 import { getBorderColor, getTeamTextColor } from "../lib/helpers";
+import { IoClose } from "react-icons/io5";
 
 type Props = {
   isOpen: boolean;
@@ -65,16 +66,16 @@ const PlayerSelection = ({
   };
 
   return (
-    <div className="rounded-lg absolute top-0 m-4 left-0 right-0 bg-white border-2 border-gray-300 p-4 shadow-lg h-9/10 z-50 animat-fade-in overflow-auto">
+    <div className="fixed inset-2 bg-white border-2 border-gray-300 rounded-lg p-4 shadow-lg z-50 overflow-auto">
       <div className="flex justify-between mb-4">
         <h2 className="text-lg font-bold text-dark-blue uppercase">
           SELECT {role}
         </h2>
         <button
-          className="ml-auto text-dark-blue hover:text-gray-600"
+          className="ml-auto text-dark-blue hover:text-gray-600 p-1"
           onClick={() => closeModal()}
         >
-          ✕
+          <IoClose size={24} />
         </button>
       </div>
 
