@@ -26,7 +26,6 @@ function App() {
       <Router>
         <Navbar />
         <ScrollToTop />
-        {/* Navbar will go here */}
         <div className="pt-15 md:pt-20">
           <Routes>
             <Route path="/" element={<Home />} />

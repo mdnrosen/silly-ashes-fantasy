@@ -33,8 +33,15 @@ const Team = () => {
   const [selected, setSelected] = useState<string[]>([]);
   const [teamName, setTeamName] = useState<string>("");
   const [selectionModalOpen, setSelectionModalOpen] = useState<boolean>(false);
-  const [budget, setBudget] = useState<number>(100);
   const [selection, setSelection] = useState<string>("");
+
+  // Calculate budget remaining based on selected players
+  const totalSpent = Object.values(myPlayers)
+    .filter((player) => player !== null)
+    .reduce((sum, player) => sum + (player?.cost || 0), 0);
+
+  const budgetRemaining = 100 - totalSpent;
+
   //   useEffect(() => {
   //   setMyPlayers({...myPlayers, batter1: {id: 12, name: 'Marnus Labuschagne', cost: 17, team: 'AUS', role: 'BATTER', imageUrl: 'https://static-files.cricket-australia.pulselive.com/headshots/440/348-camedia.png'}})
   // },[])
@@ -59,54 +66,73 @@ const Team = () => {
 
   return (
     <>
-      <div className="p-4 h-full">
+      <div className="p-2 h-screen flex flex-col pb-16">
+        {/* Team Name Input */}
         <input
           type="text"
-          className="outline-1 w-full my-4 h-10 px-2"
+          className="outline-1 w-full mb-2 h-8 px-2 text-sm border border-mid-blue rounded"
           placeholder="Team name"
           onChange={(e) => setTeamName(e.target.value)}
         />
-        <div className="grid grid-cols-2 gap-4 my-2">
-          {batterRoles.map((role, i) => (
-            <SelectPlayer
-              key={i}
-              role={role}
-              myPlayers={myPlayers}
-              openSelectionModal={openSelectionModal}
-            />
-          ))}
-        </div>
-        <hr />
-        <div className="grid grid-cols-2 gap-4 my-2">
-          {bowlerRoles.map((role, i) => (
-            <SelectPlayer
-              key={i}
-              role={role}
-              myPlayers={myPlayers}
-              openSelectionModal={openSelectionModal}
-            />
-          ))}
+
+        {/* Budget and Score Info */}
+        <div className="flex justify-between mb-2 text-xs text-dark-blue">
+          <span>Budget Remaining: ${budgetRemaining}</span>
+          <span>Team Score: 0</span>
         </div>
 
-        <hr />
-        <div className="grid grid-cols-2 gap-4 my-2">
-          {keeperAllrounderRoles.map((role, i) => (
+        {/* Player Selection Grid - Fill remaining space */}
+        <div className="flex-1 flex flex-col space-y-1">
+          {/* Batters */}
+          <div className="grid grid-cols-2 gap-1 flex-1">
+            {batterRoles.map((role, i) => (
+              <SelectPlayer
+                key={i}
+                role={role}
+                myPlayers={myPlayers}
+                openSelectionModal={openSelectionModal}
+              />
+            ))}
+          </div>
+
+          {/* Bowlers */}
+          <div className="grid grid-cols-2 gap-1 flex-1">
+            {bowlerRoles.map((role, i) => (
+              <SelectPlayer
+                key={i}
+                role={role}
+                myPlayers={myPlayers}
+                openSelectionModal={openSelectionModal}
+              />
+            ))}
+          </div>
+
+          {/* Keeper & Allrounder */}
+          <div className="grid grid-cols-2 gap-1 flex-1">
+            {keeperAllrounderRoles.map((role, i) => (
+              <SelectPlayer
+                key={i}
+                role={role}
+                myPlayers={myPlayers}
+                openSelectionModal={openSelectionModal}
+              />
+            ))}
+          </div>
+
+          {/* Wildcard */}
+          <div className="grid grid-cols-1 flex-1">
             <SelectPlayer
-              key={i}
-              role={role}
+              role={"wildcard"}
               myPlayers={myPlayers}
               openSelectionModal={openSelectionModal}
             />
-          ))}
+          </div>
         </div>
 
-        <div>
-          <SelectPlayer
-            role={"wildcard"}
-            myPlayers={myPlayers}
-            openSelectionModal={openSelectionModal}
-          />
-        </div>
+        {/* Submit Button - Fixed at bottom */}
+        <button className="w-full bg-aus-green text-off-white py-2 mt-2 rounded font-semibold text-sm">
+          Submit Team
+        </button>
       </div>
       {selectionModalOpen && (
         <PlayerSelection
@@ -115,7 +141,7 @@ const Team = () => {
           players={playersList}
           selected={selected}
           selection={selection}
-          budget={budget}
+          budget={budgetRemaining}
           savePlayer={(player, selection) => {
             setMyPlayers({ ...myPlayers, [selection]: player });
             closeSelectionModal();
