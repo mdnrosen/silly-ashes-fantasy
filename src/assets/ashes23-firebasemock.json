@@ -13,7 +13,7 @@
     "role": "KEEPER",
     "imageUrl": "https://www.wisden.com/static-assets/images/players/69554.png?v=23.77",
     "points": 388,
-    "cost": 16
+    "cost": 12
   },
   {
     "id": "b2c3d4e5-f6g7-8901-bcde-f23456789012",
@@ -29,7 +29,7 @@
     "imageUrl": "https://www.wisden.com/static-assets/images/players/10094.png?v=23.77",
     "catches": 2,
     "points": 316,
-    "cost": 19
+    "cost": 14
   },
   {
     "id": "c3d4e5f6-g7h8-9012-cdef-345678901234",
@@ -45,7 +45,7 @@
     "imageUrl": "https://www.wisden.com/static-assets/images/players/63277.png?v=23.77",
     "catches": 2,
     "points": 316,
-    "cost": 19
+    "cost": 14
   },
   {
     "id": "d4e5f6g7-h8i9-0123-defg-456789012345",
@@ -61,7 +61,7 @@
     "centuries": 0,
     "catches": 0,
     "points": 216,
-    "cost": 12
+    "cost": 9
   },
   {
     "id": "e5f6g7h8-i9j0-1234-efgh-567890123456",
@@ -77,7 +77,7 @@
     "imageUrl": "https://www.wisden.com/static-assets/images/players/4255.png?v=23.77",
     "fivewickets": 1,
     "points": 390,
-    "cost": 29
+    "cost": 22
   },
   {
     "id": "f6g7h8i9-j0k1-2345-fghi-678901234567",
@@ -93,7 +93,7 @@
     "name": "Cameron Green",
     "centuries": 0,
     "points": 243,
-    "cost": 21
+    "cost": 16
   },
   {
     "id": "g7h8i9j0-k1l2-3456-ghij-789012345678",
@@ -109,7 +109,7 @@
     "centuries": 0,
     "catches": 20,
     "points": 238,
-    "cost": 20
+    "cost": 15
   },
   {
     "id": "h8i9j0k1-l2m3-4567-hijk-890123456789",
@@ -125,7 +125,7 @@
     "name": "Mitchell Marsh",
     "centuries": 0,
     "points": 102,
-    "cost": 14
+    "cost": 11
   },
   {
     "id": "i9j0k1l2-m3n4-5678-ijkl-901234567890",
@@ -141,7 +141,7 @@
     "centuries": 1,
     "catches": 2,
     "points": 353,
-    "cost": 25
+    "cost": 19
   },
   {
     "id": "j0k1l2m3-n4o5-6789-jklm-012345678901",
@@ -157,7 +157,7 @@
     "name": "Travis Head",
     "centuries": 0,
     "points": 186,
-    "cost": 16
+    "cost": 12
   },
   {
     "id": "k1l2m3n4-o5p6-7890-klmn-123456789012",
@@ -173,7 +173,7 @@
     "name": "Mitchell Starc",
     "catches": 1,
     "points": 623,
-    "cost": 30
+    "cost": 23
   },
   {
     "id": "l2m3n4o5-p6q7-8901-lmno-234567890123",
@@ -189,7 +189,7 @@
     "fivewickets": 0,
     "centuries": 0,
     "points": 360,
-    "cost": 22
+    "cost": 17
   },
   {
     "id": "m3n4o5p6-q7r8-9012-mnop-345678901234",
@@ -205,7 +205,7 @@
     "imageUrl": "https://www.wisden.com/static-assets/images/players/10130.png?v=23.77",
     "wickets": 3,
     "points": 523,
-    "cost": 35
+    "cost": 26
   },
   {
     "id": "n4o5p6q7-r8s9-0123-nopq-456789012345",
@@ -221,7 +221,7 @@
     "centuries": 0,
     "catches": 1,
     "points": 129,
-    "cost": 29
+    "cost": 22
   },
   {
     "id": "o5p6q7r8-s9t0-1234-opqr-567890123456",
@@ -237,7 +237,7 @@
     "team": "AUS",
     "centuries": 1,
     "points": 378,
-    "cost": 27
+    "cost": 20
   },
   {
     "id": "p6q7r8s9-t0u1-2345-pqrs-678901234567",
@@ -253,7 +253,7 @@
     "name": "Zak Crawley",
     "runouts": 0,
     "points": 575,
-    "cost": 22
+    "cost": 17
   },
   {
     "id": "q7r8s9t0-u1v2-3456-qrst-789012345678",
@@ -269,7 +269,7 @@
     "imageUrl": "https://www.wisden.com/static-assets/images/players/4308.png?v=23.77",
     "runs": 373,
     "points": 438,
-    "cost": 32
+    "cost": 24
   },
   {
     "id": "r8s9t0u1-v2w3-4567-rstu-890123456789",
@@ -285,7 +285,7 @@
     "runouts": 0,
     "role": "KEEPER",
     "points": 345,
-    "cost": 27
+    "cost": 20
   },
   {
     "id": "s9t0u1v2-w3x4-5678-stuv-901234567890",
@@ -301,7 +301,7 @@
     "runouts": 0,
     "role": "KEEPER",
     "points": 345,
-    "cost": 27
+    "cost": 20
   },
   {
     "id": "t0u1v2w3-x4y5-6789-tuvw-012345678901",
@@ -317,7 +317,7 @@
     "role": "BOWLER",
     "team": "ENG",
     "points": 121,
-    "cost": 14
+    "cost": 11
   },
   {
     "id": "u1v2w3x4-y5z6-7890-uvwx-123456789012",
@@ -333,7 +333,7 @@
     "runouts": 0,
     "stumpings": 0,
     "points": 556,
-    "cost": 23
+    "cost": 17
   },
   {
     "id": "v2w3x4y5-z6a7-8901-vwxy-234567890123",
@@ -349,7 +349,7 @@
     "imageUrl": "https://www.wisden.com/static-assets/images/players/65090.png?v=23.77",
     "team": "ENG",
     "points": 518,
-    "cost": 28
+    "cost": 21
   },
   {
     "id": "w3x4y5z6-a7b8-9012-wxyz-345678901234",
@@ -365,7 +365,7 @@
     "name": "Ben Duckett",
     "team": "ENG",
     "points": 366,
-    "cost": 23
+    "cost": 17
   },
   {
     "id": "x4y5z6a7-b8c9-0123-xyza-456789012345",
@@ -381,7 +381,7 @@
     "role": "BATTER",
     "name": "Harry Brook",
     "points": 378,
-    "cost": 27
+    "cost": 20
   },
   {
     "id": "y5z6a7b8-c9d0-1234-yzab-567890123456",
@@ -397,7 +397,7 @@
     "wickets": 18,
     "name": "Pat Cummins",
     "points": 572,
-    "cost": 34
+    "cost": 26
   },
   {
     "id": "z6a7b8c9-d0e1-2345-zabc-678901234567",
@@ -413,7 +413,7 @@
     "fivewickets": 1,
     "runouts": 0,
     "points": 423,
-    "cost": 25
+    "cost": 19
   },
   {
     "id": "a7b8c9d0-e1f2-3456-abcd-789012345678",
@@ -429,7 +429,7 @@
     "name": "Scott Boland",
     "catches": 0,
     "points": 60,
-    "cost": 15
+    "cost": 11
   },
   {
     "id": 24,
@@ -445,7 +445,7 @@
     "runouts": 0,
     "wickets": 2,
     "points": 372,
-    "cost": 21
+    "cost": 16
   },
   {
     "id": 25171989123,
@@ -461,7 +461,7 @@
     "stumpings": 0,
     "catches": 4,
     "points": 305,
-    "cost": 24
+    "cost": 18
   },
   {
     "id": 25,
@@ -477,7 +477,7 @@
     "stumpings": 0,
     "catches": 4,
     "points": 305,
-    "cost": 24
+    "cost": 18
   },
   {
     "id": 26,
@@ -493,7 +493,7 @@
     "catches": 0,
     "runouts": 0,
     "points": 208,
-    "cost": 27
+    "cost": 20
   },
   {
     "id": 27,
@@ -509,7 +509,7 @@
     "fivewickets": 0,
     "role": "BATTER",
     "points": 634,
-    "cost": 35
+    "cost": 26
   },
   {
     "id": 28,
@@ -525,7 +525,7 @@
     "team": "ENG",
     "runouts": 0,
     "points": 95,
-    "cost": 19
+    "cost": 14
   },
   {
     "id": 30,
@@ -541,7 +541,7 @@
     "team": "ENG",
     "runouts": 0,
     "points": 941,
-    "cost": 40
+    "cost": 30
   },
   {
     "id": 31,
@@ -557,6 +557,6 @@
     "team": "AUS",
     "runouts": 0,
     "points": 941,
-    "cost": 40
+    "cost": 30
   }
 ]
