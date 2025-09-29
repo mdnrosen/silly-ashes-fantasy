@@ -32,6 +32,19 @@ export const getBorderColor = (team: string): string => {
   return team === "AUS" ? "border-aus-green" : "border-dark-blue";
 };
 
+export const getTeamTextColor = (team?: string): string => {
+  if (!team) return "text-dark-blue";
+
+  switch (team) {
+    case "ENG":
+      return "text-dark-blue";
+    case "AUS":
+      return "text-aus-green";
+    default:
+      return "text-dark-blue";
+  }
+};
+
 export const firstName = (name: string): string => name.split(" ")[0];
 
 export const lastName = (name: string): string => name.split(" ")[1];

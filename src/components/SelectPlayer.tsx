@@ -1,25 +1,16 @@
 import { MyPlayers } from "../pages/Team";
-import { getTitle, getSelectMessage, getBorderColor } from "../lib/helpers";
+import {
+  getTitle,
+  getSelectMessage,
+  getBorderColor,
+  getTeamTextColor,
+} from "../lib/helpers";
 import unpickedImage from "../assets/unpicked.jpg";
 
 type Props = {
   myPlayers: MyPlayers;
   openSelectionModal: (role: keyof MyPlayers) => void;
   role: keyof MyPlayers;
-};
-
-// Function to get team color for surnames
-const getTeamTextColor = (team?: string) => {
-  if (!team) return "text-dark-blue";
-
-  switch (team) {
-    case "ENG":
-      return "text-dark-blue";
-    case "AUS":
-      return "text-aus-green";
-    default:
-      return "text-dark-blue";
-  }
 };
 
 const SelectPlayer = ({ myPlayers, role, openSelectionModal }: Props) => {
@@ -48,6 +39,7 @@ const SelectPlayer = ({ myPlayers, role, openSelectionModal }: Props) => {
         hover:shadow-lg
         min-h-0
         flex-1
+        w-full
       `}
       onClick={() => openSelectionModal(role)}
     >

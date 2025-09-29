@@ -60,6 +60,10 @@ const Team = () => {
   };
   const closeSelectionModal = () => setSelectionModalOpen(false);
 
+  const deselectPlayer = (role: string) => {
+    setMyPlayers({ ...myPlayers, [role as keyof MyPlayers]: null });
+  };
+
   const batterRoles: (keyof MyPlayers)[] = ["batter1", "batter2"];
   const bowlerRoles: (keyof MyPlayers)[] = ["bowler1", "bowler2"];
   const keeperAllrounderRoles: (keyof MyPlayers)[] = ["allrounder", "keeper"];
@@ -67,21 +71,19 @@ const Team = () => {
   return (
     <>
       <div className="p-2 h-screen flex flex-col pb-16">
-        {/* Team Name Input */}
         <input
           type="text"
+          value={teamName}
           className="outline-1 w-full mb-2 h-8 px-2 text-sm border border-mid-blue rounded"
           placeholder="Team name"
           onChange={(e) => setTeamName(e.target.value)}
         />
 
-        {/* Budget and Score Info */}
         <div className="flex justify-between mb-2 text-xs text-dark-blue">
           <span>Budget Remaining: ${budgetRemaining}</span>
           <span>Team Score: 0</span>
         </div>
 
-        {/* Player Selection Grid - Fill remaining space */}
         <div className="flex-1 flex flex-col space-y-1">
           {/* Batters */}
           <div className="grid grid-cols-2 gap-1 flex-1">
@@ -142,10 +144,12 @@ const Team = () => {
           selected={selected}
           selection={selection}
           budget={budgetRemaining}
+          currentPlayer={myPlayers[selection as keyof MyPlayers]}
           savePlayer={(player, selection) => {
             setMyPlayers({ ...myPlayers, [selection]: player });
             closeSelectionModal();
           }}
+          deselectPlayer={deselectPlayer}
           closeModal={closeSelectionModal}
         />
       )}
