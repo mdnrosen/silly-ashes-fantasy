@@ -27,52 +27,54 @@ function App() {
         <Navbar />
         <ScrollToTop />
         {/* Navbar will go here */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/register" element={<Auth />} />
-          <Route
-            path="/players"
-            element={
-              <ProtectedRoute>
-                <ListPlayers />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/team"
-            element={
-              <ProtectedRoute>
-                <Team />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/rules"
-            element={
-              <ProtectedRoute>
-                <Rules />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/leaderboard"
-            element={
-              <ProtectedRoute>
-                <Leaderboard />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/player/:playerId"
-            element={
-              <ProtectedRoute>
-                <PlayerProfile />
-              </ProtectedRoute>
-            }
-          />
-          {/* add 404 route */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <div className="pt-15 md:pt-20">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/register" element={<Auth />} />
+            <Route
+              path="/players"
+              element={
+                <ProtectedRoute>
+                  <ListPlayers />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/team"
+              element={
+                <ProtectedRoute>
+                  <Team />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/rules"
+              element={
+                <ProtectedRoute>
+                  <Rules />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/leaderboard"
+              element={
+                <ProtectedRoute>
+                  <Leaderboard />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/player/:playerId"
+              element={
+                <ProtectedRoute>
+                  <PlayerProfile />
+                </ProtectedRoute>
+              }
+            />
+            {/* add 404 route */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
         <Footer />
       </Router>
     </div>

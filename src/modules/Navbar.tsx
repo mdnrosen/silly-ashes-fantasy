@@ -25,7 +25,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="flex justify-between items-center h-15 md:h-20 w-full mx-auto p-4 bg-off-white text-dark-blue relative z-50 border-b-2">
+      <div className="fixed flex justify-between items-center h-15 md:h-20 w-full mx-auto p-4 bg-off-white text-dark-blue z-50 border-b-2 mb-150 md:mb-20">
         LOGO
         <button
           onClick={toggleMenu}
