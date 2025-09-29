@@ -79,12 +79,48 @@ const Team = () => {
           onChange={(e) => setTeamName(e.target.value)}
         />
 
-        <div className="flex justify-between mb-2 text-xs text-dark-blue">
-          <span>Budget Remaining: ${budgetRemaining}</span>
-          <span>Team Score: 0</span>
+        {/* Subtle scroll hint */}
+        <div className="text-center mb-1">
+          <div className="text-xs text-gray-400">
+            Complete your team then scroll down to save ↓
+          </div>
         </div>
 
         <div className="flex-1 flex flex-col space-y-1">
+          {/* Top Row: Budget/Score Info and Wildcard */}
+          <div className="grid grid-cols-2 gap-1 flex-1">
+            {/* Budget and Score Info Card */}
+            <div className="bg-white border-2 border-gray-300 rounded-lg p-2 flex flex-col justify-center items-center">
+              {teamName ? (
+                <>
+                  <div className="text-xs font-semibold text-dark-blue text-center mb-2 uppercase">
+                    {teamName}
+                  </div>
+                  <div className="text-center space-y-1">
+                    <div className="text-xs text-dark-blue">
+                      Budget:{" "}
+                      <span className="font-bold">${budgetRemaining}</span>
+                    </div>
+                    <div className="text-xs text-dark-blue">
+                      Score: <span className="font-bold">0</span>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <div className="text-xs text-dark-blue text-center opacity-60">
+                  Enter team name above
+                </div>
+              )}
+            </div>
+
+            {/* Wildcard */}
+            <SelectPlayer
+              role={"wildcard"}
+              myPlayers={myPlayers}
+              openSelectionModal={openSelectionModal}
+            />
+          </div>
+
           {/* Batters */}
           <div className="grid grid-cols-2 gap-1 flex-1">
             {batterRoles.map((role, i) => (
@@ -119,15 +155,6 @@ const Team = () => {
                 openSelectionModal={openSelectionModal}
               />
             ))}
-          </div>
-
-          {/* Wildcard */}
-          <div className="grid grid-cols-1 flex-1">
-            <SelectPlayer
-              role={"wildcard"}
-              myPlayers={myPlayers}
-              openSelectionModal={openSelectionModal}
-            />
           </div>
         </div>
 
