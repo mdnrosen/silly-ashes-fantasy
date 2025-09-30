@@ -22,10 +22,17 @@ const SelectPlayer = ({ myPlayers, role, openSelectionModal }: Props) => {
     ? `${getBorderColor(player.team)} border-4`
     : "border-gray-400 border-2 border-dashed";
 
+  // Get team-specific background color when player is selected
+  const backgroundStyle = player
+    ? player.team === "AUS" 
+      ? "bg-green-50" 
+      : "bg-blue-50"
+    : "bg-white";
+
   return (
     <button
       className={`
-        bg-white
+        ${backgroundStyle}
         ${borderStyle}
         rounded-lg
         p-2
@@ -54,7 +61,7 @@ const SelectPlayer = ({ myPlayers, role, openSelectionModal }: Props) => {
             <img
               src={player.imageUrl}
               alt={player.name}
-              className="w-16 h-16 sm:w-20 sm:h-20 object-cover rounded"
+              className="w-18 h-18 sm:w-22 sm:h-22 object-cover rounded"
             />
           </div>
 
@@ -74,10 +81,10 @@ const SelectPlayer = ({ myPlayers, role, openSelectionModal }: Props) => {
 
             {/* Bottom right - Cost and Points */}
             <div className="text-right">
-              <div className="text-xs text-dark-blue font-medium leading-tight">
+              <div className="text-sm text-dark-blue font-bold leading-tight">
                 ${player.cost}
               </div>
-              <div className="text-xs text-dark-blue leading-tight">0 pts</div>
+              <div className="text-sm text-dark-blue font-medium leading-tight">0 pts</div>
             </div>
           </div>
         </>
@@ -88,7 +95,7 @@ const SelectPlayer = ({ myPlayers, role, openSelectionModal }: Props) => {
             <img
               src={unpickedImage}
               alt="No player selected"
-              className="w-16 h-16 sm:w-20 sm:h-20 object-cover rounded opacity-50"
+              className="w-18 h-18 sm:w-22 sm:h-22 object-cover rounded opacity-50"
             />
           </div>
           <div className="text-xs text-dark-blue text-center">

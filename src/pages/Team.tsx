@@ -90,27 +90,30 @@ const Team = () => {
           {/* Top Row: Budget/Score Info and Wildcard */}
           <div className="grid grid-cols-2 gap-1 flex-1">
             {/* Budget and Score Info Card */}
-            <div className="bg-white border-2 border-gray-300 rounded-lg p-2 flex flex-col justify-center items-center">
+            <div className="bg-white border-2 border-gray-300 rounded-lg p-2 pt-3 flex flex-col justify-between">
               {teamName ? (
-                <>
-                  <div className="text-xs font-semibold text-dark-blue text-center mb-2 uppercase">
-                    {teamName}
-                  </div>
-                  <div className="text-center space-y-1">
-                    <div className="text-xs text-dark-blue">
-                      Budget:{" "}
-                      <span className="font-bold">${budgetRemaining}</span>
-                    </div>
-                    <div className="text-xs text-dark-blue">
-                      Score: <span className="font-bold">0</span>
-                    </div>
-                  </div>
-                </>
+                <div className="text-xs font-semibold text-dark-blue text-center uppercase">
+                  {teamName}
+                </div>
               ) : (
                 <div className="text-xs text-dark-blue text-center opacity-60">
-                  Enter team name above
+                  Please name your team
                 </div>
               )}
+              <div className="flex justify-between items-end mt-2">
+                <div className="text-left">
+                  <div className="text-sm text-dark-blue font-bold leading-tight">
+                    ${budgetRemaining}
+                  </div>
+                  <div className="text-xs text-dark-blue leading-tight">BUDGET</div>
+                </div>
+                <div className="text-right">
+                  <div className="text-sm text-dark-blue font-bold leading-tight">
+                    0
+                  </div>
+                  <div className="text-xs text-dark-blue leading-tight">SCORE</div>
+                </div>
+              </div>
             </div>
 
             {/* Wildcard */}
