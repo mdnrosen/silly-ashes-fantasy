@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 
 import { Player } from "../types";
-
+import { saveTeam } from "../firebase";
 import PlayerSelection from "../modules/PlayerSelection";
 import SelectPlayer from "../components/SelectPlayer";
 
@@ -63,6 +63,30 @@ const Team = () => {
   const deselectPlayer = (role: string) => {
     setMyPlayers({ ...myPlayers, [role as keyof MyPlayers]: null });
   };
+
+
+  const canSubmit = () => {
+    // all players selected and a team name
+    return (
+      Object.values(myPlayers).every((player) => player !== null) && teamName.trim() !== ""
+    );
+  };
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    console.log("Submitting team:", { myPlayers, teamName });
+
+    // of 
+
+    const payload = {
+      myPlayers,
+      teamName,
+      username: "exampleUser" 
+    };
+
+    saveTeam(payload);
+  };
+
 
   const batterRoles: (keyof MyPlayers)[] = ["batter1", "batter2"];
   const bowlerRoles: (keyof MyPlayers)[] = ["bowler1", "bowler2"];
@@ -161,8 +185,10 @@ const Team = () => {
           </div>
         </div>
 
-        {/* Submit Button - Fixed at bottom */}
-        <button className="w-full bg-aus-green text-off-white py-2 mt-2 rounded font-semibold text-sm">
+        <button 
+          disabled={!canSubmit}
+          onClick={handleSubmit}
+          className="w-full bg-aus-green text-off-white py-2 mt-2 rounded font-semibold text-sm">
           Submit Team
         </button>
       </div>

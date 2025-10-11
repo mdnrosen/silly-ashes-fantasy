@@ -4,7 +4,6 @@ import { Player } from "../types";
 import data from "../assets/ashes23.json";
 import { calculatePlayerScore } from "../lib/helpers";
 
-// help us out here
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_API_KEY,
   authDomain: import.meta.env.VITE_AUTH_DOMAIN,
@@ -30,6 +29,8 @@ export const seedDB = async (): Promise<void> => {
   }
 };
 
+seedDB();
+
 export const addToDB = async (player: Player): Promise<void> => {
   try {
     const docRef = await addDoc(collection(db, "players"), player);
@@ -47,9 +48,20 @@ export const getPlayers = async (): Promise<Player[]> => {
       players.push(doc.data() as Player);
     });
     // calculate scores for players
-    return players.map((player) => calculatePlayerScore(player));
+    const allPlayers = players.map((player) => calculatePlayerScore(player));
+    console.log(allPlayers);
+    return allPlayers;
   } catch (error) {
     console.error("Error getting players: ", error);
     return [];
+  }
+};
+
+export const saveTeam = async (team: any) => {
+  try {
+    const docRef = await addDoc(collection(db, "teams"), team);
+    console.log("Document written with ID: ", docRef.id);
+  } catch (error) {
+    console.error("Error saving team: ", error);
   }
 };

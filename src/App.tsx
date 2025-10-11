@@ -20,7 +20,12 @@ import outputs from "./lib/config";
 import "@aws-amplify/ui-react/styles.css";
 Amplify.configure(outputs);
 
+
+import { seedDB, getPlayers } from "./firebase";
+
 function App() {
+  // seedDB();
+  getPlayers();
   return (
     <div className="min-w-xs max-w-3xl mx-auto bg-off-white min-h-screen font-roboto">
       <Router>
