@@ -30,6 +30,10 @@ const Team = () => {
     wildcard: null,
   });
 
+  const getMyTeam = () => {
+    // Check if user already has a team from team context
+  }
+
   const [selected, setSelected] = useState<string[]>([]);
   const [teamName, setTeamName] = useState<string>("");
   const [selectionModalOpen, setSelectionModalOpen] = useState<boolean>(false);
