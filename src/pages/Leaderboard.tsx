@@ -1,7 +1,22 @@
+
+import { useEffect, useState } from 'react'; 
 import dummyTeams from "../assets/dummyTeams.json";
+import { getTeams } from '../firebase';
 const currentUser = "Harry23";
 
+
+
+
 const Leaderboard = () => {
+  const [ teams, setTeams] = useState([]);
+
+  const fetchTeams = async () => {
+    const fetchedTeams = await getTeams();
+    setTeams(fetchedTeams as any);
+  };
+  useEffect(() => {
+    fetchTeams();
+  }, []);
   return (
     <div className="min-h-screen bg-off-white text-dark-blue px-4 py-4 pb-20">
       <div className="max-w-4xl mx-auto">
