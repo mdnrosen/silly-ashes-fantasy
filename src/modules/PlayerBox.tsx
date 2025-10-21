@@ -14,7 +14,6 @@ type Props = {
 };
 
 const PlayerBox = ({ isDisabled, player, defaultRole }: Props) => {
-  console.log(player);
   const playerStyles = () => `
     border-2
     h-full 

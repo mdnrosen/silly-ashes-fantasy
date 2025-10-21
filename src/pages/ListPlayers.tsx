@@ -11,7 +11,6 @@ const ListPlayers = () => {
   const _loading = useLoading();
 
   useEffect(() => {
-    console.log("PLAYERS", players);
     if (players.length === 0) {
       _loading.start();
     } else {

@@ -88,3 +88,28 @@ export const getSelectMessage = (role: string) => {
       return "";
   }
 };
+
+export const sortTeamsByPosition = (teams: any[]) => {
+  return teams.sort((a, b) => a.position - b.position);
+};
+
+// AI built this function to ensure 1st, 2nd, 32nd, 101st etc formatting
+export const getPositionSuffix = (position: number): string => {
+  const lastDigit = position % 10;
+  const lastTwoDigits = position % 100;
+
+  if (lastTwoDigits >= 11 && lastTwoDigits <= 13) {
+    return `${position}th`;
+  }
+
+  switch (lastDigit) {
+    case 1:
+      return `${position}st`;
+    case 2:
+      return `${position}nd`;
+    case 3:
+      return `${position}rd`;
+    default:
+      return `${position}th`;
+  }
+};

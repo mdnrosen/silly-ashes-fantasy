@@ -1,115 +1,42 @@
-
-import { useEffect, useState } from 'react'; 
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import dummyTeams from "../assets/dummyTeams.json";
-import { getTeams } from '../firebase';
-const currentUser = "Harry23";
-
-
-
+// import { getTeams } from "../firebase";
+import { sortTeamsByPosition } from "../lib/helpers";
+import LeaderboardCard from "../modules/LeaderboardCard";
+const currentUser = "Harry Potter";
 
 const Leaderboard = () => {
-  const [ teams, setTeams] = useState([]);
+  const [teams, setTeams] = useState([]);
+  const [userTeam, setUserTeam] = useState<any>(null);
 
   const fetchTeams = async () => {
-    const fetchedTeams = await getTeams();
-    setTeams(fetchedTeams as any);
+    // const fetchedTeams = await getTeams();
+
+    setUserTeam(dummyTeams.find((team: any) => team.username === currentUser));
+    setTeams(sortTeamsByPosition(dummyTeams) as any);
   };
   useEffect(() => {
     fetchTeams();
   }, []);
   return (
-    <div className="min-h-screen bg-off-white text-dark-blue px-4 py-4 pb-20">
-      <div className="max-w-4xl mx-auto">
-        {/* Current User's Position */}
-        {(() => {
-          const userTeam = dummyTeams.find(
-            (team) => team.username === currentUser
-          );
-          const userPosition =
-            dummyTeams.findIndex((team) => team.username === currentUser) + 1;
-
-          if (userTeam) {
-            return (
-              <div className="mb-6">
-                <h2 className="text-lg font-bold text-aus-green mb-2">
-                  YOUR TEAM
-                </h2>
-                <div className="bg-aus-green text-off-white p-6 rounded-lg shadow-md flex items-center justify-between">
-                  <div className="flex items-center space-x-6">
-                    {/* Ranking */}
-                    <div className="flex-shrink-0">
-                      <span className="text-xl md:text-2xl font-bold text-off-white">
-                        #{userPosition}
-                      </span>
-                    </div>
-
-                    {/* Team Info */}
-                    <div>
-                      <h2 className="text-xl md:text-2xl font-bold mb-1 text-off-white">
-                        {userTeam.teamname}
-                      </h2>
-                      <p className="text-off-white opacity-75 text-sm md:text-base">
-                        {userTeam.username}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Total Score */}
-                  <div className="text-right">
-                    <div className="text-2xl md:text-3xl font-bold text-off-white">
-                      {userTeam.totalScore}
-                    </div>
-                    <div className="text-sm text-off-white opacity-75">
-                      points
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          }
-          return null;
-        })()}
-
-        {/* Dashed border separator */}
-        <div className="border-t-2 border-dashed border-mid-blue mb-6"></div>
-
-        <div className="space-y-4">
-          {dummyTeams.map((team, index) => (
-            <div
-              key={`${team.username}-${team.teamname}`}
-              className="bg-dark-blue text-off-white p-6 rounded-lg shadow-md flex items-center justify-between"
-            >
-              <div className="flex items-center space-x-6">
-                {/* Ranking */}
-                <div className="flex-shrink-0">
-                  <span className="text-xl md:text-2xl font-bold text-off-white">
-                    #{index + 1}
-                  </span>
-                </div>
-
-                {/* Team Info */}
-                <div>
-                  <h2 className="text-xl md:text-2xl font-bold mb-1 text-off-white">
-                    {team.teamname}
-                  </h2>
-                  <p className="text-off-white opacity-75 text-sm md:text-base">
-                    {team.username}
-                  </p>
-                </div>
-              </div>
-
-              {/* Total Score */}
-              <div className="text-right">
-                <div className="text-2xl md:text-3xl font-bold text-off-white">
-                  {team.totalScore}
-                </div>
-                <div className="text-sm text-off-white opacity-75">points</div>
-              </div>
-            </div>
+    <>
+      <div className="h-[calc(100vh-6.5rem)] bg-off-white p-2">
+        {userTeam && (
+          <div className="h30 p-2 border-dashed border-b-2 mb-2">
+            <LeaderboardCard
+              isHighlighted={true}
+              team={teams.find((team: any) => team.username === currentUser)}
+            />
+          </div>
+        )}
+        <div className="p-2">
+          {teams.map((team: any) => (
+            <LeaderboardCard team={team} key={team.id} isHighlighted={false} />
           ))}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
