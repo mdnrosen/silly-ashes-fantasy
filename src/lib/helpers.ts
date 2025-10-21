@@ -21,7 +21,7 @@ export const sortByPoints = (players: FullPlayer[]): FullPlayer[] => {
 };
 
 export const getBgColor = (team: string): string => {
-  return team === "AUS" ? "bg-aus-green" : "bg-dark-blue";
+  return team === "AUS" ? "bg-green-50" : "bg-blue-50";
 };
 
 export const getTextColor = (team: string): string => {

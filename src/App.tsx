@@ -19,11 +19,9 @@ import outputs from "./lib/config";
 import "@aws-amplify/ui-react/styles.css";
 Amplify.configure(outputs);
 
-import { getPlayers } from "./firebase";
 import TeamTwo from "./pages/Team2Two";
 
 function App() {
-  getPlayers();
   return (
     <div className="min-w-xs max-w-3xl mx-auto bg-off-white min-h-screen font-roboto">
       <Router>

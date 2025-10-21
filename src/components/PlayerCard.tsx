@@ -1,16 +1,14 @@
 import type { JSX } from "react";
 import { FullPlayer } from "../types";
 import { Link } from "react-router-dom";
-import {
-  firstName,
-  getBorderColor,
-  lastName,
-} from "../lib/helpers";
+import { firstName, getBorderColor, lastName } from "../lib/helpers";
 
-const PlayerCard: React.FC<{ player: FullPlayer }> = ({ player }): JSX.Element => {
+const PlayerCard: React.FC<{ player: FullPlayer }> = ({
+  player,
+}): JSX.Element => {
   // Get team-specific light background colors like in PlayerSelection
   const backgroundStyle = player.team === "AUS" ? "bg-green-50" : "bg-blue-50";
-  
+
   return (
     <Link to={`/player/${player.id}`} className="no-underline w-full block">
       <div
@@ -29,14 +27,17 @@ const PlayerCard: React.FC<{ player: FullPlayer }> = ({ player }): JSX.Element =
           className={`rounded-r-lg col-span-3 flex flex-col justify-between px-4 py-3 text-dark-blue`}
         >
           <h3 className="text-lg md:text-2xl text-dark-blue font-medium">
-            {firstName(player.name)} <span className="font-bold">{lastName(player.name).toUpperCase()}</span>
+            {firstName(player.name)}{" "}
+            <span className="font-bold">
+              {lastName(player.name).toUpperCase()}
+            </span>
           </h3>
           <small className="text-xs md:text-base font-extralight text-dark-blue opacity-60">
             {player.role}
           </small>
           <div className="flex justify-between items-center">
             <small className="text-base md:text-xl text-dark-blue opacity-70 font-semibold">
-              ${player.cost}
+              {player.cost}¢
             </small>
             <span className="text-lg md:text-2xl font-bold text-dark-blue">
               {player.points}pts
