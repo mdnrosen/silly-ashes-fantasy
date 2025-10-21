@@ -1,5 +1,4 @@
 import { createContext, useState } from "react";
-import Spinner from "../components/Spinner";
 
 type LoadingContextType = {
   active: boolean;
@@ -12,6 +11,7 @@ export const LoadingContext = createContext<LoadingContextType>({
   start: () => {},
   stop: () => {},
 });
+
 export const LoadingContextProvider = ({
   children,
 }: {
@@ -27,7 +27,6 @@ export const LoadingContextProvider = ({
         stop: () => setLoading(false),
       }}
     >
-      {loading && <Spinner />}
       {children}
     </LoadingContext.Provider>
   );

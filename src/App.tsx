@@ -14,17 +14,15 @@ import Navbar from "./modules/Navbar";
 import ScrollToTop from "./components/ScrollToTop";
 import Auth from "./pages/Auth";
 import ProtectedRoute from "./components/ProtectedRoute";
-
 import { Amplify } from "aws-amplify";
 import outputs from "./lib/config";
 import "@aws-amplify/ui-react/styles.css";
 Amplify.configure(outputs);
 
-
-import { seedDB, getPlayers } from "./firebase";
+import { getPlayers } from "./firebase";
+import TeamTwo from "./pages/Team2Two";
 
 function App() {
-  // seedDB();
   getPlayers();
   return (
     <div className="min-w-xs max-w-3xl mx-auto bg-off-white min-h-screen font-roboto">
@@ -47,7 +45,7 @@ function App() {
               path="/team"
               element={
                 <ProtectedRoute>
-                  <Team />
+                  <TeamTwo />
                 </ProtectedRoute>
               }
             />
