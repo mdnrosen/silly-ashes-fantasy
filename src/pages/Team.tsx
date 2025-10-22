@@ -116,6 +116,7 @@ const Team = () => {
       <div className="p-2 h-screen flex flex-col pb-16">
         <input
           type="text"
+          max={40}
           value={teamName}
           className="outline-1 w-full mb-2 h-8 px-2 text-sm border border-mid-blue rounded"
           placeholder="Team name"

@@ -15,7 +15,6 @@ const Navbar = () => {
   };
 
   const handleLogout = async () => {
-    console.log("TRYING TO LOG OUT", _auth?.user);
     if (_auth?.signOut) {
       await _auth.signOut();
       navigate("/");
@@ -25,7 +24,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="fixed flex justify-between items-center h-15 md:h-20 w-full mx-auto p-4 bg-off-white text-dark-blue z-50 border-b-2 mb-150 md:mb-20">
+      <div className="fixed flex justify-between items-center h-15 md:h-20 w-full mx-auto p-4 bg-dark-blue text-off-white z-50 border-b-2 mb-150 md:mb-20">
         LOGO
         <button
           onClick={toggleMenu}
@@ -33,17 +32,17 @@ const Navbar = () => {
           aria-label="Toggle menu"
         >
           <span
-            className={`block w-6 h-0.5 bg-dark-blue transition-transform duration-300 ${
+            className={`block w-6 h-0.5 bg-off-white transition-transform duration-300 ${
               isMenuOpen ? "rotate-45 translate-y-2" : ""
             }`}
           ></span>
           <span
-            className={`block w-6 h-0.5 bg-dark-blue transition-opacity duration-300 ${
+            className={`block w-6 h-0.5 bg-off-white transition-opacity duration-300 ${
               isMenuOpen ? "opacity-0" : ""
             }`}
           ></span>
           <span
-            className={`block w-6 h-0.5 bg-dark-blue transition-transform duration-300 ${
+            className={`block w-6 h-0.5 bg-off-white transition-transform duration-300 ${
               isMenuOpen ? "-rotate-45 -translate-y-2" : ""
             }`}
           ></span>
@@ -57,13 +56,6 @@ const Navbar = () => {
       >
         <div className="pt-24 pb-6 px-6">
           <nav className="space-y-6">
-            <Link
-              to="/team"
-              className="block text-lg hover:text-light-blue transition-colors duration-200 uppercase"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              My Team
-            </Link>
             <Link
               to="/leaderboard"
               className="block text-lg hover:text-light-blue transition-colors duration-200 uppercase"
@@ -83,18 +75,27 @@ const Navbar = () => {
               className="block text-lg hover:text-light-blue transition-colors duration-200 uppercase"
               onClick={() => setIsMenuOpen(false)}
             >
-              The Rules
+              Rules
             </Link>
             {_auth.user && (
-              <button
-                className="block text-lg hover:text-light-blue transition-colors duration-200 pt-6 border-t border-mid-blue w-full text-left uppercase"
-                onClick={() => {
-                  setIsMenuOpen(false);
-                  handleLogout();
-                }}
-              >
-                Sign Out
-              </button>
+              <>
+                <Link
+                  to="/team"
+                  className="block text-lg hover:text-light-blue transition-colors duration-200 uppercase pt-6 border-t border-mid-blue "
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  My Team
+                </Link>
+                <button
+                  className="block text-lg hover:text-light-blue transition-colors duration-200 w-full text-left uppercase"
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    handleLogout();
+                  }}
+                >
+                  Sign Out
+                </button>
+              </>
             )}
           </nav>
         </div>

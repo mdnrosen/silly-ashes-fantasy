@@ -122,6 +122,7 @@
     "position": 1
   },
   {
+    "id": "e5f6a7b8-c9d0-1e2f-3a4b-5c6d7e8f9a0b",
     "teamName": "Geoffreys Blockers",
     "username": "Peter Brunning",
     "myPlayers": {
@@ -238,12 +239,12 @@
         "name": "Gus Atkinson"
       }
     },
-    "id": "e5f6a7b8-c9d0-1e2f-3a4b-5c6d7e8f9a0b",
     "points": 2371,
     "budgetUsed": 96,
     "position": 2
   },
   {
+    "id": "9f8e7d6c-5b4a-3210-fedc-ba9876543210",
     "username": "yorker_slayer_42",
     "teamName": "miles rockets",
     "myPlayers": {
@@ -360,7 +361,6 @@
         "cost": 19
       }
     },
-    "id": "9f8e7d6c-5b4a-3210-fedc-ba9876543210",
     "points": 2173,
     "budgetUsed": 95,
     "position": 3

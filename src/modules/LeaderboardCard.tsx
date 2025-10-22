@@ -1,4 +1,5 @@
 import { getPositionSuffix } from "../lib/helpers";
+import { Link } from "react-router-dom";
 
 type Props = {
   team: any;
@@ -9,10 +10,11 @@ const LeaderboardCard = ({ team, isHighlighted }: Props) => {
   if (!team) return null;
 
   return (
-    <div
+    <Link
+      to={`/team/${team.id}`}
       className={`px-2 border-1 h-15 rounded-md grid grid-cols-5 p-1 mb-2 ${
         isHighlighted &&
-        "h-20 border-2 bg-blue-50 text-dark-blue border-dark-blue"
+        "h-20 border-2 bg-blue-100 text-dark-blue border-dark-blue"
       }`}
     >
       <span className="col-span-1 flex justify-start items-center font-bold text-sm">
@@ -23,9 +25,9 @@ const LeaderboardCard = ({ team, isHighlighted }: Props) => {
         <span className="text-xs font-light italic">{team.username}</span>
       </div>
       <div className="col-span-1 flex justify-end items-center">
-        {team.points}pts
+        {team.points} <span className="font-extralight">pts</span>
       </div>
-    </div>
+    </Link>
   );
 };
 

@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import dummyTeams from "../assets/dummyTeams.json";
 // import { getTeams } from "../firebase";
 import { sortTeamsByPosition } from "../lib/helpers";
 import LeaderboardCard from "../modules/LeaderboardCard";
-const currentUser = "Harry Potter";
+const currentUser = "Peter Brunning";
 
 const Leaderboard = () => {
   const [teams, setTeams] = useState([]);
