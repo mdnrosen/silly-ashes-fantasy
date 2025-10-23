@@ -199,7 +199,7 @@ const TeamTwo = ({}: Props) => {
           <input type="text" placeholder="Enter team name..." className="p-2" />
         </div>
       ) : (
-        <div className="w-full p-2 flex flex-col justify-center align-start">
+        <div className="w-full py-2 px-4 flex flex-col justify-center align-start">
           <span className="text-lg font-bold">{team.teamName}</span>
           <small className="text-xs font-light">{team.username}</small>
         </div>

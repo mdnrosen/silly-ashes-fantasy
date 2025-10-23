@@ -53,7 +53,7 @@ const PlayerBox = ({ isDisabled, player, defaultRole }: Props) => {
           <div className="row-span-1 flex justify-between px-1">
             <div className="text-xs flex flex-col text-left">
               <span className="text-xs uppercase italic font-thin">
-                {player.role}
+                {defaultRole}
               </span>
               <span className="text-xs">{player.points} pts</span>
             </div>
