@@ -57,7 +57,7 @@ const PlayerBox = ({ isDisabled, player, defaultRole }: Props) => {
               </span>
               <span className="text-xs">{player.points} pts</span>
             </div>
-            <span className="text-xs">{player.cost}¢</span>
+            <span className="text-xs">¢{player.cost}</span>
           </div>
           <div
             className="row-span-5 relative bg-contain bg-center bg-no-repeat rounded-full overflow-hidden"
