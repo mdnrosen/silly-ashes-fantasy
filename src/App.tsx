@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import PlayerProfile from "./pages/PlayerProfile";
 import ListPlayers from "./pages/ListPlayers";
-import Team from "./pages/Team";
 import Rules from "./pages/Rules";
 import Leaderboard from "./pages/Leaderboard";
 import NotFound from "./pages/NotFound";
@@ -19,7 +18,7 @@ import outputs from "./lib/config";
 import "@aws-amplify/ui-react/styles.css";
 Amplify.configure(outputs);
 
-import TeamTwo from "./pages/Team2Two";
+import Team from "./pages/Team";
 
 function App() {
   return (
@@ -43,7 +42,7 @@ function App() {
               path="/team"
               element={
                 <ProtectedRoute>
-                  <TeamTwo />
+                  <Team />
                 </ProtectedRoute>
               }
             />
@@ -51,7 +50,7 @@ function App() {
               path="/team/:teamId"
               element={
                 <ProtectedRoute>
-                  <TeamTwo />
+                  <Team />
                 </ProtectedRoute>
               }
             />

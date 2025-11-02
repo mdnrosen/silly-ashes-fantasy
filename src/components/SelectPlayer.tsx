@@ -8,13 +8,14 @@ import {
 import unpickedImage from "../assets/unpicked.jpg";
 
 type Props = {
-  myPlayers: MyPlayers;
+  myPlayers: MyPlayers | null;
   openSelectionModal: (role: keyof MyPlayers) => void;
   role: keyof MyPlayers;
+  isDisabled?: boolean;
 };
 
 const SelectPlayer = ({ myPlayers, role, openSelectionModal }: Props) => {
-  const player = myPlayers[role];
+  const player = myPlayers?.[role];
   const surnameColor = getTeamTextColor(player?.team);
 
   // Determine border styling based on whether player is selected
@@ -61,7 +62,7 @@ const SelectPlayer = ({ myPlayers, role, openSelectionModal }: Props) => {
             <img
               src={player.imageUrl}
               alt={player.name}
-              className="w-18 h-18 sm:w-22 sm:h-22 object-cover rounded"
+              className="w-22 h-22 object-cover rounded"
             />
           </div>
 
@@ -95,7 +96,7 @@ const SelectPlayer = ({ myPlayers, role, openSelectionModal }: Props) => {
             <img
               src={unpickedImage}
               alt="No player selected"
-              className="w-18 h-18 sm:w-22 sm:h-22 object-cover rounded opacity-50"
+              className="w-22 h-22 object-cover rounded opacity-50"
             />
           </div>
           <div className="text-xs text-dark-blue text-center">

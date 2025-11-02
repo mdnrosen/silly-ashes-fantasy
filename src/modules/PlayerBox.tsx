@@ -11,9 +11,10 @@ type Props = {
   isDisabled?: boolean;
   player: any | null;
   defaultRole?: "Batter" | "Bowler" | "Allrounder" | "Keeper" | "Wildcard";
+  openModal: () => void;
 };
 
-const PlayerBox = ({ isDisabled, player, defaultRole }: Props) => {
+const PlayerBox = ({ isDisabled, player, defaultRole, openModal }: Props) => {
   const playerStyles = () => `
     border-2
     h-full 
@@ -27,10 +28,12 @@ const PlayerBox = ({ isDisabled, player, defaultRole }: Props) => {
   `;
 
   const renderPlaceholder = (): ReactElement => {
+    console.log('is placeholder diabled', isDisabled)
     return (
       <button
         className="border-dashed border-1 h-full aspect-square grid grid-rows-5 rounded-sm"
         disabled={isDisabled}
+        onClick={() => console.log('CLICKING')}
       >
         <div
           className="row-span-4 relative bg-cover bg-center"
@@ -49,7 +52,7 @@ const PlayerBox = ({ isDisabled, player, defaultRole }: Props) => {
 
       {/* If we have a player then render the show player card */}
       {player && (
-        <button className={playerStyles()}>
+        <button className={playerStyles()} onClick={openModal}>
           <div className="row-span-1 flex justify-between px-1">
             <div className="text-xs flex flex-col text-left">
               <span className="text-xs uppercase italic font-thin">

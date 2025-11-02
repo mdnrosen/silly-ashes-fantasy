@@ -3,7 +3,6 @@ import { getBorderColor, getTeamTextColor } from "../lib/helpers";
 import { IoClose } from "react-icons/io5";
 
 type Props = {
-  isOpen: boolean;
   players: Player[];
   selection: string;
   role: string;
@@ -16,15 +15,15 @@ type Props = {
 };
 
 const PlayerSelection = ({
-  role,
-  players,
-  selection,
-  selected,
-  budget,
-  currentPlayer,
-  savePlayer,
-  deselectPlayer,
-  closeModal,
+  role, // from playerbox
+  players, // drilled
+  selection, // from playerbox
+  selected, // drilled
+  budget, // drilled
+  currentPlayer, // from playerbox
+  savePlayer, // drilled
+  deselectPlayer, // from playerbox
+  closeModal, // drilled
 }: Props) => {
   const handleSavePlayer = (player: Player, selection: string) => {
     savePlayer(player, selection);

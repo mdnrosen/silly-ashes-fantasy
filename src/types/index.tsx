@@ -18,23 +18,25 @@ export interface FullPlayer extends Player {
   stumpings: number;
 }
 
-export interface Team {
-  user_name: string;
-  teamname: string;
-  total_points: number;
-}
-
-export interface FullTeam extends Team {
-  batters: Player[];
-  bowlers: Player[];
-  allrounders: Player[];
-  keepers: Player[];
-  total_cost: number;
-}
-
-
 export interface Toast {
   type: string;
   color: string;
   icon: string
 }
+
+export interface Team {
+    id: string | undefined,
+    teamname: string,
+    user: string | undefined,
+    totalPoints?: number,
+    budgetUsed: number,
+    players?: {
+        bowler1: string | Player | null,
+        bowler2: string | Player | null,
+        batter1: string | Player | null,
+        batter2: string | Player | null,
+        allrounder: string | Player | null,
+        keeper: string | Player | null,
+        wildcard: string | Player | null
+    }
+};

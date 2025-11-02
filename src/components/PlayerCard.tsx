@@ -37,7 +37,7 @@ const PlayerCard: React.FC<{ player: FullPlayer }> = ({
           </small>
           <div className="flex justify-between items-center">
             <small className="text-base md:text-xl text-dark-blue opacity-70 font-semibold">
-              {player.cost}$
+              ${player.cost}
             </small>
             <span className="text-lg md:text-2xl font-bold text-dark-blue">
               {player.points}pts

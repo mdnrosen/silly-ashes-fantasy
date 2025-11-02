@@ -6,7 +6,7 @@ type StatBoxProps = {
 
 const StatBox = ({ statName, statValue, emphasis }: StatBoxProps) => {
   return (
-    <div className="flex w-full flex-col text-center p-2 border-b-2 m-2 border-gray-300">
+    <div className="flex w-full flex-col text-center p-2 m-2 border-gray-300">
       <span
         className={`uppercase text-sm md:text-lg ${
           emphasis ? "font-bold" : "font-extralight"
