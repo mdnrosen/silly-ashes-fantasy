@@ -76,14 +76,14 @@ const TeamPage = () => {
   const getUserTeam = async () => {
     const userTeam = await getTeamByUser(currentUser);
     console.log(userTeam)
-    // if (!userTeam) {
-    //   resetForm();
-    // } else {
-    //   setTeam(userTeam);
-    //   setMyPlayers(userTeam?.players);
+    if (!userTeam) {
+      resetForm();
+    } else {
+      setTeam(userTeam);
+      setMyPlayers(userTeam?.players);
       setLoading(false);
-    //   setReadOnly(false);
-    // }
+      setReadOnly(false);
+    }
 
   }
 
