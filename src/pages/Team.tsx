@@ -4,6 +4,7 @@ import { Player, Team } from "../types";
 
 import PlayerSelection from "../modules/PlayerSelection";
 import SelectPlayer from "../components/SelectPlayer";
+import Spinner from "../components/Spinner";
 
 import { PlayersContext } from "../context/PlayersContext";
 import { useParams } from 'react-router-dom';
@@ -35,6 +36,7 @@ const TeamPage = () => {
 
   const [selected, setSelected] = useState<string[]>([]);
   const [teamName, setTeamName] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(true);
   const [selectionModalOpen, setSelectionModalOpen] = useState<boolean>(false);
   const [selection, setSelection] = useState<string>("");
   const [team, setTeam] = useState<Team | null>(null);
@@ -92,8 +94,12 @@ const TeamPage = () => {
   const bowlerRoles: (keyof MyPlayers)[] = ["bowler1", "bowler2"];
   const keeperAllrounderRoles: (keyof MyPlayers)[] = ["allrounder", "keeper"];
 
+
+
+
   return (
     <>
+      {loading && <Spinner />}
       <div className="p-2 flex flex-col">
         <input
           type="text"
