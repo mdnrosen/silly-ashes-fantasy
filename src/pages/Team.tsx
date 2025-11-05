@@ -1,12 +1,13 @@
 import { useState, useEffect, useContext } from "react";
 
-import { Player } from "../types";
+import { Player, Team } from "../types";
 
 import PlayerSelection from "../modules/PlayerSelection";
 import SelectPlayer from "../components/SelectPlayer";
 
 import { PlayersContext } from "../context/PlayersContext";
 import { useParams } from 'react-router-dom';
+import { getTeam } from "../firebase/get";
 const currentUser = 'drose-87'
 
 type MyPlayers = {
@@ -19,7 +20,7 @@ type MyPlayers = {
   wildcard: Player | null;
 };
 
-const Team = () => {
+const TeamPage = () => {
   const playersList = useContext(PlayersContext);
   const [readOnly, setReadOnly ] = useState<boolean>(true);
   const [myPlayers, setMyPlayers] = useState<MyPlayers>({
@@ -36,8 +37,9 @@ const Team = () => {
   const [teamName, setTeamName] = useState<string>("");
   const [selectionModalOpen, setSelectionModalOpen] = useState<boolean>(false);
   const [selection, setSelection] = useState<string>("");
+  const [team, setTeam] = useState<Team | null>(null);
 
-  const params = useParams()
+  const { teamId } = useParams()
   // Calculate budget remaining based on selected players
   const totalSpent = Object.values(myPlayers)
     .filter((player) => player !== null)
@@ -45,9 +47,15 @@ const Team = () => {
 
   const budgetRemaining = 100 - totalSpent;
 
-  //   useEffect(() => {
-  //   setMyPlayers({...myPlayers, batter1: {id: 12, name: 'Marnus Labuschagne', cost: 17, team: 'AUS', role: 'BATTER', imageUrl: 'https://static-files.cricket-australia.pulselive.com/headshots/440/348-camedia.png'}})
-  // },[])
+
+  const fetchTeam = async (id: string) => {
+   const team =  await getTeam(id);
+   if (!team) return;
+   console.log(team)
+   setMyPlayers(team?.players)
+   setTeamName(team.teamname)
+
+  }
 
   useEffect(() => {
     setSelected(
@@ -58,8 +66,11 @@ const Team = () => {
   }, [myPlayers]);
 
   useEffect(() => {
-    console.log(params.teamId)
-    
+    console.log(teamId)
+    if (teamId) {
+       fetchTeam(teamId);
+    }
+
     // calcuate if read only
     // 3. If team in params team exists - team.user does not match user- it's read only
     
@@ -221,4 +232,4 @@ const Team = () => {
   );
 };
 
-export default Team;
+export default TeamPage;

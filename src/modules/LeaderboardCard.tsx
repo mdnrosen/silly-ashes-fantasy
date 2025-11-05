@@ -8,7 +8,6 @@ type Props = {
 };
 
 const LeaderboardCard = ({ team, isHighlighted }: Props) => {
-  console.log('TEAM THAT MATCHES USER', team)
   if (!team) return null;
 
   return (
