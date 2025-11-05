@@ -25,7 +25,12 @@ const Navbar = () => {
   return (
     <>
       <div className="fixed flex justify-between items-center h-15 md:h-20 w-full mx-auto p-4 bg-dark-blue text-off-white z-50 border-b-2 mb-150 md:mb-20">
-        LOGO
+        <img
+          src="/assets/sillyAshesLogo.jpeg"
+          alt="Silly Ashes Logo"
+          className="h-15 md:h-16 w-auto object-contain"
+          style={{ maxHeight: '100%' }}
+        />
         <button
           onClick={toggleMenu}
           className="flex flex-col justify-center items-center w-8 h-8 space-y-1.5"

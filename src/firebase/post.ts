@@ -1,8 +1,10 @@
-import { db } from "./utils";
+import { db } from "./config";
 import { addDoc, collection } from "firebase/firestore";
 import { Player } from "../types";
 import data from "../assets/ashes23.json";
 import { v4 as uuidv4 } from "uuid";
+
+import teams from "../assets/teamFromDBMock.json";
 
 export const seedDB = async (): Promise<void> => {
   try {
@@ -15,8 +17,6 @@ export const seedDB = async (): Promise<void> => {
   }
 };
 
-// seedDB();
-
 export const addToDB = async (player: Player): Promise<void> => {
   try {
     const docRef = await addDoc(collection(db, "players"), player);
@@ -28,7 +28,6 @@ export const addToDB = async (player: Player): Promise<void> => {
 
 export const saveTeam = async (team: any) => {
   try {
-    team.id = uuidv4();
     const docRef = await addDoc(collection(db, "teams"), team);
     console.log("Document written with ID: ", docRef.id);
   } catch (error) {

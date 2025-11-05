@@ -17,7 +17,6 @@ import { Amplify } from "aws-amplify";
 import outputs from "./lib/config";
 import "@aws-amplify/ui-react/styles.css";
 Amplify.configure(outputs);
-
 import Team from "./pages/Team";
 
 function App() {
@@ -26,7 +25,7 @@ function App() {
       <Router>
         <Navbar />
         <ScrollToTop />
-        <div className="pt-15 md:pt-20">
+        <div className="pt-15 md:pt-20 pb-10">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/register" element={<Auth />} />
@@ -71,7 +70,7 @@ function App() {
               }
             />
             <Route
-              path="/player/:playerId"
+              path="/player/:id"
               element={
                 <ProtectedRoute>
                   <PlayerProfile />

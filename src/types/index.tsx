@@ -1,11 +1,13 @@
 export interface Player {
-  id?: string | number; // unique identifier for the player
+  id?: string;
   name: string;
   imageUrl: string;
   role: string;
   team: string;
   cost: number;
-  points: number;
+  points?: number;
+  stub: string;
+  runs: number;
 }
 
 export interface FullPlayer extends Player {
@@ -24,19 +26,21 @@ export interface Toast {
   icon: string
 }
 
+
 export interface Team {
-    id: string | undefined,
-    teamname: string,
-    user: string | undefined,
-    totalPoints?: number,
-    budgetUsed: number,
-    players?: {
-        bowler1: string | Player | null,
-        bowler2: string | Player | null,
-        batter1: string | Player | null,
-        batter2: string | Player | null,
-        allrounder: string | Player | null,
-        keeper: string | Player | null,
-        wildcard: string | Player | null
-    }
-};
+  id: string;
+  teamname: string,
+  user: string | undefined;
+  points: number;
+  budgetUsed: number;
+  position?: number;
+  players: {
+    bowler1: null | Player;
+    bowler2: null | Player;
+    batter1: null | Player;
+    batter2: null | Player;
+    allrounder: null | Player;
+    keeper: null | Player;
+    wildcard: null | Player;
+  }
+}

@@ -1,4 +1,4 @@
-import { FullPlayer } from "../types";
+import { FullPlayer, Team } from "../types";
 
 export const getImageURL = (path: string) => {
   return new URL(path, import.meta.url).href;
@@ -16,8 +16,10 @@ export const calculatePlayerScore = (player: FullPlayer): FullPlayer => {
   return { ...player, points: score };
 };
 
-export const sortByPoints = (players: FullPlayer[]): FullPlayer[] => {
-  return players.sort((a, b) => (b.points || 0) - (a.points || 0));
+export const sortByPoints = (
+  record: FullPlayer[] | Team[]
+): FullPlayer[] | Team[] => {
+  return record.sort((a, b) => (b.points || 0) - (a.points || 0));
 };
 
 export const getBgColor = (team: string): string => {
@@ -89,12 +91,15 @@ export const getSelectMessage = (role: string) => {
   }
 };
 
-export const sortTeamsByPosition = (teams: any[]) => {
-  return teams.sort((a, b) => a.position - b.position);
+const setPosition = (teams: Team[]) => {
+  teams.forEach((team, index) => {
+    team.position = index + 1;
+  });
 };
 
 // AI built this function to ensure 1st, 2nd, 32nd, 101st etc formatting
-export const getPositionSuffix = (position: number): string => {
+export const getPositionSuffix = (position: number | undefined): string => {
+  if (!position) return "";
   const lastDigit = position % 10;
   const lastTwoDigits = position % 100;
 
@@ -112,4 +117,8 @@ export const getPositionSuffix = (position: number): string => {
     default:
       return `${position}th`;
   }
+};
+
+export const toSnakeCase = (name: string) => {
+  return name.split(" ").join("_").toLowerCase();
 };

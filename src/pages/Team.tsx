@@ -6,8 +6,10 @@ import PlayerSelection from "../modules/PlayerSelection";
 import SelectPlayer from "../components/SelectPlayer";
 
 import { PlayersContext } from "../context/PlayersContext";
+import { useParams } from 'react-router-dom';
+const currentUser = 'drose-87'
 
-export type MyPlayers = {
+type MyPlayers = {
   batter1: Player | null;
   batter2: Player | null;
   bowler1: Player | null;
@@ -35,6 +37,7 @@ const Team = () => {
   const [selectionModalOpen, setSelectionModalOpen] = useState<boolean>(false);
   const [selection, setSelection] = useState<string>("");
 
+  const params = useParams()
   // Calculate budget remaining based on selected players
   const totalSpent = Object.values(myPlayers)
     .filter((player) => player !== null)
@@ -50,18 +53,21 @@ const Team = () => {
     setSelected(
       Object.values(myPlayers)
         .filter((p) => p !== null)
-        .map((p) => p!.id!.toString())
+        .map((p) => p!.stub!.toString())
     );
   }, [myPlayers]);
 
   useEffect(() => {
+    console.log(params.teamId)
+    
     // calcuate if read only
+    // 3. If team in params team exists - team.user does not match user- it's read only
+    
     // 1. If team in params team exists - if team.user matches user from auth hook, then it is editable
     // 2. If team is params is undefined - it's a new team - handle form
-    // 3. If team in params team exists - team.user does not match user- it's read only
   },[])
 
-  const openSelectionModal = (selection: string) => {
+  const openSelectionModal = (selection: keyof MyPlayers) => {
     setSelection(selection);
     setSelectionModalOpen(true);
   };
@@ -77,7 +83,7 @@ const Team = () => {
 
   return (
     <>
-      <div className="p-2 h-screen flex flex-col mb-12">
+      <div className="p-2 flex flex-col">
         <input
           type="text"
           value={teamName}
@@ -187,7 +193,7 @@ const Team = () => {
             </div>
             <div className="col-span-1"></div>
           </div>
-          <button className="w-full bg-aus-green text-off-white py-2 rounded font-semibold text-sm">
+          <button className="w-full bg-aus-green text-off-white p-2 my-2 rounded font-semibold text-sm">
           Submit Team
         </button>
         </div>

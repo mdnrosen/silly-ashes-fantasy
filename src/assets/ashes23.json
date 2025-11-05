@@ -1,6 +1,5 @@
 [
   {
-    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
     "wickets": 0,
     "centuries": 0,
     "catches": 14,
@@ -13,10 +12,10 @@
     "role": "KEEPER",
     "imageUrl": "https://www.wisden.com/static-assets/images/players/69554.png?v=23.77",
     "points": 388,
-    "cost": 9
+    "cost": 9,
+    "stub": "jamie_smith"
   },
   {
-    "id": "b2c3d4e5-f6g7-8901-bcde-f23456789012",
     "fivewickets": 0,
     "wickets": 3,
     "runouts": 0,
@@ -29,10 +28,10 @@
     "imageUrl": "https://www.wisden.com/static-assets/images/players/10094.png?v=23.77",
     "catches": 2,
     "points": 316,
-    "cost": 10
+    "cost": 10,
+    "stub": "mitch_marsh"
   },
   {
-    "id": "c3d4e5f6-g7h8-9012-cdef-345678901234",
     "fivewickets": 0,
     "wickets": 3,
     "runouts": 0,
@@ -45,10 +44,10 @@
     "imageUrl": "https://www.wisden.com/static-assets/images/players/63277.png?v=23.77",
     "catches": 2,
     "points": 316,
-    "cost": 10
+    "cost": 10,
+    "stub": "beau_webster"
   },
   {
-    "id": "d4e5f6g7-h8i9-0123-defg-456789012345",
     "runouts": 0,
     "role": "BOWLER",
     "stumpings": 0,
@@ -61,10 +60,10 @@
     "centuries": 0,
     "catches": 0,
     "points": 216,
-    "cost": 7
+    "cost": 7,
+    "stub": "todd_murphy"
   },
   {
-    "id": "e5f6g7h8-i9j0-1234-efgh-567890123456",
     "name": "Josh Hazlewood",
     "team": "AUS",
     "runouts": 0,
@@ -77,10 +76,10 @@
     "imageUrl": "https://www.wisden.com/static-assets/images/players/4255.png?v=23.77",
     "fivewickets": 1,
     "points": 390,
-    "cost": 16
+    "cost": 16,
+    "stub": "josh_hazlewood"
   },
   {
-    "id": "f6g7h8i9-j0k1-2345-fghi-678901234567",
     "runs": 103,
     "runouts": 0,
     "team": "AUS",
@@ -93,10 +92,10 @@
     "name": "Cameron Green",
     "centuries": 0,
     "points": 243,
-    "cost": 12
+    "cost": 12,
+    "stub": "cameron_green"
   },
   {
-    "id": "g7h8i9j0-k1l2-3456-ghij-789012345678",
     "runouts": 1,
     "role": "WICKET_KEEPER",
     "stumpings": 0,
@@ -109,10 +108,10 @@
     "centuries": 0,
     "catches": 20,
     "points": 238,
-    "cost": 15
+    "cost": 15,
+    "stub": "alex_carey"
   },
   {
-    "id": "h8i9j0k1-l2m3-4567-hijk-890123456789",
     "runs": 71,
     "runouts": 0,
     "team": "AUS",
@@ -125,10 +124,10 @@
     "name": "Mitchell Marsh",
     "centuries": 0,
     "points": 102,
-    "cost": 11
+    "cost": 11,
+    "stub": "mitchell_marsh"
   },
   {
-    "id": "i9j0k1l2-m3n4-5678-ijkl-901234567890",
     "runouts": 0,
     "role": "BATSMAN",
     "stumpings": 0,
@@ -141,10 +140,10 @@
     "centuries": 1,
     "catches": 2,
     "points": 353,
-    "cost": 19
+    "cost": 19,
+    "stub": "marnus_labuschagne"
   },
   {
-    "id": "j0k1l2m3-n4o5-6789-jklm-012345678901",
     "runs": 166,
     "runouts": 0,
     "team": "AUS",
@@ -157,10 +156,10 @@
     "name": "Travis Head",
     "centuries": 0,
     "points": 186,
-    "cost": 14
+    "cost": 14,
+    "stub": "travis_head"
   },
   {
-    "id": "k1l2m3n4-o5p6-7890-klmn-123456789012",
     "team": "AUS",
     "wickets": 23,
     "fivewickets": 1,
@@ -173,10 +172,10 @@
     "name": "Mitchell Starc",
     "catches": 1,
     "points": 623,
-    "cost": 19
+    "cost": 19,
+    "stub": "mitchell_starc"
   },
   {
-    "id": "l2m3n4o5-p6q7-8901-lmno-234567890123",
     "imageUrl": "https://www.wisden.com/static-assets/images/players/66927.png?v=23.77",
     "catches": 0,
     "name": "Will Jacks",
@@ -189,10 +188,10 @@
     "fivewickets": 0,
     "centuries": 0,
     "points": 360,
-    "cost": 14
+    "cost": 14,
+    "stub": "will_jacks"
   },
   {
-    "id": "m3n4o5p6-q7r8-9012-mnop-345678901234",
     "centuries": 1,
     "name": "Ben Stokes",
     "fivewickets": 0,
@@ -205,10 +204,10 @@
     "imageUrl": "https://www.wisden.com/static-assets/images/players/10130.png?v=23.77",
     "wickets": 3,
     "points": 523,
-    "cost": 23
+    "cost": 23,
+    "stub": "ben_stokes"
   },
   {
-    "id": "n4o5p6q7-r8s9-0123-nopq-456789012345",
     "name": "Jofra Archer",
     "imageUrl": "https://www.wisden.com/static-assets/images/players/64254.png?v=23.77",
     "team": "ENG",
@@ -221,10 +220,10 @@
     "centuries": 0,
     "catches": 1,
     "points": 129,
-    "cost": 16
+    "cost": 16,
+    "stub": "jofra_archer"
   },
   {
-    "id": "o5p6q7r8-s9t0-1234-opqr-567890123456",
     "imageUrl": "https://www.wisden.com/static-assets/images/players/65083.png?v=23.77",
     "catches": 1,
     "name": "Marnus Labuschagne",
@@ -237,10 +236,10 @@
     "team": "AUS",
     "centuries": 1,
     "points": 378,
-    "cost": 15
+    "cost": 15,
+    "stub": "marnus_labuschagne"
   },
   {
-    "id": "p6q7r8s9-t0u1-2345-pqrs-678901234567",
     "runs": 480,
     "role": "BATTER",
     "centuries": 1,
@@ -253,10 +252,10 @@
     "name": "Zak Crawley",
     "runouts": 0,
     "points": 575,
-    "cost": 15
+    "cost": 15,
+    "stub": "zak_crawley"
   },
   {
-    "id": "q7r8s9t0-u1v2-3456-qrst-789012345678",
     "runouts": 0,
     "fivewickets": 0,
     "catches": 11,
@@ -269,10 +268,10 @@
     "imageUrl": "https://www.wisden.com/static-assets/images/players/4308.png?v=23.77",
     "runs": 373,
     "points": 438,
-    "cost": 19
+    "cost": 19,
+    "stub": "steve_smith"
   },
   {
-    "id": "r8s9t0u1-v2w3-4567-rstu-890123456789",
     "wickets": 0,
     "stumpings": 5,
     "catches": 21,
@@ -285,10 +284,10 @@
     "runouts": 0,
     "role": "KEEPER",
     "points": 345,
-    "cost": 16
+    "cost": 16,
+    "stub": "alex_carey"
   },
   {
-    "id": "s9t0u1v2-w3x4-5678-stuv-901234567890",
     "wickets": 0,
     "stumpings": 5,
     "catches": 21,
@@ -301,10 +300,10 @@
     "runouts": 0,
     "role": "KEEPER",
     "points": 345,
-    "cost": 8
+    "cost": 8,
+    "stub": "josh_inglis"
   },
   {
-    "id": "t0u1v2w3-x4y5-6789-tuvw-012345678901",
     "runouts": 0,
     "wickets": 5,
     "centuries": 0,
@@ -317,10 +316,10 @@
     "role": "BOWLER",
     "team": "ENG",
     "points": 121,
-    "cost": 11
+    "cost": 11,
+    "stub": "josh_tongue"
   },
   {
-    "id": "u1v2w3x4-y5z6-7890-uvwx-123456789012",
     "catches": 2,
     "wickets": 0,
     "runs": 496,
@@ -333,10 +332,10 @@
     "runouts": 0,
     "stumpings": 0,
     "points": 556,
-    "cost": 12
+    "cost": 12,
+    "stub": "usman_khawaja"
   },
   {
-    "id": "v2w3x4y5-z6a7-8901-vwxy-234567890123",
     "role": "BOWLER",
     "stumpings": 0,
     "runs": 78,
@@ -349,10 +348,10 @@
     "imageUrl": "https://www.wisden.com/static-assets/images/players/65090.png?v=23.77",
     "team": "ENG",
     "points": 518,
-    "cost": 12
+    "cost": 12,
+    "stub": "brydon_carse"
   },
   {
-    "id": "w3x4y5z6-a7b8-9012-wxyz-345678901234",
     "imageUrl": "https://www.wisden.com/static-assets/images/players/63082.png?v=23.77",
     "wickets": 0,
     "runouts": 0,
@@ -365,10 +364,10 @@
     "name": "Ben Duckett",
     "team": "ENG",
     "points": 366,
-    "cost": 16
+    "cost": 16,
+    "stub": "ben_duckett"
   },
   {
-    "id": "x4y5z6a7-b8c9-0123-xyza-456789012345",
     "runouts": 0,
     "imageUrl": "https://www.wisden.com/static-assets/images/players/66374.png?v=23.77",
     "catches": 3,
@@ -381,10 +380,10 @@
     "role": "BATTER",
     "name": "Harry Brook",
     "points": 378,
-    "cost": 20
+    "cost": 20,
+    "stub": "harry_brook"
   },
   {
-    "id": "y5z6a7b8-c9d0-1234-yzab-567890123456",
     "fivewickets": 1,
     "centuries": 0,
     "runs": 162,
@@ -397,10 +396,10 @@
     "wickets": 18,
     "name": "Pat Cummins",
     "points": 572,
-    "cost": 23
+    "cost": 23,
+    "stub": "pat_cummins"
   },
   {
-    "id": "z6a7b8c9-d0e1-2345-zabc-678901234567",
     "centuries": 0,
     "catches": 0,
     "team": "ENG",
@@ -413,10 +412,10 @@
     "fivewickets": 1,
     "runouts": 0,
     "points": 423,
-    "cost": 11
+    "cost": 11,
+    "stub": "mark_wood"
   },
   {
-    "id": "a7b8c9d0-e1f2-3456-abcd-789012345678",
     "team": "AUS",
     "stumpings": 0,
     "imageUrl": "https://www.wisden.com/static-assets/images/players/61998.png?v=23.77",
@@ -429,26 +428,10 @@
     "name": "Scott Boland",
     "catches": 0,
     "points": 60,
-    "cost": 13
+    "cost": 13,
+    "stub": "scott_boland"
   },
   {
-    "id": 25171989123,
-    "role": "BOWLER",
-    "wickets": 14,
-    "runs": 110,
-    "fivewickets": 0,
-    "name": "Gus Atkinson",
-    "centuries": 0,
-    "team": "ENG",
-    "imageUrl": "https://www.wisden.com/static-assets/images/players/69416.png?v=23.77",
-    "runouts": 0,
-    "stumpings": 0,
-    "catches": 4,
-    "points": 305,
-    "cost": 8
-  },
-  {
-    "id": "b8c9d0e1-f2g3-4567-bcde-890123456789",
     "name": "Travis Head",
     "runs": 362,
     "fivewickets": 0,
@@ -461,10 +444,10 @@
     "runouts": 0,
     "wickets": 2,
     "points": 372,
-    "cost": 8
+    "cost": 8,
+    "stub": "travis_head"
   },
   {
-    "id": "c9d0e1f2-g3h4-5678-cdef-901234567890",
     "role": "BOWLER",
     "wickets": 14,
     "runs": 110,
@@ -477,10 +460,10 @@
     "stumpings": 0,
     "catches": 4,
     "points": 305,
-    "cost": 8
+    "cost": 8,
+    "stub": "gus_atkinson"
   },
   {
-    "id": "d0e1f2g3-h4i5-6789-defg-012345678901",
     "role": "BOWLER",
     "wickets": 14,
     "runs": 110,
@@ -493,10 +476,10 @@
     "stumpings": 0,
     "catches": 4,
     "points": 305,
-    "cost": 7
+    "cost": 7,
+    "stub": "matthew_potts"
   },
   {
-    "id": "e1f2g3h4-i5j6-7890-efgh-123456789012",
     "role": "BOWLER",
     "runs": 28,
     "name": "Nathan Lyon",
@@ -509,10 +492,10 @@
     "catches": 0,
     "runouts": 0,
     "points": 208,
-    "cost": 13
+    "cost": 13,
+    "stub": "nathan_lyon"
   },
   {
-    "id": "f2g3h4i5-j6k7-8901-fghi-234567890123",
     "runouts": 0,
     "name": "Joe Root",
     "catches": 11,
@@ -525,10 +508,10 @@
     "fivewickets": 0,
     "role": "BATTER",
     "points": 634,
-    "cost": 24
+    "cost": 24,
+    "stub": "joe_root"
   },
   {
-    "id": "g3h4i5j6-k7l8-9012-ghij-345678901234",
     "imageUrl": "https://www.wisden.com/static-assets/images/players/66403.png?v=23.77",
     "fivewickets": 0,
     "centuries": 0,
@@ -541,10 +524,10 @@
     "team": "ENG",
     "runouts": 0,
     "points": 95,
-    "cost": 14
+    "cost": 14,
+    "stub": "ollie_pope"
   },
   {
-    "id": "h4i5j6k7-l8m9-0123-hijk-456789012345",
     "imageUrl": "https://www.wisden.com/static-assets/images/players/85736.png?v=23.77",
     "fivewickets": 0,
     "centuries": 3,
@@ -557,10 +540,10 @@
     "team": "ENG",
     "runouts": 0,
     "points": 941,
-    "cost": 11
+    "cost": 11,
+    "stub": "jacob_bethell"
   },
   {
-    "id": "i5j6k7l8-m9n0-1234-ijkl-567890123456",
     "imageUrl": "https://www.wisden.com/static-assets/images/players/110298.png?v=23.77",
     "fivewickets": 0,
     "centuries": 3,
@@ -573,6 +556,7 @@
     "team": "AUS",
     "runouts": 0,
     "points": 941,
-    "cost": 8
+    "cost": 8,
+    "stub": "sam_konstas"
   }
 ]

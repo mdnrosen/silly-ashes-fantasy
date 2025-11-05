@@ -5,23 +5,21 @@ import {
   getBgColor,
   firstName,
   lastName,
-  getTextColor,
-  getBorderColor,
 } from "../lib/helpers";
 import { IoArrowBack } from "react-icons/io5";
-import ProfileSubNav from "../components/ProfileSubNav";
 import StatBox from "../components/StatBox";
 
 const PlayerProfile = (): JSX.Element => {
-  const { playerId } = useParams<{ playerId: string }>();
+  const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const players = useContext(PlayersContext);
-  const player = players.find((p) => p.id?.toString() === playerId);
+  const player = players.find((p) => p.id === id);
   const first = firstName(player?.name || "");
   const last = lastName(player?.name || "");
 
   const handleBack = () => navigate(-1);
-
+  console.log('id in params', id)
+  console.log('player found', player)
   if (!player) {
     return (
       <div className="h-full flex flex-col justify-center align-middle my-auto">

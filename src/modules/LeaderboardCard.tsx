@@ -1,12 +1,14 @@
 import { getPositionSuffix } from "../lib/helpers";
 import { Link } from "react-router-dom";
+import { Team } from "../types";
 
 type Props = {
-  team: any;
+  team: Team;
   isHighlighted: boolean;
 };
 
 const LeaderboardCard = ({ team, isHighlighted }: Props) => {
+  console.log('TEAM THAT MATCHES USER', team)
   if (!team) return null;
 
   return (
@@ -21,8 +23,8 @@ const LeaderboardCard = ({ team, isHighlighted }: Props) => {
         {getPositionSuffix(team.position)}
       </span>
       <div className="col-span-3 flex flex-col align-start justify-center">
-        <span className="text-sm font-bold">{team.teamName}</span>
-        <span className="text-xs font-light italic">{team.username}</span>
+        <span className="text-sm font-bold">{team.teamname}</span>
+        <span className="text-xs font-light italic">{team.user}</span>
       </div>
       <div className="col-span-1 flex justify-end items-center">
         {team.points} <span className="font-extralight">pts</span>
