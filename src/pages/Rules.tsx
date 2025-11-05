@@ -1,110 +1,88 @@
+import { SlPeople } from "react-icons/sl";
+import { MdOutlineSportsCricket } from "react-icons/md";
+import { IoMdSwap } from "react-icons/io";
+
+
+
 const Rules = () => {
   return (
-    <div className="animate-fade-in min-h-screen bg-off-white text-dark-blue px-4 py-8 pb-20">
-      <div className="max-w-4xl mx-auto">
-        <div className="bg-dark-blue p-6 rounded-lg mb-8 text-off-white">
-          <h2 className="text-3xl font-bold mb-6 text-center">
-            TEAM SELECTION
-          </h2>
-          <div className="flex justify-center">
-            <div>
-              <h3 className="text-xl font-bold mb-4 text-light-blue">
-                TEAM COMPOSITION
-              </h3>
-              <ul className="space-y-2">
-                <li>• 2 Batters</li>
-                <li>• 2 Bowlers</li>
-                <li>• 1 All-rounder</li>
-                <li>• 1 Wicket-keeper</li>
-                <li>• 1 Wildcard (any position)</li>
-              </ul>
-            </div>
-          </div>
+    <div className="animate-fade-in min-h-screen text-dark-blue">
+        <div className="p-4 bg-off-white">
+          <h1 className=" text-2xl uppercase">The Rules</h1>
         </div>
-
-        <div className="bg-aus-green p-6 rounded-lg mb-8 border-2 border-dark-blue text-off-white">
-          <h2 className="text-2xl font-bold mb-4 text-center">⚠️ IMPORTANT</h2>
-          <p className="text-xl text-center font-semibold">FIVE TRANSFERS</p>
-          <p className="text-center mt-2">
-            At any point (except during a Test) you can use a transfer. But you
-            only have 5 total over the whole tournament. Use them wisely
-          </p>
+        <div className="p-4 bg-green-50">
+          <span className="flex align-center">
+            <SlPeople  className="mr-2 mt-1" />
+              <h2 className="text-xl uppercase mb-2 font-light ">TEAM COMPOSITION</h2>
+          </span>
+          <p className="text-md mb-2">Your team will consist of the following:</p>
+          <ul className="text-sm px-3">
+            <li>2 Batters</li>
+            <li>2 Bowlers</li>
+            <li>1 All-rounders</li>
+            <li>1 Wicketkeeper</li>
+            <li>1 Wildcard (can be any of the above positions)</li>
+          </ul>
         </div>
-
-        {/* Scoring System */}
-        <div className="bg-dark-blue p-6 rounded-lg text-off-white">
-          <h2 className="text-3xl font-bold mb-6 text-center">
-            SCORING SYSTEM
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Batting Points */}
-            <div>
-              <h3 className="text-xl font-bold mb-4 text-light-blue">
-                BATTING
-              </h3>
-              <ul className="space-y-2">
-                <li className="flex justify-between">
-                  <span>Each Run</span>
-                  <span className="font-bold">+1 point</span>
-                </li>
-                <li className="flex justify-between">
-                  <span>Century (100+ runs)</span>
-                  <span className="font-bold">+50 points</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Bowling Points */}
-            <div>
-              <h3 className="text-xl font-bold mb-4 text-light-blue">
-                BOWLING
-              </h3>
-              <ul className="space-y-2">
-                <li className="flex justify-between">
-                  <span>Each Wicket</span>
-                  <span className="font-bold">+20 points</span>
-                </li>
-                <li className="flex justify-between">
-                  <span>5 Wicket Haul</span>
-                  <span className="font-bold">+50 points</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Fielding Points */}
-            <div>
-              <h3 className="text-xl font-bold mb-4 text-light-blue">
-                FIELDING
-              </h3>
-              <ul className="space-y-2">
-                <li className="flex justify-between">
-                  <span>Each Catch</span>
-                  <span className="font-bold">+5 points</span>
-                </li>
-                <li className="flex justify-between">
-                  <span>Each Stumping</span>
-                  <span className="font-bold">+20 points</span>
-                </li>
-                <li className="flex justify-between">
-                  <span>Each Run Out</span>
-                  <span className="font-bold">+20 points</span>
-                </li>
-              </ul>
-            </div>
+        <div className="p-4 bg-blue-50">
+          <span className="flex">
+            <MdOutlineSportsCricket className="mr-2 mt-1" />
+              <h2 className="text-xl uppercase mb-2 font-light ">SCORING SYSTEM</h2>
+          </span>
+          <p className="text-sm mb-2">Your team will earn points as follows:</p>
+          <div className="p-2 mb-2">
+          <p className="font-extralight text-md">BATTING</p>
+            <span className="flex justify-between w-full text-sm">
+              <p>Each run</p>
+              <p className="font-semibold">+1 point</p>
+            </span>
+            <span className="flex justify-between w-full text-sm">
+              <p>Century</p>
+              <p className="font-semibold">+50 points</p>
+            </span>
           </div>
 
-          <div className="bg-light-blue p-3 rounded-lg mt-4 text-dark-blue">
-            <p className="text-center text-sm">
-              <strong>Note:</strong> All players earn points for every action
-              they perform on the field. A batter can score bowling points if
-              they take wickets, and a bowler can earn batting points for runs
-              scored. However, you can only select players based on their
-              designated positions.
-            </p>
-          </div>
+          <div className="p-2 mb-2">
+          <p className="font-extralight text-md">BOWLING</p>
+            <span className="flex justify-between w-full text-sm">
+              <p>Each wicket</p>
+              <p className="font-semibold">+20 points</p>
+            </span>
+            <span className="flex justify-between w-full text-sm">
+              <p>Five wicket haul</p>
+              <p className="font-semibold">+50 points</p>
+            </span>
+              </div>
+          <div className="p-2 mb-2">
+          <p className="font-extralight text-md">FIELDING</p>
+            <span className="flex justify-between w-full text-sm">
+              <p>Each catch</p>
+              <p className="font-semibold">+5 points</p>
+            </span>
+            <span className="flex justify-between w-full text-sm">
+              <p>Each run out</p>
+              <p className="font-semibold">+10 points</p>
+            </span>
+            <span className="flex justify-between w-full text-sm">
+              <p>Each stumping</p>
+              <p className="font-semibold">+10 points</p>
+            </span>
+              </div>
+              <p className="text-xs font-light">
+                All players earn points for every action they perform on the field. Batters can score bowling points if they bowl and bowlers will get points for any runs added. However you can only select players based on their designated role.
+              </p>
         </div>
-      </div>
+                <div className="p-4 bg-green-50">
+             <span className="flex">
+            <IoMdSwap className="mr-2 mt-1" />
+              <h2 className="text-xl uppercase mb-2 font-light ">TRANSFERS</h2>
+          </span>
+          <p className="text-md mb-2">You have <strong>FIVE</strong> Transfers</p>
+      <p className="text-xs font-light">
+                At any point (expect during a test) you can use a transfer to alter your line up. But you only have 5 to last the whole tournment, so use them wisely. 
+              </p>
+        </div>
+        
     </div>
   );
 };
