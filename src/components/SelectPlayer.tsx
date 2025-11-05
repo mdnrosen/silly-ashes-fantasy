@@ -85,7 +85,7 @@ const SelectPlayer = ({ myPlayers, role, openSelectionModal }: Props) => {
               <div className="text-sm text-dark-blue font-bold leading-tight">
                 ${player.cost}
               </div>
-              <div className="text-sm text-dark-blue font-medium leading-tight">0 pts</div>
+              <div className="text-sm text-dark-blue font-medium leading-tight">{player.points} pts</div>
             </div>
           </div>
         </>

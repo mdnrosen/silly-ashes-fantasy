@@ -1,11 +1,10 @@
 import {
   collection,
-  DocumentData,
   getDocs,
-  doc,
-  getDoc,
   where,
   query,
+  doc,
+  getDoc,
 } from "firebase/firestore";
 import { Player, FullPlayer } from "../types";
 import { calculatePlayerScore, sortByPoints } from "../lib/helpers";
@@ -22,7 +21,6 @@ export const getPlayers = async (): Promise<Player[]> => {
     const allPlayers = players.map((player) =>
       calculatePlayerScore(player as FullPlayer)
     );
-    console.log(allPlayers);
     return allPlayers;
   } catch (error) {
     console.error("Error getting players: ", error);
@@ -34,18 +32,12 @@ export const getPlayer = async (stub: string): Promise<Player | null> => {
   const playerRef = collection(db, "players");
   const q = query(playerRef, where("stub", "==", stub));
   const querySnapShot = await getDocs(q);
-  console.log("Getting player with stub...", stub);
   if (!querySnapShot.empty) {
     const firstDoc = querySnapShot.docs[0];
-    console.log(firstDoc.data());
     return firstDoc.data() as Player;
   }
   return null;
 };
-
-// (async () => {
-//   await getPlayer("travis_head");
-// })();
 
 export const getTeams = async () => {
   try {
@@ -65,6 +57,21 @@ export const getTeams = async () => {
     console.error("Error getting teams: ", error);
     return [];
   }
+};
+
+export const getTeam = async (id: string) => {
+  try {
+    const docRef = doc(db, "teams", id);
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      return {
+        // @ts-expect-error
+        id: docSnap.id,
+        ...(docSnap.data() as Team),
+      };
+    }
+    return null;
+  } catch (error) {}
 };
 
 // {

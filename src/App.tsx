@@ -17,7 +17,7 @@ import { Amplify } from "aws-amplify";
 import outputs from "./lib/config";
 import "@aws-amplify/ui-react/styles.css";
 Amplify.configure(outputs);
-import Team from "./pages/Team";
+import TeamPage from "./pages/Team";
 
 function App() {
   return (
@@ -41,7 +41,7 @@ function App() {
               path="/team"
               element={
                 <ProtectedRoute>
-                  <Team />
+                  <TeamPage />
                 </ProtectedRoute>
               }
             />
@@ -49,7 +49,7 @@ function App() {
               path="/team/:teamId"
               element={
                 <ProtectedRoute>
-                  <Team />
+                  <TeamPage />
                 </ProtectedRoute>
               }
             />
