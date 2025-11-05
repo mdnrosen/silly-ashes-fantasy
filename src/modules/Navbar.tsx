@@ -66,7 +66,7 @@ const Navbar = () => {
               className="block text-lg hover:text-light-blue transition-colors duration-200 uppercase"
               onClick={() => setIsMenuOpen(false)}
             >
-              Leaderboard
+              Teams
             </Link>
             <Link
               to="/players"

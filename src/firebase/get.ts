@@ -70,8 +70,31 @@ export const getTeam = async (id: string) => {
         ...(docSnap.data() as Team),
       };
     }
+  } catch (error) {
+    console.error(error);
+    throw new Error(`Unable to find team with id: ${id}`);
+  }
+};
+
+export const getTeamByUser = async (user: string) => {
+  try {
+    const docRef = collection(db, "teams");
+    const q = query(docRef, where("user", "==", user));
+    const querySnapShot = await getDocs(q);
+    if (!querySnapShot.empty) {
+      const firstDoc = querySnapShot.docs[0];
+      return {
+        // @ts-expect-error
+        id: firstDoc.id,
+        ...(firstDoc.data() as Team),
+      };
+    }
+    console.log("user team -->>", user);
     return null;
-  } catch (error) {}
+  } catch (error) {
+    console.error(error);
+    throw new Error(`Unable to check for team belonging to user ${user}`);
+  }
 };
 
 // {
