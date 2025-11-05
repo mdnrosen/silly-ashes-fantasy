@@ -14,7 +14,7 @@ type Props = {
   isDisabled?: boolean;
 };
 
-const SelectPlayer = ({ myPlayers, role, openSelectionModal }: Props) => {
+const SelectPlayer = ({ myPlayers, role, openSelectionModal, isDisabled }: Props) => {
   const player = myPlayers?.[role];
   const surnameColor = getTeamTextColor(player?.team);
 
@@ -32,6 +32,7 @@ const SelectPlayer = ({ myPlayers, role, openSelectionModal }: Props) => {
 
   return (
     <button
+        disabled={isDisabled}
       className={`
         ${backgroundStyle}
         ${borderStyle}

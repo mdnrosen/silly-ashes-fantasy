@@ -1,7 +1,7 @@
 import { Navigate, useLocation } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 import { useLoading } from "../hooks/useLoading";
-
+import Spinner from "../components/Spinner"
 type Props = {
   children: React.ReactNode;
 };
@@ -16,7 +16,7 @@ const ProtectedRoute = ({ children }: Props) => {
     _loading.start();
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="text-dark-blue">Loading...</div>
+        <Spinner />
       </div>
     );
   }
