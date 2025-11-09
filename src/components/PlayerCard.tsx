@@ -40,7 +40,7 @@ const PlayerCard: React.FC<{ player: Player }> = ({
               ${player.cost}
             </small>
             <span className="text-lg md:text-2xl font-bold text-dark-blue">
-              {player.points}pts
+              {player.points || 0}<span className="font-extralight">pts</span>
             </span>
           </div>
         </div>

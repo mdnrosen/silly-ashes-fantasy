@@ -464,64 +464,6 @@
     "cost": 13
   },
   {
-    "name": "Alex Carey",
-    "team": "AUS",
-    "role": "KEEPER",
-    "imageUrl": "https://www.wisden.com/static-assets/images/players/63706.png?v=23.77",
-    "stub": "alex_carey",
-    "runs": {
-      "firstTest": 0,
-      "secondTest": 0,
-      "thirdTest": 0,
-      "fourthTest": 0,
-      "fifthTest": 0
-    },
-    "wickets": {
-      "firstTest": 0,
-      "secondTest": 0,
-      "thirdTest": 0,
-      "fourthTest": 0,
-      "fifthTest": 0
-    },
-    "catches": {
-      "firstTest": 0,
-      "secondTest": 0,
-      "thirdTest": 0,
-      "fourthTest": 0,
-      "fifthTest": 0
-    },
-    "stumpings": {
-      "firstTest": 0,
-      "secondTest": 0,
-      "thirdTest": 0,
-      "fourthTest": 0,
-      "fifthTest": 0
-    },
-    "runouts": {
-      "firstTest": 0,
-      "secondTest": 0,
-      "thirdTest": 0,
-      "fourthTest": 0,
-      "fifthTest": 0
-    },
-    "centuries": {
-      "firstTest": 0,
-      "secondTest": 0,
-      "thirdTest": 0,
-      "fourthTest": 0,
-      "fifthTest": 0
-    },
-    "fivewickets": {
-      "firstTest": 0,
-      "secondTest": 0,
-      "thirdTest": 0,
-      "fourthTest": 0,
-      "fifthTest": 0
-    },
-    "totalPoints": 0,
-    "cost": 10
-  },
-  {
     "name": "Josh Inglis",
     "team": "AUS",
     "role": "KEEPER",
@@ -694,64 +636,6 @@
     },
     "totalPoints": 0,
     "cost": 10
-  },
-  {
-    "name": "Travis Head",
-    "team": "AUS",
-    "role": "BATTER",
-    "imageUrl": "https://www.wisden.com/static-assets/images/players/62023.png?v=23.77",
-    "stub": "travis_head",
-    "runs": {
-      "firstTest": 0,
-      "secondTest": 0,
-      "thirdTest": 0,
-      "fourthTest": 0,
-      "fifthTest": 0
-    },
-    "wickets": {
-      "firstTest": 0,
-      "secondTest": 0,
-      "thirdTest": 0,
-      "fourthTest": 0,
-      "fifthTest": 0
-    },
-    "catches": {
-      "firstTest": 0,
-      "secondTest": 0,
-      "thirdTest": 0,
-      "fourthTest": 0,
-      "fifthTest": 0
-    },
-    "stumpings": {
-      "firstTest": 0,
-      "secondTest": 0,
-      "thirdTest": 0,
-      "fourthTest": 0,
-      "fifthTest": 0
-    },
-    "runouts": {
-      "firstTest": 0,
-      "secondTest": 0,
-      "thirdTest": 0,
-      "fourthTest": 0,
-      "fifthTest": 0
-    },
-    "centuries": {
-      "firstTest": 0,
-      "secondTest": 0,
-      "thirdTest": 0,
-      "fourthTest": 0,
-      "fifthTest": 0
-    },
-    "fivewickets": {
-      "firstTest": 0,
-      "secondTest": 0,
-      "thirdTest": 0,
-      "fourthTest": 0,
-      "fifthTest": 0
-    },
-    "totalPoints": 0,
-    "cost": 15
   },
   {
     "name": "Nathan Lyon",

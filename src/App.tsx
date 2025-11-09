@@ -18,8 +18,10 @@ import outputs from "./lib/config";
 import "@aws-amplify/ui-react/styles.css";
 Amplify.configure(outputs);
 import TeamPage from "./pages/Team";
+import TeamHome from "./pages/TeamHome";
 
 import { seedDB} from './firebase/post';
+import CreateTeam from "./pages/CreateTeam";
 
 
 function App() {
@@ -45,7 +47,7 @@ function App() {
               path="/team"
               element={
                 <ProtectedRoute>
-                  <TeamPage />
+                  <TeamHome />
                 </ProtectedRoute>
               }
             />
@@ -53,7 +55,7 @@ function App() {
               path="/team/:teamId"
               element={
                 <ProtectedRoute>
-                  <TeamPage />
+                  <TeamHome />
                 </ProtectedRoute>
               }
             />
@@ -70,6 +72,14 @@ function App() {
               element={
                 <ProtectedRoute>
                   <Leaderboard />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/create"
+              element={
+                <ProtectedRoute>
+                  <CreateTeam />
                 </ProtectedRoute>
               }
             />

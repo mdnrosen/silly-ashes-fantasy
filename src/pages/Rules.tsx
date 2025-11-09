@@ -75,11 +75,11 @@ const Rules = () => {
                 <div className="p-4 bg-green-50">
              <span className="flex">
             <IoMdSwap className="mr-2 mt-1" />
-              <h2 className="text-xl uppercase mb-2 font-light ">TRANSFERS</h2>
+              <h2 className="text-xl uppercase mb-2 font-light ">Team Selection</h2>
           </span>
-          <p className="text-md mb-2">You have <strong>FIVE</strong> Transfers</p>
+          <p className="text-md mb-2">You will need to pick your team for <strong>EACH</strong> test.</p>
       <p className="text-xs font-light">
-                At any point (expect during a test) you can use a transfer to alter your line up. But you only have 5 to last the whole tournment, so use them wisely. 
+              Once you're team is picked, it is locked in for that Test Match. No swapsies because you chose to pick before the toss. 
               </p>
         </div>
         
