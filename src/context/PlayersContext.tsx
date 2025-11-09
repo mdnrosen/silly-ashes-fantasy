@@ -1,17 +1,16 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
-import { FullPlayer } from "../types";
+import { Player } from "../types";
 import { getPlayers } from "../firebase";
-import dummyData from "../assets/ashes23-firebasemock.json";
 
-export const PlayersContext = createContext<FullPlayer[]>([]);
+export const PlayersContext = createContext<Player[]>([]);
 
 export const PlayersProvider = ({ children }: { children: ReactNode }) => {
-  const [players, setPlayers] = useState<FullPlayer[]>([]);
+  const [players, setPlayers] = useState<Player[]>([]);
 
   const fetchPlayers = async () => {
     try {
       const players = await getPlayers();
-      setPlayers(players as FullPlayer[]);
+      setPlayers(players as Player[]);
     } catch (error) {
       console.error("Unable to retrieve players", error);
     }

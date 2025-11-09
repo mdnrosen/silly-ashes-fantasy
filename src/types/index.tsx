@@ -7,17 +7,32 @@ export interface Player {
   cost: number;
   points?: number;
   stub: string;
-  runs: number;
 }
 
-export interface FullPlayer extends Player {
-  runs: number;
-  centuries: number;
-  runouts: number;
-  catches: number;
-  wickets: number;
-  fivewickets: number;
-  stumpings: number;
+export interface StatByTest {
+  firstTest: number;
+  secondTest: number;
+  thirdTest: number;
+  fourthTest: number;
+  fifthTest: number;
+}
+
+export interface Player {
+  id?: string; // optional as it will be populated from DB
+  name: string;
+  imageUrl: string;
+  role: string;
+  team: string;
+  cost: number;
+  totalPoints: number;
+  stub: string;
+  runs: StatByTest;
+  wickets: StatByTest;
+  catches: StatByTest;
+  stumpings: StatByTest;
+  runouts: StatByTest;
+  centuries: StatByTest;
+  fivewickets: StatByTest;
 }
 
 export interface Toast {
@@ -26,6 +41,15 @@ export interface Toast {
   icon: string
 }
 
+export type TeamRoles = {
+  bowler1: null | Player;
+  bowler2: null | Player;
+  batter1: null | Player;
+  batter2: null | Player;
+  allrounder: null | Player;
+  keeper: null | Player;
+  wildcard: null | Player;
+};
 
 export interface Team {
   id: string;
@@ -34,13 +58,12 @@ export interface Team {
   points: number;
   budgetUsed: number;
   position?: number;
-  players: {
-    bowler1: null | Player;
-    bowler2: null | Player;
-    batter1: null | Player;
-    batter2: null | Player;
-    allrounder: null | Player;
-    keeper: null | Player;
-    wildcard: null | Player;
-  }
+  squad: {
+    firstTest: TeamRoles;
+    secondTest: TeamRoles;
+    thirdTest: TeamRoles;
+    fourthTest: TeamRoles;
+    fifthTest: TeamRoles;
+  };
+  players: TeamRoles;
 }

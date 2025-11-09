@@ -1,562 +1,1858 @@
 [
   {
-    "wickets": 0,
-    "centuries": 0,
-    "catches": 14,
-    "runs": 298,
-    "stumpings": 2,
-    "name": "Jamie Smith",
-    "fivewickets": 0,
-    "runouts": 0,
-    "team": "ENG",
-    "role": "KEEPER",
-    "imageUrl": "https://www.wisden.com/static-assets/images/players/69554.png?v=23.77",
-    "points": 388,
-    "cost": 9,
-    "stub": "jamie_smith"
-  },
-  {
-    "fivewickets": 0,
-    "wickets": 3,
-    "runouts": 0,
-    "team": "AUS",
-    "runs": 250,
-    "centuries": 1,
-    "name": "Mitch Marsh",
-    "stumpings": 0,
-    "role": "ALLROUNDER",
-    "imageUrl": "https://www.wisden.com/static-assets/images/players/10094.png?v=23.77",
-    "catches": 2,
-    "points": 316,
-    "cost": 10,
-    "stub": "mitch_marsh"
-  },
-  {
-    "fivewickets": 0,
-    "wickets": 3,
-    "runouts": 0,
-    "team": "AUS",
-    "runs": 250,
-    "centuries": 1,
     "name": "Beau Webster",
-    "stumpings": 0,
+    "team": "AUS",
     "role": "ALLROUNDER",
     "imageUrl": "https://www.wisden.com/static-assets/images/players/63277.png?v=23.77",
-    "catches": 2,
-    "points": 316,
-    "cost": 10,
-    "stub": "beau_webster"
-  },
-  {
-    "runouts": 0,
-    "role": "BOWLER",
-    "stumpings": 0,
-    "fivewickets": 0,
-    "runs": 76,
-    "name": "Todd Murphy",
-    "wickets": 7,
-    "team": "AUS",
-    "imageUrl": "https://www.wisden.com/static-assets/images/players/72445.png?v=23.77",
-    "centuries": 0,
-    "catches": 0,
-    "points": 216,
-    "cost": 7,
-    "stub": "todd_murphy"
+    "stub": "beau_webster",
+    "runs": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "wickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "catches": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "stumpings": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "runouts": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "centuries": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "fivewickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "totalPoints": 0,
+    "cost": 15
   },
   {
     "name": "Josh Hazlewood",
     "team": "AUS",
-    "runouts": 0,
-    "runs": 20,
-    "stumpings": 0,
-    "catches": 2,
     "role": "BOWLER",
-    "wickets": 16,
-    "centuries": 0,
     "imageUrl": "https://www.wisden.com/static-assets/images/players/4255.png?v=23.77",
-    "fivewickets": 1,
-    "points": 390,
-    "cost": 16,
-    "stub": "josh_hazlewood"
+    "stub": "josh_hazlewood",
+    "runs": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "wickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "catches": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "stumpings": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "runouts": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "centuries": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "fivewickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "totalPoints": 0,
+    "cost": 12
   },
   {
-    "runs": 103,
-    "runouts": 0,
-    "team": "AUS",
-    "wickets": 5,
-    "stumpings": 0,
-    "imageUrl": "https://www.wisden.com/static-assets/images/players/66870.png?v=23.77",
-    "fivewickets": 0,
-    "role": "ALLROUNDER",
-    "catches": 4,
     "name": "Cameron Green",
-    "centuries": 0,
-    "points": 243,
-    "cost": 12,
-    "stub": "cameron_green"
-  },
-  {
-    "runouts": 1,
-    "role": "WICKET_KEEPER",
-    "stumpings": 0,
-    "fivewickets": 0,
-    "runs": 118,
-    "name": "Alex Carey",
-    "wickets": 0,
     "team": "AUS",
-    "imageUrl": "https://www.wisden.com/static-assets/images/players/30315.png?v=23.77",
-    "centuries": 0,
-    "catches": 20,
-    "points": 238,
-    "cost": 15,
-    "stub": "alex_carey"
-  },
-  {
-    "runs": 71,
-    "runouts": 0,
-    "team": "AUS",
-    "wickets": 3,
-    "stumpings": 0,
-    "imageUrl": "https://www.wisden.com/static-assets/images/players/57779.png?v=23.77",
-    "fivewickets": 0,
     "role": "ALLROUNDER",
-    "catches": 1,
-    "name": "Mitchell Marsh",
-    "centuries": 0,
-    "points": 102,
-    "cost": 11,
-    "stub": "mitchell_marsh"
+    "imageUrl": "https://www.wisden.com/static-assets/images/players/66870.png?v=23.77",
+    "stub": "cameron_green",
+    "runs": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "wickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "catches": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "stumpings": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "runouts": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "centuries": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "fivewickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "totalPoints": 0,
+    "cost": 18
   },
   {
-    "runouts": 0,
-    "role": "BATSMAN",
-    "stumpings": 0,
-    "fivewickets": 0,
-    "runs": 303,
-    "name": "Marnus Labuschagne",
-    "wickets": 0,
+    "name": "Alex Carey",
     "team": "AUS",
-    "imageUrl": "https://www.wisden.com/static-assets/images/players/48158.png?v=23.77",
-    "centuries": 1,
-    "catches": 2,
-    "points": 353,
-    "cost": 19,
-    "stub": "marnus_labuschagne"
+    "role": "KEEPER",
+    "imageUrl": "https://www.wisden.com/static-assets/images/players/30315.png?v=23.77",
+    "stub": "alex_carey",
+    "runs": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "wickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "catches": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "stumpings": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "runouts": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "centuries": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "fivewickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "totalPoints": 0,
+    "cost": 17
   },
   {
-    "runs": 166,
-    "runouts": 0,
-    "team": "AUS",
-    "wickets": 0,
-    "stumpings": 0,
-    "imageUrl": "https://www.wisden.com/static-assets/images/players/58880.png?v=23.77",
-    "fivewickets": 0,
-    "role": "BATSMAN",
-    "catches": 2,
     "name": "Travis Head",
-    "centuries": 0,
-    "points": 186,
-    "cost": 14,
-    "stub": "travis_head"
+    "team": "AUS",
+    "role": "BATSMAN",
+    "imageUrl": "https://www.wisden.com/static-assets/images/players/58880.png?v=23.77",
+    "stub": "travis_head",
+    "runs": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "wickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "catches": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "stumpings": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "runouts": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "centuries": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "fivewickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "totalPoints": 0,
+    "cost": 11
   },
   {
+    "name": "Mitchell Starc",
     "team": "AUS",
-    "wickets": 23,
-    "fivewickets": 1,
-    "runouts": 0,
-    "centuries": 0,
     "role": "BOWLER",
     "imageUrl": "https://www.wisden.com/static-assets/images/players/10053.png?v=23.77",
-    "stumpings": 0,
-    "runs": 82,
-    "name": "Mitchell Starc",
-    "catches": 1,
-    "points": 623,
-    "cost": 19,
-    "stub": "mitchell_starc"
+    "stub": "mitchell_starc",
+    "runs": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "wickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "catches": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "stumpings": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "runouts": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "centuries": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "fivewickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "totalPoints": 0,
+    "cost": 19
   },
   {
-    "imageUrl": "https://www.wisden.com/static-assets/images/players/66927.png?v=23.77",
-    "catches": 0,
+    "name": "Marnus Labuschagne",
+    "team": "AUS",
+    "role": "BATTER",
+    "imageUrl": "https://www.wisden.com/static-assets/images/players/65083.png?v=23.77",
+    "stub": "marnus_labuschagne",
+    "runs": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "wickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "catches": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "stumpings": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "runouts": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "centuries": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "fivewickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "totalPoints": 0,
+    "cost": 14
+  },
+  {
+    "name": "Steve Smith",
+    "team": "AUS",
+    "role": "BATTER",
+    "imageUrl": "https://www.wisden.com/static-assets/images/players/4308.png?v=23.77",
+    "stub": "steve_smith",
+    "runs": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "wickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "catches": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "stumpings": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "runouts": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "centuries": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "fivewickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "totalPoints": 0,
+    "cost": 13
+  },
+  {
+    "name": "Alex Carey",
+    "team": "AUS",
+    "role": "KEEPER",
+    "imageUrl": "https://www.wisden.com/static-assets/images/players/63706.png?v=23.77",
+    "stub": "alex_carey",
+    "runs": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "wickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "catches": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "stumpings": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "runouts": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "centuries": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "fivewickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "totalPoints": 0,
+    "cost": 10
+  },
+  {
+    "name": "Josh Inglis",
+    "team": "AUS",
+    "role": "KEEPER",
+    "imageUrl": "https://www.wisden.com/static-assets/images/players/65893.png?v=23.77",
+    "stub": "josh_inglis",
+    "runs": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "wickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "catches": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "stumpings": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "runouts": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "centuries": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "fivewickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "totalPoints": 0,
+    "cost": 16
+  },
+  {
+    "name": "Usman Khawaja",
+    "team": "AUS",
+    "role": "BATTER",
+    "imageUrl": "https://www.wisden.com/static-assets/images/players/10048.png?v=23.77",
+    "stub": "usman_khawaja",
+    "runs": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "wickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "catches": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "stumpings": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "runouts": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "centuries": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "fivewickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "totalPoints": 0,
+    "cost": 11
+  },
+  {
+    "name": "Scott Boland",
+    "team": "AUS",
+    "role": "BOWLER",
+    "imageUrl": "https://www.wisden.com/static-assets/images/players/61998.png?v=23.77",
+    "stub": "scott_boland",
+    "runs": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "wickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "catches": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "stumpings": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "runouts": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "centuries": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "fivewickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "totalPoints": 0,
+    "cost": 10
+  },
+  {
+    "name": "Travis Head",
+    "team": "AUS",
+    "role": "BATTER",
+    "imageUrl": "https://www.wisden.com/static-assets/images/players/62023.png?v=23.77",
+    "stub": "travis_head",
+    "runs": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "wickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "catches": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "stumpings": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "runouts": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "centuries": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "fivewickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "totalPoints": 0,
+    "cost": 15
+  },
+  {
+    "name": "Nathan Lyon",
+    "team": "AUS",
+    "role": "BOWLER",
+    "imageUrl": "https://www.wisden.com/static-assets/images/players/29679.png?v=23.77",
+    "stub": "nathan_lyon",
+    "runs": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "wickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "catches": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "stumpings": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "runouts": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "centuries": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "fivewickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "totalPoints": 0,
+    "cost": 14
+  },
+  {
+    "name": "Sean Abbott",
+    "team": "AUS",
+    "role": "BOWLER",
+    "imageUrl": "https://www.wisden.com/static-assets/images/players/57028.png?v=23.77",
+    "stub": "sean_abbott",
+    "runs": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "wickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "catches": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "stumpings": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "runouts": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "centuries": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "fivewickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "totalPoints": 0,
+    "cost": 13
+  },
+  {
+    "name": "Jake Weatherald",
+    "team": "AUS",
+    "role": "BATTER",
+    "imageUrl": "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_320,q_50/lsci/db/PICTURES/CMS/394300/394322.5.png",
+    "stub": "jake_weatherald",
+    "runs": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "wickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "catches": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "stumpings": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "runouts": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "centuries": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "fivewickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "totalPoints": 0,
+    "cost": 10
+  },
+  {
+    "name": "Brendan Doggett",
+    "team": "AUS",
+    "role": "BOWLER",
+    "imageUrl": "https://www.wisden.com/static-assets/images/players/66572.png?v=23.77",
+    "stub": "brendan_doggett",
+    "runs": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "wickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "catches": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "stumpings": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "runouts": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "centuries": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "fivewickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "totalPoints": 0,
+    "cost": 11
+  },
+  {
+    "name": "Jamie Smith",
+    "team": "ENG",
+    "role": "KEEPER",
+    "imageUrl": "https://www.wisden.com/static-assets/images/players/69554.png?v=23.77",
+    "stub": "jamie_smith",
+    "runs": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "wickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "catches": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "stumpings": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "runouts": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "centuries": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "fivewickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "totalPoints": 0,
+    "cost": 19
+  },
+  {
     "name": "Will Jacks",
-    "role": "ALLROUNDER",
     "team": "ENG",
-    "runs": 180,
-    "wickets": 9,
-    "stumpings": 0,
-    "runouts": 0,
-    "fivewickets": 0,
-    "centuries": 0,
-    "points": 360,
-    "cost": 14,
-    "stub": "will_jacks"
+    "role": "ALLROUNDER",
+    "imageUrl": "https://www.wisden.com/static-assets/images/players/66927.png?v=23.77",
+    "stub": "will_jacks",
+    "runs": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "wickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "catches": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "stumpings": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "runouts": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "centuries": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "fivewickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "totalPoints": 0,
+    "cost": 10
   },
   {
-    "centuries": 1,
     "name": "Ben Stokes",
-    "fivewickets": 0,
-    "stumpings": 0,
-    "catches": 6,
-    "runs": 405,
     "team": "ENG",
     "role": "ALLROUNDER",
-    "runouts": 0,
     "imageUrl": "https://www.wisden.com/static-assets/images/players/10130.png?v=23.77",
-    "wickets": 3,
-    "points": 523,
-    "cost": 23,
-    "stub": "ben_stokes"
+    "stub": "ben_stokes",
+    "runs": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "wickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "catches": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "stumpings": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "runouts": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "centuries": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "fivewickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "totalPoints": 0,
+    "cost": 18
   },
   {
     "name": "Jofra Archer",
+    "team": "ENG",
+    "role": "BOWLER",
     "imageUrl": "https://www.wisden.com/static-assets/images/players/64254.png?v=23.77",
-    "team": "ENG",
-    "wickets": 5,
-    "stumpings": 0,
-    "role": "BOWLER",
-    "fivewickets": 0,
-    "runs": 28,
-    "runouts": 0,
-    "centuries": 0,
-    "catches": 1,
-    "points": 129,
-    "cost": 16,
-    "stub": "jofra_archer"
+    "stub": "jofra_archer",
+    "runs": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "wickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "catches": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "stumpings": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "runouts": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "centuries": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "fivewickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "totalPoints": 0,
+    "cost": 17
   },
   {
-    "imageUrl": "https://www.wisden.com/static-assets/images/players/65083.png?v=23.77",
-    "catches": 1,
-    "name": "Marnus Labuschagne",
-    "fivewickets": 0,
-    "runouts": 0,
-    "runs": 328,
-    "role": "BATTER",
-    "stumpings": 0,
-    "wickets": 0,
-    "team": "AUS",
-    "centuries": 1,
-    "points": 378,
-    "cost": 15,
-    "stub": "marnus_labuschagne"
-  },
-  {
-    "runs": 480,
-    "role": "BATTER",
-    "centuries": 1,
-    "imageUrl": "https://www.wisden.com/static-assets/images/players/67258.png?v=23.77",
-    "catches": 9,
-    "wickets": 0,
-    "fivewickets": 0,
-    "team": "ENG",
-    "stumpings": 0,
     "name": "Zak Crawley",
-    "runouts": 0,
-    "points": 575,
-    "cost": 15,
-    "stub": "zak_crawley"
-  },
-  {
-    "runouts": 0,
-    "fivewickets": 0,
-    "catches": 11,
-    "centuries": 1,
+    "team": "ENG",
     "role": "BATTER",
-    "name": "Steve Smith",
-    "wickets": 0,
-    "stumpings": 0,
-    "team": "AUS",
-    "imageUrl": "https://www.wisden.com/static-assets/images/players/4308.png?v=23.77",
-    "runs": 373,
-    "points": 438,
-    "cost": 19,
-    "stub": "steve_smith"
+    "imageUrl": "https://www.wisden.com/static-assets/images/players/67258.png?v=23.77",
+    "stub": "zak_crawley",
+    "runs": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "wickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "catches": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "stumpings": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "runouts": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "centuries": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "fivewickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "totalPoints": 0,
+    "cost": 15
   },
   {
-    "wickets": 0,
-    "stumpings": 5,
-    "catches": 21,
-    "name": "Alex Carey",
-    "imageUrl": "https://www.wisden.com/static-assets/images/players/63706.png?v=23.77",
-    "centuries": 0,
-    "fivewickets": 0,
-    "team": "AUS",
-    "runs": 200,
-    "runouts": 0,
-    "role": "KEEPER",
-    "points": 345,
-    "cost": 16,
-    "stub": "alex_carey"
-  },
-  {
-    "wickets": 0,
-    "stumpings": 5,
-    "catches": 21,
-    "name": "Josh Inglis",
-    "imageUrl": "https://www.wisden.com/static-assets/images/players/65893.png?v=23.77",
-    "centuries": 0,
-    "fivewickets": 0,
-    "team": "AUS",
-    "runs": 200,
-    "runouts": 0,
-    "role": "KEEPER",
-    "points": 345,
-    "cost": 8,
-    "stub": "josh_inglis"
-  },
-  {
-    "runouts": 0,
-    "wickets": 5,
-    "centuries": 0,
-    "catches": 1,
-    "fivewickets": 0,
-    "runs": 20,
     "name": "Josh Tongue",
+    "team": "ENG",
+    "role": "BOWLER",
     "imageUrl": "https://www.wisden.com/static-assets/images/players/66292.png?v=23.77",
-    "stumpings": 0,
-    "role": "BOWLER",
-    "team": "ENG",
-    "points": 121,
-    "cost": 11,
-    "stub": "josh_tongue"
+    "stub": "josh_tongue",
+    "runs": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "wickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "catches": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "stumpings": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "runouts": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "centuries": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "fivewickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "totalPoints": 0,
+    "cost": 10
   },
   {
-    "catches": 2,
-    "wickets": 0,
-    "runs": 496,
-    "team": "AUS",
-    "centuries": 1,
-    "name": "Usman Khawaja",
-    "fivewickets": 0,
-    "imageUrl": "https://www.wisden.com/static-assets/images/players/10048.png?v=23.77",
-    "role": "BATTER",
-    "runouts": 0,
-    "stumpings": 0,
-    "points": 556,
-    "cost": 12,
-    "stub": "usman_khawaja"
-  },
-  {
-    "role": "BOWLER",
-    "stumpings": 0,
-    "runs": 78,
-    "runouts": 0,
-    "wickets": 22,
-    "centuries": 0,
-    "fivewickets": 0,
     "name": "Brydon Carse",
-    "catches": 0,
-    "imageUrl": "https://www.wisden.com/static-assets/images/players/65090.png?v=23.77",
     "team": "ENG",
-    "points": 518,
-    "cost": 12,
-    "stub": "brydon_carse"
+    "role": "BOWLER",
+    "imageUrl": "https://www.wisden.com/static-assets/images/players/65090.png?v=23.77",
+    "stub": "brydon_carse",
+    "runs": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "wickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "catches": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "stumpings": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "runouts": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "centuries": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "fivewickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "totalPoints": 0,
+    "cost": 12
   },
   {
-    "imageUrl": "https://www.wisden.com/static-assets/images/players/63082.png?v=23.77",
-    "wickets": 0,
-    "runouts": 0,
-    "fivewickets": 0,
-    "catches": 9,
-    "stumpings": 0,
-    "role": "BATTER",
-    "centuries": 0,
-    "runs": 321,
     "name": "Ben Duckett",
     "team": "ENG",
-    "points": 366,
-    "cost": 16,
-    "stub": "ben_duckett"
+    "role": "BATTER",
+    "imageUrl": "https://www.wisden.com/static-assets/images/players/63082.png?v=23.77",
+    "stub": "ben_duckett",
+    "runs": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "wickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "catches": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "stumpings": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "runouts": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "centuries": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "fivewickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "totalPoints": 0,
+    "cost": 11
   },
   {
-    "runouts": 0,
-    "imageUrl": "https://www.wisden.com/static-assets/images/players/66374.png?v=23.77",
-    "catches": 3,
-    "centuries": 0,
-    "fivewickets": 0,
-    "stumpings": 0,
-    "runs": 363,
-    "team": "ENG",
-    "wickets": 0,
-    "role": "BATTER",
     "name": "Harry Brook",
-    "points": 378,
-    "cost": 20,
-    "stub": "harry_brook"
-  },
-  {
-    "fivewickets": 1,
-    "centuries": 0,
-    "runs": 162,
-    "catches": 4,
-    "stumpings": 0,
-    "runouts": 0,
-    "team": "AUS",
-    "imageUrl": "https://www.wisden.com/static-assets/images/players/56964.png?v=23.77",
-    "role": "BOWLER",
-    "wickets": 18,
-    "name": "Pat Cummins",
-    "points": 572,
-    "cost": 23,
-    "stub": "pat_cummins"
-  },
-  {
-    "centuries": 0,
-    "catches": 0,
     "team": "ENG",
-    "stumpings": 0,
-    "runs": 83,
-    "role": "BOWLER",
-    "wickets": 14,
+    "role": "BATTER",
+    "imageUrl": "https://www.wisden.com/static-assets/images/players/66374.png?v=23.77",
+    "stub": "harry_brook",
+    "runs": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "wickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "catches": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "stumpings": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "runouts": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "centuries": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "fivewickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "totalPoints": 0,
+    "cost": 10
+  },
+  {
     "name": "Mark Wood",
+    "team": "ENG",
+    "role": "BOWLER",
     "imageUrl": "https://www.wisden.com/static-assets/images/players/57871.png?v=23.77",
-    "fivewickets": 1,
-    "runouts": 0,
-    "points": 423,
-    "cost": 11,
-    "stub": "mark_wood"
+    "stub": "mark_wood",
+    "runs": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "wickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "catches": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "stumpings": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "runouts": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "centuries": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "fivewickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "totalPoints": 0,
+    "cost": 19
   },
   {
-    "team": "AUS",
-    "stumpings": 0,
-    "imageUrl": "https://www.wisden.com/static-assets/images/players/61998.png?v=23.77",
-    "role": "BOWLER",
-    "runs": 20,
-    "runouts": 0,
-    "wickets": 2,
-    "centuries": 0,
-    "fivewickets": 0,
-    "name": "Scott Boland",
-    "catches": 0,
-    "points": 60,
-    "cost": 13,
-    "stub": "scott_boland"
-  },
-  {
-    "name": "Travis Head",
-    "runs": 362,
-    "fivewickets": 0,
-    "role": "BATTER",
-    "centuries": 0,
-    "team": "AUS",
-    "catches": 2,
-    "stumpings": 0,
-    "imageUrl": "https://www.wisden.com/static-assets/images/players/62023.png?v=23.77",
-    "runouts": 0,
-    "wickets": 2,
-    "points": 372,
-    "cost": 8,
-    "stub": "travis_head"
-  },
-  {
-    "role": "BOWLER",
-    "wickets": 14,
-    "runs": 110,
-    "fivewickets": 0,
     "name": "Gus Atkinson",
-    "centuries": 0,
     "team": "ENG",
+    "role": "BOWLER",
     "imageUrl": "https://www.wisden.com/static-assets/images/players/69416.png?v=23.77",
-    "runouts": 0,
-    "stumpings": 0,
-    "catches": 4,
-    "points": 305,
-    "cost": 8,
-    "stub": "gus_atkinson"
+    "stub": "gus_atkinson",
+    "runs": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "wickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "catches": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "stumpings": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "runouts": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "centuries": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "fivewickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "totalPoints": 0,
+    "cost": 10
   },
   {
-    "role": "BOWLER",
-    "wickets": 14,
-    "runs": 110,
-    "fivewickets": 0,
     "name": "Matthew Potts",
-    "centuries": 0,
     "team": "ENG",
-    "imageUrl": "https://www.wisden.com/static-assets/images/players/67418.png?v=23.77",
-    "runouts": 0,
-    "stumpings": 0,
-    "catches": 4,
-    "points": 305,
-    "cost": 7,
-    "stub": "matthew_potts"
-  },
-  {
     "role": "BOWLER",
-    "runs": 28,
-    "name": "Nathan Lyon",
-    "wickets": 9,
-    "centuries": 0,
-    "stumpings": 0,
-    "fivewickets": 0,
-    "imageUrl": "https://www.wisden.com/static-assets/images/players/29679.png?v=23.77",
-    "team": "AUS",
-    "catches": 0,
-    "runouts": 0,
-    "points": 208,
-    "cost": 13,
-    "stub": "nathan_lyon"
+    "imageUrl": "https://www.wisden.com/static-assets/images/players/67418.png?v=23.77",
+    "stub": "matthew_potts",
+    "runs": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "wickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "catches": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "stumpings": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "runouts": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "centuries": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "fivewickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "totalPoints": 0,
+    "cost": 11
   },
   {
-    "runouts": 0,
     "name": "Joe Root",
-    "catches": 11,
     "team": "ENG",
-    "stumpings": 0,
-    "centuries": 1,
+    "role": "BATTER",
     "imageUrl": "https://www.wisden.com/static-assets/images/players/10129.png?v=23.77",
-    "runs": 412,
-    "wickets": 6,
-    "fivewickets": 0,
-    "role": "BATTER",
-    "points": 634,
-    "cost": 24,
-    "stub": "joe_root"
+    "stub": "joe_root",
+    "runs": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "wickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "catches": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "stumpings": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "runouts": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "centuries": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "fivewickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "totalPoints": 0,
+    "cost": 13
   },
   {
-    "imageUrl": "https://www.wisden.com/static-assets/images/players/66403.png?v=23.77",
-    "fivewickets": 0,
-    "centuries": 0,
-    "runs": 90,
-    "wickets": 0,
-    "catches": 1,
     "name": "Ollie Pope",
-    "role": "BATTER",
-    "stumpings": 0,
     "team": "ENG",
-    "runouts": 0,
-    "points": 95,
-    "cost": 14,
-    "stub": "ollie_pope"
+    "role": "BATTER",
+    "imageUrl": "https://www.wisden.com/static-assets/images/players/66403.png?v=23.77",
+    "stub": "ollie_pope",
+    "runs": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "wickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "catches": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "stumpings": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "runouts": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "centuries": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "fivewickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "totalPoints": 0,
+    "cost": 10
   },
   {
-    "imageUrl": "https://www.wisden.com/static-assets/images/players/85736.png?v=23.77",
-    "fivewickets": 0,
-    "centuries": 3,
-    "runs": 766,
-    "wickets": 0,
-    "catches": 5,
     "name": "Jacob Bethell",
-    "role": "BATTER",
-    "stumpings": 0,
     "team": "ENG",
-    "runouts": 0,
-    "points": 941,
-    "cost": 11,
-    "stub": "jacob_bethell"
-  },
-  {
-    "imageUrl": "https://www.wisden.com/static-assets/images/players/110298.png?v=23.77",
-    "fivewickets": 0,
-    "centuries": 3,
-    "runs": 766,
-    "wickets": 0,
-    "catches": 5,
-    "name": "Sam Konstas",
     "role": "BATTER",
-    "stumpings": 0,
-    "team": "AUS",
-    "runouts": 0,
-    "points": 941,
-    "cost": 8,
-    "stub": "sam_konstas"
+    "imageUrl": "https://www.wisden.com/static-assets/images/players/85736.png?v=23.77",
+    "stub": "jacob_bethell",
+    "runs": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "wickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "catches": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "stumpings": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "runouts": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "centuries": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "fivewickets": {
+      "firstTest": 0,
+      "secondTest": 0,
+      "thirdTest": 0,
+      "fourthTest": 0,
+      "fifthTest": 0
+    },
+    "totalPoints": 0,
+    "cost": 11
   }
 ]

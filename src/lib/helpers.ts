@@ -1,24 +1,65 @@
-import { FullPlayer, Team } from "../types";
+import { Team, Player } from "../types";
+
+export type TestKey =
+  | "firstTest"
+  | "secondTest"
+  | "thirdTest"
+  | "fourthTest"
+  | "fifthTest";
 
 export const getImageURL = (path: string) => {
   return new URL(path, import.meta.url).href;
 };
 
-export const calculatePlayerScore = (player: FullPlayer): FullPlayer => {
-  let score = 0;
-  score += player.runs;
-  score += player.centuries * 50;
-  score += player.wickets * 20;
-  score += player.fivewickets * 50;
-  score += player.catches * 5;
-  score += player.runouts * 20;
-  score += player.stumpings * 20;
-  return { ...player, points: score };
+export const calculateScoreForTest = (
+  player: Player,
+  test: TestKey
+): number => {
+  const runs = player.runs[test] || 0;
+  const wickets = player.wickets[test] || 0;
+  const catches = player.catches[test] || 0;
+  const stumpings = player.stumpings[test] || 0;
+  const runouts = player.runouts[test] || 0;
+  const centuries = player.centuries[test] || 0;
+  const fivewickets = player.fivewickets[test] || 0;
+
+  return (
+    runs +
+    centuries * 50 +
+    wickets * 20 +
+    catches * 5 +
+    runouts * 10 +
+    stumpings * 10 +
+    fivewickets * 50
+  );
 };
 
-export const sortByPoints = (
-  record: FullPlayer[] | Team[]
-): FullPlayer[] | Team[] => {
+const tests: TestKey[] = [
+  "firstTest",
+  "secondTest",
+  "thirdTest",
+  "fourthTest",
+  "fifthTest",
+];
+
+export const calculatePlayerScore = (player: Player): number => {
+  let score = 0;
+  for (const test of tests) {
+    score += calculateScoreForTest(player, test);
+  }
+  return score;
+};
+
+export const sumStat = (player: Player, stat: string): number => {
+  let total = 0;
+  for (const test of tests) {
+    // @ts-ignore: Indexing by stat is safe for Player's StatByTest fields
+    total += player[stat][test] || 0;
+  }
+  return total;
+};
+
+export const sortByPoints = (record: Player[] | Team[]): Player[] | Team[] => {
   return record.sort((a, b) => (b.points || 0) - (a.points || 0));
 };
 
@@ -89,12 +130,6 @@ export const getSelectMessage = (role: string) => {
     default:
       return "";
   }
-};
-
-const setPosition = (teams: Team[]) => {
-  teams.forEach((team, index) => {
-    team.position = index + 1;
-  });
 };
 
 // AI built this function to ensure 1st, 2nd, 32nd, 101st etc formatting

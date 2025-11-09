@@ -1,9 +1,9 @@
 import type { JSX } from "react";
-import { FullPlayer } from "../types";
+import { Player } from "../types";
 import { Link } from "react-router-dom";
 import { firstName, getBorderColor, lastName } from "../lib/helpers";
 
-const PlayerCard: React.FC<{ player: FullPlayer }> = ({
+const PlayerCard: React.FC<{ player: Player }> = ({
   player,
 }): JSX.Element => {
   // Get team-specific light background colors like in PlayerSelection
@@ -13,7 +13,7 @@ const PlayerCard: React.FC<{ player: FullPlayer }> = ({
     <Link to={`/player/${player.id}`} className="no-underline w-full block">
       <div
         className={`animate-fade-in w-full min-h-28 md:min-h-32 grid grid-cols-4 border-2 ${getBorderColor(
-          player.team
+          player.team as string
         )} rounded-lg shadow-md mb-2 md:mb-3 ${backgroundStyle}`}
       >
         <div className="col-span-1 bg-white rounded-lg">
