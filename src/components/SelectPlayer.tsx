@@ -53,7 +53,7 @@ const SelectPlayer = ({ myPlayers, role, openSelectionModal, isDisabled }: Props
       onClick={() => openSelectionModal(role)}
     >
       <div className="text-xs font-semibold text-dark-blue text-center mb-1">
-        {getTitle(role)}
+        {getTitle(role as string)}
       </div>
 
       {player ? (
@@ -101,7 +101,7 @@ const SelectPlayer = ({ myPlayers, role, openSelectionModal, isDisabled }: Props
             />
           </div>
           <div className="text-xs text-dark-blue text-center">
-            {getSelectMessage(role)}
+            {getSelectMessage(role as string)}
           </div>
         </>
       )}

@@ -6,7 +6,7 @@ import {
   doc,
   getDoc,
 } from "firebase/firestore";
-import { Player, FullPlayer } from "../types";
+import { Player } from "../types";
 import { calculatePlayerScore, sortByPoints } from "../lib/helpers";
 import { Team } from "../types";
 import { db } from "./config";
@@ -19,7 +19,7 @@ export const getPlayers = async (): Promise<Player[]> => {
       players.push({ id: doc.id, ...(doc.data() as Player) });
     });
     const allPlayers = players.map((player) =>
-      calculatePlayerScore(player as FullPlayer)
+      calculatePlayerScore(player as Player)
     );
     return allPlayers;
   } catch (error) {

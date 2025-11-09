@@ -10,7 +10,7 @@ import { getTeam, getTeamByUser } from "../firebase/get";
 const currentUser = 'drose-87';
 
 // Types
-interface MyPlayers {
+export interface MyPlayers {
   batter1: Player | null;
   batter2: Player | null;
   bowler1: Player | null;
