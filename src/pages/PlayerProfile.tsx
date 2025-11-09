@@ -5,6 +5,8 @@ import {
   getBgColor,
   firstName,
   lastName,
+  sumStat,
+  calculatePlayerScore,
 } from "../lib/helpers";
 import { IoArrowBack } from "react-icons/io5";
 import StatBox from "../components/StatBox";
@@ -58,11 +60,11 @@ const PlayerProfile = (): JSX.Element => {
           player.team
         )}`}
       >
-        <StatBox statName="Points" statValue={player.points} emphasis={true} />
-        <StatBox statName="Runs" statValue={player.runs} emphasis={false} />
+        <StatBox statName="Points" statValue={calculatePlayerScore(player)} emphasis={true} />
+        <StatBox statName="Runs" statValue={sumStat(player, 'runs')} emphasis={false} />
         <StatBox
           statName="Wickets"
-          statValue={player.wickets}
+          statValue={sumStat(player, 'wickets')}
           emphasis={false}
         />
       </div>
@@ -73,17 +75,17 @@ const PlayerProfile = (): JSX.Element => {
       >
         <StatBox
           statName="Catches"
-          statValue={player.catches}
+          statValue={sumStat(player, 'catches')}
           emphasis={false}
         />
         <StatBox
           statName="Runouts"
-          statValue={player.runouts}
+          statValue={sumStat(player, 'runouts')}
           emphasis={false}
         />
         <StatBox
           statName="Stumpings"
-          statValue={player.stumpings}
+          statValue={sumStat(player, 'stumpings')}
           emphasis={false}
         />
       </div>
@@ -94,12 +96,12 @@ const PlayerProfile = (): JSX.Element => {
       >
         <StatBox
           statName="Hundreds"
-          statValue={player.centuries}
+          statValue={sumStat(player, 'centuries')}
           emphasis={false}
         />
         <StatBox
           statName="Five-fors"
-          statValue={player.fivewickets}
+          statValue={sumStat(player, 'fivewickets')}
           emphasis={false}
         />
       </div>

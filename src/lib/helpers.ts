@@ -1,12 +1,19 @@
 import { Team, Player } from "../types";
 
+export type TestKey =
+  | "firstTest"
+  | "secondTest"
+  | "thirdTest"
+  | "fourthTest"
+  | "fifthTest";
+
 export const getImageURL = (path: string) => {
   return new URL(path, import.meta.url).href;
 };
 
 export const calculateScoreForTest = (
   player: Player,
-  test: keyof typeof player.runs
+  test: TestKey
 ): number => {
   const runs = player.runs[test] || 0;
   const wickets = player.wickets[test] || 0;
@@ -21,25 +28,35 @@ export const calculateScoreForTest = (
     centuries * 50 +
     wickets * 20 +
     catches * 5 +
-    runouts * 20 +
-    stumpings * 20 +
+    runouts * 10 +
+    stumpings * 10 +
     fivewickets * 50
   );
 };
 
-export const calculatePlayerScore = (player: Player): Player => {
-  const tests: (keyof typeof player.runs)[] = [
-    "firstTest",
-    "secondTest",
-    "thirdTest",
-    "fourthTest",
-    "fifthTest",
-  ];
+const tests: TestKey[] = [
+  "firstTest",
+  "secondTest",
+  "thirdTest",
+  "fourthTest",
+  "fifthTest",
+];
+
+export const calculatePlayerScore = (player: Player): number => {
   let score = 0;
   for (const test of tests) {
     score += calculateScoreForTest(player, test);
   }
-  return { ...player, points: score };
+  return score;
+};
+
+export const sumStat = (player: Player, stat: string): number => {
+  let total = 0;
+  for (const test of tests) {
+    // @ts-ignore: Indexing by stat is safe for Player's StatByTest fields
+    total += player[stat][test] || 0;
+  }
+  return total;
 };
 
 export const sortByPoints = (record: Player[] | Team[]): Player[] | Team[] => {

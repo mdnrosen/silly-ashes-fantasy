@@ -18,10 +18,11 @@ const ListPlayers = () => {
       _loading.stop();
     }
   }, [players, _loading.active]);
-
+  console.log(players)
   return (
     <>
       {_loading.active && <Spinner />}
+
       <div className="flex flex-wrap justify-center items-center p-2 mb-4">
         {!!sortedPlayers.length &&
           sortedPlayers.map((player) => (

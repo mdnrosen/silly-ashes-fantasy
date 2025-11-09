@@ -18,10 +18,7 @@ export const getPlayers = async (): Promise<Player[]> => {
     querySnapshot.forEach((doc) => {
       players.push({ id: doc.id, ...(doc.data() as Player) });
     });
-    const allPlayers = players.map((player) =>
-      calculatePlayerScore(player as Player)
-    );
-    return allPlayers;
+    return players;
   } catch (error) {
     console.error("Error getting players: ", error);
     return [];
