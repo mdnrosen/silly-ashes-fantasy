@@ -1,6 +1,6 @@
 import { db } from "./config";
 import { addDoc, collection } from "firebase/firestore";
-import { Player } from "../types";
+import { Player, Team } from "../types";
 import data from "../assets/ashes23.json";
 import { v4 as uuidv4 } from "uuid";
 
@@ -32,5 +32,38 @@ export const saveTeam = async (team: any) => {
     console.log("Document written with ID: ", docRef.id);
   } catch (error) {
     console.error("Error saving team: ", error);
+  }
+};
+
+export const createNewTeam = async (teamname: string, user: string) => {
+  try {
+    const emptyRoles = {
+      bowler1: null,
+      bowler2: null,
+      batter1: null,
+      batter2: null,
+      allrounder: null,
+      keeper: null,
+      wildcard: null,
+    };
+    const emptySquad = {
+      firstTest: { ...emptyRoles },
+      secondTest: { ...emptyRoles },
+      thirdTest: { ...emptyRoles },
+      fourthTest: { ...emptyRoles },
+      fifthTest: { ...emptyRoles },
+    };
+    const team = {
+      teamname,
+      user,
+      points: 0,
+      budgetUsed: 0,
+      position: 0,
+      squad: emptySquad,
+    };
+    const response = await addDoc(collection(db, "teams"), team);
+    return response;
+  } catch (error) {
+    console.error("Error creating new team:", error);
   }
 };

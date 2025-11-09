@@ -65,5 +65,4 @@ export interface Team {
     fourthTest: TeamRoles;
     fifthTest: TeamRoles;
   };
-  players: TeamRoles;
 }
