@@ -11,11 +11,12 @@ const CreateTeam = () => {
     const [loading, setLoading] = useState<boolean>(false);
     const [teamname, setTeamname ] = useState<string>('');
     const [nameError, setNameError ] = useState<string | null>(null);
+
     const _auth = useAuth();
     const _toast = useToast();
     const navigate = useNavigate();
+    
     const teams = useContext(TeamContext)
-
 
     const isDisabled = (teamname.length === 0) || !!nameError;
 
@@ -54,10 +55,7 @@ const CreateTeam = () => {
         <>
             {loading && <Spinner />}
             <div className="p-2 flex flex-col">
-                <div className="p-4 bg-off-white">
-                    <h1 className=" text-2xl uppercase">Create your team</h1>
-                </div>
-                <p className="text-sm font-light">Before you can continue you'll need a team yourself. Check out <Link to="/rules">the rules</Link> for how to play. Just enter the name of your team below: </p>
+                <p className="text-sm font-light">Looks like you don't have a team yet. Let's start with the team name... </p>
                 <form onSubmit={(e) => handleSubmit(e)}className="my-2 flex flex-col">
                     <input 
                         className={`rounded-md border-1 border-dark-blue p-2 h-10 mb-2 ${nameError ? 'border-red-500' : ''}`}

@@ -1,14 +1,3 @@
-export interface Player {
-  id?: string;
-  name: string;
-  imageUrl: string;
-  role: string;
-  team: string;
-  cost: number;
-  points?: number;
-  stub: string;
-}
-
 export interface StatByTest {
   firstTest: number;
   secondTest: number;
@@ -24,7 +13,7 @@ export interface Player {
   role: string;
   team: string;
   cost: number;
-  totalPoints: number;
+  points: number;
   stub: string;
   runs: StatByTest;
   wickets: StatByTest;
@@ -38,7 +27,7 @@ export interface Player {
 export interface Toast {
   type: string;
   color: string;
-  icon: string
+  icon: string;
 }
 
 export type TeamRoles = {
@@ -53,11 +42,18 @@ export type TeamRoles = {
 
 export interface Team {
   id: string;
-  teamname: string,
+  teamname: string;
   user: string | undefined;
   points: number;
   budgetUsed: number;
   position?: number;
+  isSquadSelected?: {
+    firstTest: boolean;
+    secondTest: boolean;
+    thirdTest: boolean;
+    fourthTest: boolean;
+    fifthTest: boolean;
+  };
   squad: {
     firstTest: TeamRoles;
     secondTest: TeamRoles;

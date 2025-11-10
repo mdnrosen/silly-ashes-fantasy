@@ -1,40 +1,37 @@
-import { useEffect, useState } from "react";
-import { getTeams } from "../firebase";
+import { useMemo, useContext } from "react";
 import LeaderboardCard from "../modules/LeaderboardCard";
-import { Team } from '../types'
-import Spinner from "../components/Spinner";
-const currentUser = "drose-87";
+import { Team } from "../types";
+import { useAuth } from "../hooks/useAuth";
+import CreateTeam from "./CreateTeam";
+import { TeamContext } from "../context/TeamContext";
 
 const Leaderboard = () => {
-  const [teams, setTeams] = useState<Team[]>([]);
-  const [userTeam, setUserTeam] = useState<any>(null);
-  const [loading, setLoading] = useState<boolean>(false);
+  const _auth = useAuth();
+  const teams = useContext(TeamContext);
 
-  const fetchTeams = async () => {
-    const data = await getTeams();
-    setTeams(data as Team[]);
-    setUserTeam(data && (data as Team[]).find((team: Team) => team.user === currentUser)!);
-    setLoading(false);
-  };
-  useEffect(() => {
-    fetchTeams();
-  }, []);
+  const userTeam = useMemo(() => {
+    if (teams === null) return;
+    return teams.find((team) => team.user === _auth.user?.nickname) ?? null;
+  }, [teams, _auth.user?.nickname]);
 
   return (
     <>
-    {loading && <Spinner />}
       <div className="h-[calc(100vh-6.5rem)] bg-off-white p-2">
-        {userTeam && (
+        <div className="p-4 bg-off-white">
+          <h1 className=" text-2xl uppercase">LEADERBOARD</h1>
+        </div>
+        {userTeam ? (
           <div className="h30 p-2 border-dashed border-b-2 mb-2">
-            <small className="text-sm font-extralight italic">This is your team!</small>
-            <LeaderboardCard
-              isHighlighted={true}
-              team={userTeam}
-            />
+            <small className="text-sm font-extralight italic">
+              This is your team!
+            </small>
+            <LeaderboardCard isHighlighted={true} team={userTeam} />
           </div>
+        ) : (
+          <CreateTeam />
         )}
         <div className="p-2">
-          {teams.map((team: Team) => (
+          {teams?.map((team: Team) => (
             <LeaderboardCard team={team} key={team.id} isHighlighted={false} />
           ))}
         </div>

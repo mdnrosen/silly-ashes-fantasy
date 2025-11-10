@@ -20,9 +20,10 @@ Amplify.configure(outputs);
 import TeamPage from "./pages/Team";
 import TeamHome from "./pages/TeamHome";
 
-import { seedDB} from './firebase/post';
+import { seedDB } from "./firebase/post";
 import CreateTeam from "./pages/CreateTeam";
-
+import Team from "./pages/Team";
+import TeamTwo from "./pages/TeamTwo";
 
 function App() {
   // seedDB();
@@ -44,7 +45,7 @@ function App() {
               }
             />
             <Route
-              path="/team"
+              path="/team/:teamId"
               element={
                 <ProtectedRoute>
                   <TeamHome />
@@ -52,10 +53,10 @@ function App() {
               }
             />
             <Route
-              path="/team/:teamId"
+              path="/team/:teamId/:test"
               element={
                 <ProtectedRoute>
-                  <TeamHome />
+                  <TeamTwo />
                 </ProtectedRoute>
               }
             />

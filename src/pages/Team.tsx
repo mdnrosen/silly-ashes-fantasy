@@ -4,10 +4,8 @@ import PlayerSelection from "../modules/PlayerSelection";
 import SelectPlayer from "../components/SelectPlayer";
 import Spinner from "../components/Spinner";
 import { PlayersContext } from "../context/PlayersContext";
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 import { getTeam, getTeamByUser } from "../firebase/get";
-
-const currentUser = 'drose-87';
 
 // Types
 export interface MyPlayers {
@@ -75,7 +73,7 @@ const TeamPage = () => {
 
   const getUserTeam = async () => {
     const userTeam = await getTeamByUser(currentUser);
-    console.log(userTeam)
+    console.log(userTeam);
     if (!userTeam) {
       resetForm();
     } else {
@@ -84,9 +82,7 @@ const TeamPage = () => {
       setLoading(false);
       setReadOnly(false);
     }
-
-  }
-
+  };
 
   // Update selected stubs
   useEffect(() => {
@@ -104,7 +100,7 @@ const TeamPage = () => {
     } else if (currentUser) {
       getUserTeam();
     } else {
-      resetForm()
+      resetForm();
     }
   }, []);
 
@@ -155,18 +151,26 @@ const TeamPage = () => {
               {team ? (
                 <div className="flex flex-col">
                   <div className="mb-2">
-                    <h2 className="text-lg uppercase font-extralight italic">COST</h2>
-                    <p className="font-semibold text-md">${100 - team.budgetUsed}</p>
+                    <h2 className="text-lg uppercase font-extralight italic">
+                      COST
+                    </h2>
+                    <p className="font-semibold text-md">
+                      ${100 - team.budgetUsed}
+                    </p>
                   </div>
                   <div>
-                    <h2 className="text-lg uppercase font-extralight italic">POINTS</h2>
+                    <h2 className="text-lg uppercase font-extralight italic">
+                      POINTS
+                    </h2>
                     <p className="font-semibold text-md">{team.points}</p>
                   </div>
                 </div>
               ) : (
                 <div className="flex flex-col">
                   <div className="mb-2">
-                    <h2 className="text-lg uppercase font-extralight italic">COST</h2>
+                    <h2 className="text-lg uppercase font-extralight italic">
+                      COST
+                    </h2>
                     <p className="font-semibold text-md">${totalSpent}</p>
                   </div>
                 </div>
