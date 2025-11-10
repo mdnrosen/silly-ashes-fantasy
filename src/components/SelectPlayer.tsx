@@ -1,4 +1,4 @@
-import { MyPlayers } from "../pages/Team";
+import { TeamRoles } from "../types";
 import {
   getTitle,
   getSelectMessage,
@@ -8,13 +8,18 @@ import {
 import unpickedImage from "../assets/unpicked.jpg";
 
 type Props = {
-  myPlayers: MyPlayers | null;
-  openSelectionModal: (role: keyof MyPlayers) => void;
-  role: keyof MyPlayers;
+  myPlayers: TeamRoles | null;
+  openSelectionModal: (role: keyof TeamRoles) => void;
+  role: Exclude<keyof TeamRoles, "squadPicked">;
   isDisabled?: boolean;
 };
 
-const SelectPlayer = ({ myPlayers, role, openSelectionModal, isDisabled }: Props) => {
+const SelectPlayer = ({
+  myPlayers,
+  role,
+  openSelectionModal,
+  isDisabled,
+}: Props) => {
   const player = myPlayers?.[role];
   const surnameColor = getTeamTextColor(player?.team);
 
@@ -25,14 +30,14 @@ const SelectPlayer = ({ myPlayers, role, openSelectionModal, isDisabled }: Props
 
   // Get team-specific background color when player is selected
   const backgroundStyle = player
-    ? player.team === "AUS" 
-      ? "bg-green-50" 
+    ? player.team === "AUS"
+      ? "bg-green-50"
       : "bg-blue-50"
     : "bg-white";
 
   return (
     <button
-        disabled={isDisabled}
+      disabled={isDisabled}
       className={`
         ${backgroundStyle}
         ${borderStyle}
@@ -61,7 +66,7 @@ const SelectPlayer = ({ myPlayers, role, openSelectionModal, isDisabled }: Props
           {/* Large centered image */}
           <div className="flex-1 flex items-center justify-center mb-2">
             <img
-              src={player.imageUrl}
+              src={player?.imageUrl}
               alt={player.name}
               className="w-22 h-22 object-cover rounded"
             />
@@ -86,7 +91,9 @@ const SelectPlayer = ({ myPlayers, role, openSelectionModal, isDisabled }: Props
               <div className="text-sm text-dark-blue font-bold leading-tight">
                 ${player.cost}
               </div>
-              <div className="text-sm text-dark-blue font-medium leading-tight">{player.points} pts</div>
+              <div className="text-sm text-dark-blue font-medium leading-tight">
+                {player.points || 0} pts
+              </div>
             </div>
           </div>
         </>
@@ -100,7 +107,7 @@ const SelectPlayer = ({ myPlayers, role, openSelectionModal, isDisabled }: Props
               className="w-22 h-22 object-cover rounded opacity-50"
             />
           </div>
-          <div className="text-xs text-dark-blue text-center">
+          <div className="text-xs text-dark-blue text-center p-3">
             {getSelectMessage(role as string)}
           </div>
         </>

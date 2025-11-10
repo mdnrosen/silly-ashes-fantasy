@@ -59,7 +59,7 @@ export const sumStat = (player: Player, stat: string): number => {
   return total;
 };
 
-export const sortByPoints = (record: Player[] | Team[]): Player[] | Team[] => {
+export const sortByPoints = <T extends Player | Team>(record: T[]): T[] => {
   return record.sort((a, b) => (b.points || 0) - (a.points || 0));
 };
 
@@ -156,4 +156,61 @@ export const getPositionSuffix = (position: number | undefined): string => {
 
 export const toSnakeCase = (name: string) => {
   return name.split(" ").join("_").toLowerCase();
+};
+
+export const testTimes = (test: string) => {
+  switch (test) {
+    case "firstTest":
+      return {
+        start: new Date("2025-11-21T02:30:00Z"),
+        end: new Date("2025-11-25T10:30:00Z"),
+      };
+    case "secondTest":
+      return {
+        start: new Date("2025-12-04T04:30:00Z"),
+        end: new Date("2025-12-08T12:30:00Z"),
+      };
+    case "thirdTest":
+      return {
+        start: new Date("2025-12-17T00:00:00Z"),
+        end: new Date("2025-12-21T08:00:00Z"),
+      };
+    case "fourthTest":
+      return {
+        start: new Date("2025-12-25T23:30:00Z"),
+        end: new Date("2025-12-30T07:00:00Z"),
+      };
+    case "fifthTest":
+      return {
+        start: new Date("2026-01-04T23:30:00Z"),
+        end: new Date("2026-01-08T07:00:00Z"),
+      };
+    default:
+      return "";
+  }
+};
+
+export const getTestLabel = (test: string | undefined): string => {
+  if (!test) return "";
+  switch (test) {
+    case "firstTest":
+      return "First Test - Perth";
+    case "secondTest":
+      return "Second Test - Brisbane";
+    case "thirdTest":
+      return "Third Test - Adelaide";
+    case "fourthTest":
+      return "Fourth Test - Melbourne";
+    case "fifthTest":
+      return "Fifth Test - Sydney";
+    default:
+      return "";
+  }
+};
+
+export const isTeamPicked = (team: Team, test: string) => {
+  if (!team) return false;
+  return (
+    team.isSquadSelected?.[test as keyof typeof team.isSquadSelected] === true
+  );
 };

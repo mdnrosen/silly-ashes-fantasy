@@ -139,7 +139,7 @@ const PlayerSelection = ({
               </div>
               <div className="col-span-1 flex flex-col justify-center items-center">
                 <p className="font-bold text-dark-blue">${player.cost}</p>
-                <p className="text-sm text-dark-blue">{player.points} pts</p>
+                <p className="text-sm text-dark-blue">{player?.points} pts</p>
               </div>
             </button>
           );

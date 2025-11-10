@@ -25,12 +25,15 @@ const Navbar = () => {
   return (
     <>
       <div className="fixed flex justify-between items-center h-15 md:h-20 w-full mx-auto p-4 bg-dark-blue text-off-white z-50 border-b-2 mb-150 md:mb-20">
-        <img
-          src="/assets/sillyAshesLogo.jpeg"
-          alt="Silly Ashes Logo"
-          className="h-15 md:h-16 w-auto object-contain"
-          style={{ maxHeight: '100%' }}
-        />
+        <Link to="/" className="h-full">
+          <img
+            src="/assets/sillyAshesLogo.jpeg"
+            alt="Silly Ashes Logo"
+            className="h-full"
+            style={{ maxHeight: "100%" }}
+          />
+        </Link>
+
         <button
           onClick={toggleMenu}
           className="flex flex-col justify-center items-center w-8 h-8 space-y-1.5"
@@ -84,13 +87,6 @@ const Navbar = () => {
             </Link>
             {_auth.user && (
               <>
-                <Link
-                  to="/team"
-                  className="block text-lg hover:text-light-blue transition-colors duration-200 uppercase pt-6 border-t border-mid-blue "
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  My Team
-                </Link>
                 <button
                   className="block text-lg hover:text-light-blue transition-colors duration-200 w-full text-left uppercase"
                   onClick={() => {
