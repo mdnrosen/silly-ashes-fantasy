@@ -1,10 +1,7 @@
 import { db } from "./config";
 import { addDoc, collection } from "firebase/firestore";
-import { Player, Team } from "../types";
+import { Player } from "../types";
 import data from "../assets/ashes23.json";
-import { v4 as uuidv4 } from "uuid";
-
-import teams from "../assets/teamFromDBMock.json";
 
 export const seedDB = async (): Promise<void> => {
   try {
