@@ -1,17 +1,26 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { getCurrentUser, signOut, AuthUser } from "aws-amplify/auth";
+import {
+  getCurrentUser,
+  signOut,
+  AuthUser,
+  fetchUserAttributes,
+} from "aws-amplify/auth";
 import { Hub } from "aws-amplify/utils";
 
+type User = AuthUser & {
+  nickname?: string;
+};
+
 interface UseAuthReturn {
-  user: AuthUser | null;
+  user: User | null;
   isLoading: boolean;
   isAuthenticated: boolean;
   signOut: () => Promise<void>;
 }
 
 export function useAuth(): UseAuthReturn {
-  const [user, setUser] = useState<AuthUser | null>(null);
+  const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
   const isMountedRef = useRef(true);
@@ -21,8 +30,9 @@ export function useAuth(): UseAuthReturn {
 
     try {
       const currentUser = await getCurrentUser();
+      const { nickname } = await fetchUserAttributes();
       if (isMountedRef.current) {
-        setUser(currentUser);
+        setUser({ ...currentUser, nickname });
         setIsLoading(false);
       }
     } catch (error) {

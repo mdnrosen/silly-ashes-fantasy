@@ -17,7 +17,6 @@ const CreateTeam = () => {
     const teams = useContext(TeamContext)
 
 
-
     const isDisabled = (teamname.length === 0) || !!nameError;
 
     const handleChange = async(e: React.ChangeEvent<HTMLInputElement>) => {
@@ -42,7 +41,7 @@ const CreateTeam = () => {
                 return;
             }
             setLoading(true);
-            const team = await createNewTeam(teamname, _auth.user?.username || '');
+            const team = await createNewTeam(teamname, _auth.user?.nickname || '');
             _toast?.success("Team created successfully");
             navigate(`/team/${team?.id}`)
         } catch (error) {
