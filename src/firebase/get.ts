@@ -7,7 +7,7 @@ import {
   getDoc,
 } from "firebase/firestore";
 import { Player } from "../types";
-import { calculatePlayerScore, sortByPoints } from "../lib/helpers";
+import { sortByPoints } from "../lib/helpers";
 import { Team } from "../types";
 import { db } from "./config";
 
