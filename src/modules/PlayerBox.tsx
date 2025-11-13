@@ -28,12 +28,10 @@ const PlayerBox = ({ isDisabled, player, defaultRole, openModal }: Props) => {
   `;
 
   const renderPlaceholder = (): ReactElement => {
-    console.log('is placeholder diabled', isDisabled)
     return (
       <button
         className="border-dashed border-1 h-full aspect-square grid grid-rows-5 rounded-sm"
         disabled={isDisabled}
-        onClick={() => console.log('CLICKING')}
       >
         <div
           className="row-span-4 relative bg-cover bg-center"

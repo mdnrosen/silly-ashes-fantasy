@@ -73,7 +73,6 @@ const TeamPage = () => {
 
   const getUserTeam = async () => {
     const userTeam = await getTeamByUser(currentUser);
-    console.log(userTeam);
     if (!userTeam) {
       resetForm();
     } else {

@@ -20,8 +20,6 @@ const PlayerProfile = (): JSX.Element => {
   const last = lastName(player?.name || "");
 
   const handleBack = () => navigate(-1);
-  console.log('id in params', id)
-  console.log('player found', player)
   if (!player) {
     return (
       <div className="h-full flex flex-col justify-center align-middle my-auto">
@@ -60,11 +58,19 @@ const PlayerProfile = (): JSX.Element => {
           player.team
         )}`}
       >
-        <StatBox statName="Points" statValue={calculatePlayerScore(player)} emphasis={true} />
-        <StatBox statName="Runs" statValue={sumStat(player, 'runs')} emphasis={false} />
+        <StatBox
+          statName="Points"
+          statValue={calculatePlayerScore(player)}
+          emphasis={true}
+        />
+        <StatBox
+          statName="Runs"
+          statValue={sumStat(player, "runs")}
+          emphasis={false}
+        />
         <StatBox
           statName="Wickets"
-          statValue={sumStat(player, 'wickets')}
+          statValue={sumStat(player, "wickets")}
           emphasis={false}
         />
       </div>
@@ -75,17 +81,17 @@ const PlayerProfile = (): JSX.Element => {
       >
         <StatBox
           statName="Catches"
-          statValue={sumStat(player, 'catches')}
+          statValue={sumStat(player, "catches")}
           emphasis={false}
         />
         <StatBox
           statName="Runouts"
-          statValue={sumStat(player, 'runouts')}
+          statValue={sumStat(player, "runouts")}
           emphasis={false}
         />
         <StatBox
           statName="Stumpings"
-          statValue={sumStat(player, 'stumpings')}
+          statValue={sumStat(player, "stumpings")}
           emphasis={false}
         />
       </div>
@@ -96,12 +102,12 @@ const PlayerProfile = (): JSX.Element => {
       >
         <StatBox
           statName="Hundreds"
-          statValue={sumStat(player, 'centuries')}
+          statValue={sumStat(player, "centuries")}
           emphasis={false}
         />
         <StatBox
           statName="Five-fors"
-          statValue={sumStat(player, 'fivewickets')}
+          statValue={sumStat(player, "fivewickets")}
           emphasis={false}
         />
       </div>

@@ -18,7 +18,6 @@ const ListPlayers = () => {
       _loading.stop();
     }
   }, [players, _loading.active]);
-  console.log(players)
   return (
     <>
       {_loading.active && <Spinner />}

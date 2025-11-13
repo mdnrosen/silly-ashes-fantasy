@@ -86,7 +86,6 @@ export const getTeamByUser = async (user: string) => {
         ...(firstDoc.data() as Team),
       };
     }
-    console.log("user team -->>", user);
     return null;
   } catch (error) {
     console.error(error);
