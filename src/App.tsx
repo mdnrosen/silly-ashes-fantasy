@@ -6,27 +6,23 @@ import Rules from "./pages/Rules";
 import Leaderboard from "./pages/Leaderboard";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
+import TeamHome from "./pages/TeamHome";
+import Team from "./pages/TeamSquad";
+import Auth from "./pages/Auth";
 
 import Footer from "./modules/Footer";
 import Navbar from "./modules/Navbar";
 
 import ScrollToTop from "./components/ScrollToTop";
-import Auth from "./pages/Auth";
 import ProtectedRoute from "./components/ProtectedRoute";
-import { Amplify } from "aws-amplify";
+
 import outputs from "./lib/config";
+
+import { Amplify } from "aws-amplify";
 import "@aws-amplify/ui-react/styles.css";
 Amplify.configure(outputs);
-import TeamPage from "./pages/Team";
-import TeamHome from "./pages/TeamHome";
-
-import { seedDB } from "./firebase/post";
-import CreateTeam from "./pages/CreateTeam";
-import Team from "./pages/Team";
-import TeamTwo from "./pages/TeamTwo";
 
 function App() {
-  // seedDB();
   return (
     <div className="min-w-xs max-w-3xl mx-auto bg-off-white min-h-screen font-roboto">
       <Router>
@@ -36,6 +32,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/register" element={<Auth />} />
+            <Route path="/rules" element={<Rules />} />
             <Route
               path="/players"
               element={
@@ -56,15 +53,7 @@ function App() {
               path="/team/:teamId/:test"
               element={
                 <ProtectedRoute>
-                  <TeamTwo />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/rules"
-              element={
-                <ProtectedRoute>
-                  <Rules />
+                  <Team />
                 </ProtectedRoute>
               }
             />
@@ -73,14 +62,6 @@ function App() {
               element={
                 <ProtectedRoute>
                   <Leaderboard />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/create"
-              element={
-                <ProtectedRoute>
-                  <CreateTeam />
                 </ProtectedRoute>
               }
             />

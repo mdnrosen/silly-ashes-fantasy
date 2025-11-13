@@ -6,7 +6,7 @@ import data from "../assets/ashes23.json";
 export const seedDB = async (): Promise<void> => {
   try {
     for (const player of data) {
-      await addToDB(player);
+      await addToDB({ ...player, points: 0 });
     }
     console.log("Database seeded successfully");
   } catch (error) {

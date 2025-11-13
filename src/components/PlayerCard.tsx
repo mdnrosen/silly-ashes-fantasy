@@ -3,10 +3,7 @@ import { Player } from "../types";
 import { Link } from "react-router-dom";
 import { firstName, getBorderColor, lastName } from "../lib/helpers";
 
-const PlayerCard: React.FC<{ player: Player }> = ({
-  player,
-}): JSX.Element => {
-  // Get team-specific light background colors like in PlayerSelection
+const PlayerCard: React.FC<{ player: Player }> = ({ player }): JSX.Element => {
   const backgroundStyle = player.team === "AUS" ? "bg-green-50" : "bg-blue-50";
 
   return (
@@ -40,7 +37,8 @@ const PlayerCard: React.FC<{ player: Player }> = ({
               ${player.cost}
             </small>
             <span className="text-lg md:text-2xl font-bold text-dark-blue">
-              {player.points || 0}<span className="font-extralight">pts</span>
+              {player.points || 0}
+              <span className="font-extralight">pts</span>
             </span>
           </div>
         </div>

@@ -16,7 +16,7 @@ import PlayerSelection from "../modules/PlayerSelection";
 
 import { saveTestSquad } from "../firebase/put";
 
-const TeamTwo = () => {
+const TeamSquad = () => {
   const _toast = useToast();
   const _auth = useAuth();
   const { teamId, test } = useParams();
@@ -262,4 +262,4 @@ const TeamTwo = () => {
     </>
   );
 };
-export default TeamTwo;
+export default TeamSquad;
