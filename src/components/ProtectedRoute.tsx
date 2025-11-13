@@ -1,7 +1,7 @@
 import { Navigate, useLocation } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 import { useLoading } from "../hooks/useLoading";
-import Spinner from "../components/Spinner"
+import Spinner from "../components/Spinner";
 type Props = {
   children: React.ReactNode;
 };
@@ -11,7 +11,6 @@ const ProtectedRoute = ({ children }: Props) => {
   const location = useLocation();
   const _loading = useLoading();
 
-  // Still loading auth state
   if (isLoading) {
     _loading.start();
     return (
@@ -21,7 +20,6 @@ const ProtectedRoute = ({ children }: Props) => {
     );
   }
 
-  // User not authenticated
   if (!isAuthenticated || !user) {
     return <Navigate to="/register" replace state={{ from: location }} />;
   }

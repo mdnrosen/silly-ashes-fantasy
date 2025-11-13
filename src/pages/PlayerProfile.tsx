@@ -112,14 +112,13 @@ const PlayerProfile = (): JSX.Element => {
         />
       </div>
       <div
-        className={`row-span-2 flex px-2 justify-between align-middle ${getBgColor(
+        className={`row-span-2 flex px-2 justify-start align-middle ${getBgColor(
           player.team
         )}`}
       >
         <button onClick={handleBack}>
           <IoArrowBack size={24} />
         </button>
-        <small className="my-auto">82% Selected</small>
       </div>
     </div>
   );
