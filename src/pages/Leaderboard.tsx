@@ -7,7 +7,7 @@ import { TeamContext } from "../context/TeamContext";
 
 const Leaderboard = () => {
   const _auth = useAuth();
-  const teams = useContext(TeamContext);
+  const { teams } = useContext(TeamContext) ?? { teams: null };
 
   const userTeam = useMemo(() => {
     if (teams === null) return;

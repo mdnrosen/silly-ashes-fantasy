@@ -15,13 +15,17 @@ import SelectPlayer from "../components/SelectPlayer";
 import PlayerSelection from "../modules/PlayerSelection";
 
 import { saveTestSquad } from "../firebase/put";
+import ConfirmModal from "../modules/ConfirmModal";
 
 const TeamSquad = () => {
   const _toast = useToast();
   const _auth = useAuth();
   const { teamId, test } = useParams();
   const navigate = useNavigate();
-  const teams = useContext(TeamContext);
+  const { teams, reloadTeams } = useContext(TeamContext) ?? {
+    teams: null,
+    reloadTeams: async () => {},
+  };
   const players = useContext(PlayersContext);
 
   const emptySquad: TeamRoles = {
@@ -40,9 +44,11 @@ const TeamSquad = () => {
   const [selectionModalOpen, setSelectionModalOpen] = useState<boolean>(false);
   const [selection, setSelection] = useState<string>("");
   const [selected, setSelected] = useState<string[]>([]);
+  const [confirmModalOpen, setConfirmModalOpen] = useState<boolean>(false);
 
   const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
     try {
+      setConfirmModalOpen(false);
       setLoading(true);
       e.preventDefault();
       if (isReadOnly) return;
@@ -70,7 +76,7 @@ const TeamSquad = () => {
   };
 
   const reloadAfterSave = async () => {
-    // refetch teams data?
+    await reloadTeams();
     await findTeam();
   };
 
@@ -229,7 +235,7 @@ const TeamSquad = () => {
           {/* Submit Button */}
           {!isReadOnly && (
             <button
-              onClick={handleSubmit}
+              onClick={() => setConfirmModalOpen(true)}
               className="w-full bg-aus-green text-off-white p-2 my-2 rounded font-semibold text-sm"
             >
               Submit Team
@@ -257,6 +263,18 @@ const TeamSquad = () => {
           }}
           deselectPlayer={deselectPlayer}
           closeModal={closeSelectionModal}
+        />
+      )}
+      {confirmModalOpen && (
+        <ConfirmModal
+          title="Save team"
+          message="Once you save your team, you cannot make any changes. Do you wish to continue?"
+          successText="Save Team"
+          cancelText="Cancel"
+          successCallback={() =>
+            handleSubmit({} as React.MouseEvent<HTMLButtonElement>)
+          }
+          cancelCallback={() => setConfirmModalOpen(false)}
         />
       )}
     </>
