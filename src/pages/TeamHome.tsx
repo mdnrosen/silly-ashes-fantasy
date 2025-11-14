@@ -6,7 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { TeamContext } from "../context/TeamContext";
 import { IoArrowBack } from "react-icons/io5";
 const TeamHome = () => {
-  const teams = useContext(TeamContext);
+  const { teams } = useContext(TeamContext) ?? { teams: null };
   const { teamId } = useParams();
   const navigate = useNavigate();
   const team = useMemo(() => {

@@ -3,7 +3,12 @@ import { createContext, ReactNode, useEffect, useState } from "react";
 import { Team } from "../types";
 import { getTeams } from "../firebase";
 
-export const TeamContext = createContext<Team[] | null>(null);
+interface TeamContextType {
+  teams: Team[] | null;
+  reloadTeams: () => Promise<void>;
+}
+
+export const TeamContext = createContext<TeamContextType | null>(null);
 
 export const TeamProvider = ({ children }: { children: ReactNode }) => {
   const [teams, setTeams] = useState<Team[] | null>(null);
@@ -21,5 +26,9 @@ export const TeamProvider = ({ children }: { children: ReactNode }) => {
     fetchTeams();
   }, []);
 
-  return <TeamContext.Provider value={teams}>{children}</TeamContext.Provider>;
+  return (
+    <TeamContext.Provider value={{ teams, reloadTeams: fetchTeams }}>
+      {children}
+    </TeamContext.Provider>
+  );
 };
