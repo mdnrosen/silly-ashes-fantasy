@@ -30,6 +30,7 @@ export interface Toast {
   icon: string;
 }
 
+// For UI - uses full Player objects
 export type TeamRoles = {
   bowler1: null | Player;
   bowler2: null | Player;
@@ -38,6 +39,17 @@ export type TeamRoles = {
   allrounder: null | Player;
   keeper: null | Player;
   wildcard: null | Player;
+};
+
+// For Firebase - stores only player IDs
+export type TeamRolesIds = {
+  bowler1: string | null;
+  bowler2: string | null;
+  batter1: string | null;
+  batter2: string | null;
+  allrounder: string | null;
+  keeper: string | null;
+  wildcard: string | null;
 };
 
 export interface Team {
