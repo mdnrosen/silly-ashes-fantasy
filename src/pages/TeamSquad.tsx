@@ -5,7 +5,11 @@ import { IoArrowBack } from "react-icons/io5";
 
 import { useToast, useAuth } from "../hooks";
 import { Team, TeamRoles } from "../types";
-import { getTestLabel, isTeamPicked } from "../lib/helpers";
+import {
+  getTestLabel,
+  isTeamPicked,
+  hydrateSquadWithPlayers,
+} from "../lib/helpers";
 
 import { TeamContext } from "../context/TeamContext";
 import { PlayersContext } from "../context/PlayersContext";
@@ -15,6 +19,7 @@ import SelectPlayer from "../components/SelectPlayer";
 import PlayerSelection from "../modules/PlayerSelection";
 
 import { saveTestSquad } from "../firebase/put";
+import { getTeam } from "../firebase/get";
 import ConfirmModal from "../modules/ConfirmModal";
 
 const TeamSquad = () => {
@@ -46,11 +51,10 @@ const TeamSquad = () => {
   const [selected, setSelected] = useState<string[]>([]);
   const [confirmModalOpen, setConfirmModalOpen] = useState<boolean>(false);
 
-  const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleSubmit = async () => {
     try {
       setConfirmModalOpen(false);
       setLoading(true);
-      e.preventDefault();
       if (isReadOnly) return;
 
       if (Object.values(selectedSquad).some((player) => player === null)) {
@@ -62,11 +66,9 @@ const TeamSquad = () => {
 
       await saveTestSquad(teamId, test as string, selectedSquad);
       //   deliberate timeout to allow context to refresh
-      setTimeout(() => {
-        _toast?.success("Team saved successfully!");
-      }, 2000);
-      await reloadAfterSave();
 
+      await reloadAfterSave();
+      _toast?.success("Team saved successfully!");
       // to do we need to find a way to refresh the get teams context
     } catch (error) {
       _toast?.error(error as string);
@@ -76,17 +78,28 @@ const TeamSquad = () => {
   };
 
   const reloadAfterSave = async () => {
-    await reloadTeams();
-    await findTeam();
+    // Reload the global teams context in the background
+    reloadTeams();
+
+    // Fetch this specific team directly to ensure we have the latest data
+    if (teamId) {
+      const freshTeam = await getTeam(teamId);
+      if (freshTeam) {
+        setTeam(freshTeam);
+        const pickedTeam = isTeamPicked(freshTeam, test as string);
+        if (pickedTeam) {
+          // @ts-ignore - squad comes from Firebase with IDs, need to hydrate
+          const squadIds = freshTeam.squad[test];
+          const hydratedSquad = hydrateSquadWithPlayers(squadIds, players);
+          setSelectedSquad(hydratedSquad);
+        }
+      }
+    }
   };
 
   const findTeam = async () => {
     setLoading(true);
-    if (teams === null) {
-      setLoading(false);
-      return;
-    }
-    const foundTeam = teams.find((team) => team.id === teamId) ?? null;
+    const foundTeam = teams?.find((team) => team.id === teamId) ?? null;
     if (!foundTeam) {
       setLoading(false);
       _toast?.error("Team not found");
@@ -94,8 +107,10 @@ const TeamSquad = () => {
     }
     const pickedTeam = isTeamPicked(foundTeam, test as string);
     if (pickedTeam) {
-      // @ts-ignore
-      setSelectedSquad(foundTeam.squad[test]);
+      // @ts-ignore - squad comes from Firebase with IDs, need to hydrate
+      const squadIds = foundTeam.squad[test];
+      const hydratedSquad = hydrateSquadWithPlayers(squadIds, players);
+      setSelectedSquad(hydratedSquad);
     } else {
       setSelectedSquad(emptySquad);
     }
@@ -127,8 +142,10 @@ const TeamSquad = () => {
   };
 
   useEffect(() => {
-    findTeam();
-  }, []);
+    if (teams !== null && players.length > 0) {
+      findTeam();
+    }
+  }, [teams, players]);
 
   // This checks for already selected players to disable them in the modal
   useEffect(() => {
@@ -271,9 +288,7 @@ const TeamSquad = () => {
           message="Once you save your team, you cannot make any changes. Do you wish to continue?"
           successText="Save Team"
           cancelText="Cancel"
-          successCallback={() =>
-            handleSubmit({} as React.MouseEvent<HTMLButtonElement>)
-          }
+          successCallback={() => handleSubmit()}
           cancelCallback={() => setConfirmModalOpen(false)}
         />
       )}

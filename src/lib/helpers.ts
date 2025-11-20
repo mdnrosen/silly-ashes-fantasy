@@ -1,4 +1,4 @@
-import { Team, Player } from "../types";
+import { Team, Player, TeamRoles, TeamRolesIds } from "../types";
 
 export type TestKey =
   | "firstTest"
@@ -213,4 +213,25 @@ export const isTeamPicked = (team: Team, test: string) => {
   return (
     team.isSquadSelected?.[test as keyof typeof team.isSquadSelected] === true
   );
+};
+
+// Helper function to convert TeamRolesIds (with just IDs) to TeamRoles (with Player objects)
+export const hydrateSquadWithPlayers = (
+  squadIds: TeamRolesIds,
+  players: Player[]
+): TeamRoles => {
+  const findPlayer = (id: string | null) => {
+    if (!id) return null;
+    return players.find((p) => p.id === id) ?? null;
+  };
+
+  return {
+    bowler1: findPlayer(squadIds.bowler1),
+    bowler2: findPlayer(squadIds.bowler2),
+    batter1: findPlayer(squadIds.batter1),
+    batter2: findPlayer(squadIds.batter2),
+    allrounder: findPlayer(squadIds.allrounder),
+    keeper: findPlayer(squadIds.keeper),
+    wildcard: findPlayer(squadIds.wildcard),
+  };
 };
