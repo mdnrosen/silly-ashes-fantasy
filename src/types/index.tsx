@@ -12,7 +12,6 @@ export interface Player {
   imageUrl: string;
   role: string;
   team: string;
-  cost: number;
   points: number;
   stub: string;
   runs: StatByTest;
@@ -57,7 +56,6 @@ export interface Team {
   teamname: string;
   user: string | undefined;
   points: number;
-  budgetUsed: number;
   position?: number;
   isSquadSelected?: {
     firstTest: boolean;

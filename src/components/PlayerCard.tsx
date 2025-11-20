@@ -32,10 +32,7 @@ const PlayerCard: React.FC<{ player: Player }> = ({ player }): JSX.Element => {
           <small className="text-xs md:text-base font-extralight text-dark-blue opacity-60">
             {player.role}
           </small>
-          <div className="flex justify-between items-center">
-            <small className="text-base md:text-xl text-dark-blue opacity-70 font-semibold">
-              ${player.cost}
-            </small>
+          <div className="flex justify-end items-center">
             <span className="text-lg md:text-2xl font-bold text-dark-blue">
               {player.points || 0}
               <span className="font-extralight">pts</span>

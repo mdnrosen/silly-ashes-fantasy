@@ -125,12 +125,6 @@ const TeamSquad = () => {
     return _auth.user?.nickname !== team?.user;
   }, [_auth, teams, team]);
 
-  const totalSpent = Object.values(selectedSquad)
-    .filter((player): player is NonNullable<typeof player> => player !== null)
-    .reduce((sum, player) => sum + (player.cost || 0), 0);
-
-  const budgetRemaining = 100 - totalSpent;
-
   const openSelectionModal = (selection: keyof TeamRoles) => {
     setSelection(selection);
     setSelectionModalOpen(true);
@@ -170,23 +164,15 @@ const TeamSquad = () => {
         </div>
 
         <div className="flex-1">
-          {/* Top Row: Budget/Score Info and Wildcard */}
+          {/* Top Row: Test Info and Wildcard */}
           <div className="grid grid-cols-2 gap-2 mb-2">
-            {/* Budget and Score Info Card */}
+            {/* Score Info Card */}
             <div className="col-span-1 p-2 rounded-lg bg-gray-50">
               <div className="flex flex-col">
                 <div className="mb-2 flex">
                   <h2 className="text-sm text-center uppercase font-extralight italic border-b-2 mb-2">
                     {getTestLabel(test)}{" "}
                   </h2>
-                </div>
-                <div className="mb-2">
-                  <h2 className="text-lg uppercase font-extralight italic">
-                    COST
-                  </h2>
-                  <p className="font-semibold text-md">
-                    ${100 - budgetRemaining}
-                  </p>
                 </div>
                 <div>
                   <h2 className="text-lg uppercase font-extralight italic">
@@ -272,7 +258,6 @@ const TeamSquad = () => {
           players={players}
           selected={selected}
           selection={selection}
-          budget={budgetRemaining}
           currentPlayer={selectedSquad[selection as keyof TeamRoles] ?? null}
           savePlayer={(player, selection) => {
             setSelectedSquad({ ...selectedSquad, [selection]: player });

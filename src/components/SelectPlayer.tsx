@@ -72,7 +72,7 @@ const SelectPlayer = ({
             />
           </div>
 
-          {/* Bottom section with name and cost/points */}
+          {/* Bottom section with name and points */}
           <div className="w-full flex justify-between items-end">
             {/* Bottom left - Name */}
             <div className="text-left">
@@ -86,12 +86,9 @@ const SelectPlayer = ({
               </div>
             </div>
 
-            {/* Bottom right - Cost and Points */}
+            {/* Bottom right - Points */}
             <div className="text-right">
               <div className="text-sm text-dark-blue font-bold leading-tight">
-                ${player.cost}
-              </div>
-              <div className="text-sm text-dark-blue font-medium leading-tight">
                 {player.points || 0} pts
               </div>
             </div>

@@ -16,7 +16,10 @@ const CreateTeam = () => {
   const _toast = useToast();
   const navigate = useNavigate();
 
-  const { teams } = useContext(TeamContext) ?? { teams: null };
+  const { teams, reloadTeams } = useContext(TeamContext) ?? {
+    teams: null,
+    reloadTeams: async () => {},
+  };
 
   const isDisabled = teamname.length === 0 || !!nameError;
 
@@ -43,10 +46,17 @@ const CreateTeam = () => {
       }
       setLoading(true);
       const team = await createNewTeam(teamname, _auth.user?.nickname || "");
+      if (!team) {
+        throw new Error("Failed to create team");
+      }
+      // Reload teams to include the newly created team
+      await reloadTeams();
       _toast?.success("Team created successfully");
-      navigate(`/team/${team?.id}`);
+      navigate(`/team/${team.id}`);
     } catch (error) {
-      _toast?.error("Failed to create team");
+      const errorMessage =
+        error instanceof Error ? error.message : "Failed to create team";
+      _toast?.error(errorMessage);
     } finally {
       setLoading(false);
     }

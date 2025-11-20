@@ -54,7 +54,6 @@ export const createNewTeam = async (teamname: string, user: string) => {
       teamname,
       user,
       points: 0,
-      budgetUsed: 0,
       position: 0,
       squad: emptySquad,
     };
@@ -62,5 +61,6 @@ export const createNewTeam = async (teamname: string, user: string) => {
     return response;
   } catch (error) {
     console.error("Error creating new team:", error);
+    throw error;
   }
 };

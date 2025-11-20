@@ -43,7 +43,6 @@ const PlayerProfile = (): JSX.Element => {
         </div>
         <div className="flex flex-col text-right justify-center">
           <span className="font-extralight uppercase">{player.role}</span>
-          <span className="text-sm">${player.cost}</span>
         </div>
       </div>
       <div className="row-span-9 overflow-hidden">

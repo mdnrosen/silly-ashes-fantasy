@@ -12,14 +12,34 @@ const TeamHome = () => {
   const team = useMemo(() => {
     if (teams === null) return null;
     return teams.find((team) => team.id === teamId) ?? null;
-  }, [teams]);
+  }, [teams, teamId]);
 
   const tests = [
-    { label: "First Test", venue: "Perth", key: "firstTest" },
-    { label: "Second Test", venue: "Brisbane", key: "secondTest" },
-    { label: "Third Test", venue: "Adelaide", key: "thirdTest" },
-    { label: "Fourth Test", venue: "Melbourne", key: "fourthTest" },
-    { label: "Fifth Test", venue: "Sydney", key: "fifthTest" },
+    { label: "First Test", venue: "Perth", key: "firstTest", status: "Open" },
+    {
+      label: "Second Test",
+      venue: "Brisbane",
+      key: "secondTest",
+      status: "Unavailable",
+    },
+    {
+      label: "Third Test",
+      venue: "Adelaide",
+      key: "thirdTest",
+      status: "Unavailable",
+    },
+    {
+      label: "Fourth Test",
+      venue: "Melbourne",
+      key: "fourthTest",
+      status: "Unavailable",
+    },
+    {
+      label: "Fifth Test",
+      venue: "Sydney",
+      key: "fifthTest",
+      status: "Unavailable",
+    },
   ];
   return (
     <>
@@ -47,6 +67,7 @@ const TeamHome = () => {
               test={test.key}
               label={test.label}
               venue={test.venue}
+              status={test.status}
             />
           ))}
         </div>

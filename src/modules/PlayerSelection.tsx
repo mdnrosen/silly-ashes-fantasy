@@ -10,7 +10,6 @@ type Props = {
   currentPlayer: Player | null;
   savePlayer: (player: Player, selection: string) => void;
   deselectPlayer: (role: string) => void;
-  budget: number;
   closeModal: () => void;
 };
 
@@ -19,7 +18,6 @@ const PlayerSelection = ({
   players, // drilled
   selection, // from playerbox
   selected, // drilled
-  budget, // drilled
   currentPlayer, // from playerbox
   savePlayer, // drilled
   deselectPlayer, // from playerbox
@@ -36,8 +34,6 @@ const PlayerSelection = ({
 
   const isDisabled = (player: Player): boolean => {
     if (selected.includes(player.id!.toString())) return true;
-    if (player?.cost > budget) return true;
-
     return false;
   };
 
@@ -138,8 +134,9 @@ const PlayerSelection = ({
                 </p>
               </div>
               <div className="col-span-1 flex flex-col justify-center items-center">
-                <p className="font-bold text-dark-blue">${player.cost}</p>
-                <p className="text-sm text-dark-blue">{player?.points} pts</p>
+                <p className="text-sm text-dark-blue font-bold">
+                  {player?.points || 0} pts
+                </p>
               </div>
             </button>
           );
