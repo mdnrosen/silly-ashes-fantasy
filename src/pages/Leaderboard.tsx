@@ -4,15 +4,34 @@ import { Team } from "../types";
 import { useAuth } from "../hooks/useAuth";
 import CreateTeam from "./CreateTeam";
 import { TeamContext } from "../context/TeamContext";
+import { PlayersContext } from "../context/PlayersContext";
+import { calculateTeamTotalPoints } from "../lib/helpers";
 
 const Leaderboard = () => {
   const _auth = useAuth();
   const { teams } = useContext(TeamContext) ?? { teams: null };
+  const players = useContext(PlayersContext);
+
+  const sortedTeams = useMemo(() => {
+    if (teams === null || players.length === 0) return null;
+    return [...teams]
+      .map((team) => ({
+        ...team,
+        calculatedPoints: calculateTeamTotalPoints(team, players),
+      }))
+      .sort((a, b) => b.calculatedPoints - a.calculatedPoints)
+      .map((team, index) => ({
+        ...team,
+        position: index + 1,
+      }));
+  }, [teams, players]);
 
   const userTeam = useMemo(() => {
-    if (teams === null) return;
-    return teams.find((team) => team.user === _auth.user?.nickname) ?? null;
-  }, [teams, _auth.user?.nickname]);
+    if (sortedTeams === null) return;
+    return (
+      sortedTeams.find((team) => team.user === _auth.user?.nickname) ?? null
+    );
+  }, [sortedTeams, _auth.user?.nickname]);
 
   return (
     <>
@@ -31,7 +50,7 @@ const Leaderboard = () => {
           <CreateTeam />
         )}
         <div className="p-2">
-          {teams?.map((team: Team) => (
+          {sortedTeams?.map((team: Team & { calculatedPoints: number }) => (
             <LeaderboardCard team={team} key={team.id} isHighlighted={false} />
           ))}
         </div>

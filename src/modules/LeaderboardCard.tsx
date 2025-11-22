@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Team } from "../types";
 
 type Props = {
-  team: Team;
+  team: Team & { calculatedPoints?: number };
   isHighlighted: boolean;
 };
 
@@ -26,7 +26,8 @@ const LeaderboardCard = ({ team, isHighlighted }: Props) => {
         <span className="text-xs font-light italic">{team.user}</span>
       </div>
       <div className="col-span-1 flex justify-end items-center">
-        {team.points} <span className="font-extralight">pts</span>
+        {team.calculatedPoints ?? team.points}{" "}
+        <span className="font-extralight">pts</span>
       </div>
     </Link>
   );

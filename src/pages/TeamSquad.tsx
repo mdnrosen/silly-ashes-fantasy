@@ -9,6 +9,8 @@ import {
   getTestLabel,
   isTeamPicked,
   hydrateSquadWithPlayers,
+  TestKey,
+  calculateSquadScoreForTest,
 } from "../lib/helpers";
 
 import { TeamContext } from "../context/TeamContext";
@@ -178,7 +180,9 @@ const TeamSquad = () => {
                   <h2 className="text-lg uppercase font-extralight italic">
                     POINTS
                   </h2>
-                  <p className="font-semibold text-md">{team?.points}</p>
+                  <p className="font-semibold text-md">
+                    {calculateSquadScoreForTest(selectedSquad, test as TestKey)}
+                  </p>
                 </div>
               </div>
             </div>
@@ -189,6 +193,7 @@ const TeamSquad = () => {
                 myPlayers={selectedSquad}
                 openSelectionModal={openSelectionModal}
                 isDisabled={isReadOnly}
+                test={test as TestKey}
               />
             </div>
           </div>
@@ -202,6 +207,7 @@ const TeamSquad = () => {
                   myPlayers={selectedSquad}
                   openSelectionModal={openSelectionModal}
                   isDisabled={isReadOnly}
+                  test={test as TestKey}
                 />
               </div>
             ))}
@@ -216,6 +222,7 @@ const TeamSquad = () => {
                   myPlayers={selectedSquad}
                   openSelectionModal={openSelectionModal}
                   isDisabled={isReadOnly}
+                  test={test as TestKey}
                 />
               </div>
             ))}
@@ -230,6 +237,7 @@ const TeamSquad = () => {
                   myPlayers={selectedSquad}
                   openSelectionModal={openSelectionModal}
                   isDisabled={isReadOnly}
+                  test={test as TestKey}
                 />
               </div>
             ))}

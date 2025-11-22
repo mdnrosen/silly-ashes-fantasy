@@ -4,6 +4,8 @@ import {
   getSelectMessage,
   getBorderColor,
   getTeamTextColor,
+  calculateScoreForTest,
+  TestKey,
 } from "../lib/helpers";
 import unpickedImage from "../assets/unpicked.jpg";
 
@@ -12,6 +14,7 @@ type Props = {
   openSelectionModal: (role: keyof TeamRoles) => void;
   role: Exclude<keyof TeamRoles, "squadPicked">;
   isDisabled?: boolean;
+  test?: TestKey;
 };
 
 const SelectPlayer = ({
@@ -19,9 +22,12 @@ const SelectPlayer = ({
   role,
   openSelectionModal,
   isDisabled,
+  test,
 }: Props) => {
   const player = myPlayers?.[role];
   const surnameColor = getTeamTextColor(player?.team);
+  const playerPoints =
+    player && test ? calculateScoreForTest(player, test) : player?.points || 0;
 
   // Determine border styling based on whether player is selected
   const borderStyle = player
@@ -89,7 +95,7 @@ const SelectPlayer = ({
             {/* Bottom right - Points */}
             <div className="text-right">
               <div className="text-sm text-dark-blue font-bold leading-tight">
-                {player.points || 0} pts
+                {playerPoints} pts
               </div>
             </div>
           </div>

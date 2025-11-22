@@ -1,12 +1,14 @@
 import { useContext, useMemo } from "react";
 import TestSummary from "../modules/TestSummary";
 import Spinner from "../components/Spinner";
-import { getPositionSuffix } from "../lib/helpers";
+import { getPositionSuffix, calculateTeamTotalPoints } from "../lib/helpers";
 import { useNavigate, useParams } from "react-router-dom";
 import { TeamContext } from "../context/TeamContext";
+import { PlayersContext } from "../context/PlayersContext";
 import { IoArrowBack } from "react-icons/io5";
 const TeamHome = () => {
   const { teams } = useContext(TeamContext) ?? { teams: null };
+  const players = useContext(PlayersContext);
   const { teamId } = useParams();
   const navigate = useNavigate();
   const team = useMemo(() => {
@@ -52,7 +54,7 @@ const TeamHome = () => {
           </div>
           <div className="p-2 flex justify-between">
             <p>
-              {team?.points || 0}{" "}
+              {calculateTeamTotalPoints(team, players)}{" "}
               <span className="font-extralight">points</span>
             </p>
             <p>

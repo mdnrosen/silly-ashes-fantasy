@@ -1,7 +1,12 @@
 import type { JSX } from "react";
 import { Player } from "../types";
 import { Link } from "react-router-dom";
-import { firstName, getBorderColor, lastName } from "../lib/helpers";
+import {
+  firstName,
+  getBorderColor,
+  lastName,
+  calculatePlayerScore,
+} from "../lib/helpers";
 
 const PlayerCard: React.FC<{ player: Player }> = ({ player }): JSX.Element => {
   const backgroundStyle = player.team === "AUS" ? "bg-green-50" : "bg-blue-50";
@@ -34,7 +39,7 @@ const PlayerCard: React.FC<{ player: Player }> = ({ player }): JSX.Element => {
           </small>
           <div className="flex justify-end items-center">
             <span className="text-lg md:text-2xl font-bold text-dark-blue">
-              {player.points || 0}
+              {calculatePlayerScore(player)}
               <span className="font-extralight">pts</span>
             </span>
           </div>

@@ -50,6 +50,34 @@ export const calculatePlayerScore = (player: Player): number => {
   return score;
 };
 
+export const calculateSquadScoreForTest = (
+  squad: TeamRoles,
+  test: TestKey
+): number => {
+  let total = 0;
+  Object.values(squad).forEach((player) => {
+    if (player) {
+      total += calculateScoreForTest(player, test);
+    }
+  });
+  return total;
+};
+
+export const calculateTeamTotalPoints = (
+  team: Team,
+  players: Player[]
+): number => {
+  let total = 0;
+  tests.forEach((test) => {
+    const squadIds = team.squad[test] as unknown as TeamRolesIds;
+    if (squadIds) {
+      const hydratedSquad = hydrateSquadWithPlayers(squadIds, players);
+      total += calculateSquadScoreForTest(hydratedSquad, test);
+    }
+  });
+  return total;
+};
+
 export const sumStat = (player: Player, stat: string): number => {
   let total = 0;
   for (const test of tests) {
@@ -60,7 +88,13 @@ export const sumStat = (player: Player, stat: string): number => {
 };
 
 export const sortByPoints = <T extends Player | Team>(record: T[]): T[] => {
-  return record.sort((a, b) => (b.points || 0) - (a.points || 0));
+  return record.sort((a, b) => {
+    const aPoints =
+      "runs" in a ? calculatePlayerScore(a as Player) : a.points || 0;
+    const bPoints =
+      "runs" in b ? calculatePlayerScore(b as Player) : b.points || 0;
+    return bPoints - aPoints;
+  });
 };
 
 export const getBgColor = (team: string): string => {
