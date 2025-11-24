@@ -201,7 +201,7 @@ export const testTimes = (test: string) => {
       };
     case "secondTest":
       return {
-        start: new Date("2025-12-04T04:30:00Z"),
+        start: new Date("2025-12-04T04:00:00Z"),
         end: new Date("2025-12-08T12:30:00Z"),
       };
     case "thirdTest":
