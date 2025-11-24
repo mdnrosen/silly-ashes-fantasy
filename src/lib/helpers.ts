@@ -269,3 +269,9 @@ export const hydrateSquadWithPlayers = (
     wildcard: findPlayer(squadIds.wildcard),
   };
 };
+
+export const testHasStarted = (test: string): boolean => {
+  const testTime = testTimes(test);
+  if (testTime === undefined || testTime === "") return false;
+  return new Date() >= new Date(testTime.start);
+};

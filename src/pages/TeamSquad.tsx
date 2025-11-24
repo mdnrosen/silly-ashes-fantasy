@@ -11,6 +11,8 @@ import {
   hydrateSquadWithPlayers,
   TestKey,
   calculateSquadScoreForTest,
+  testTimes,
+  testHasStarted,
 } from "../lib/helpers";
 
 import { TeamContext } from "../context/TeamContext";
@@ -122,6 +124,7 @@ const TeamSquad = () => {
 
   const isReadOnly = useMemo(() => {
     if (!_auth) return true;
+    if (testHasStarted(test as string)) return true;
     // @ts-ignore
     if (isTeamPicked(team, test as string)) return true;
     return _auth.user?.nickname !== team?.user;

@@ -17,12 +17,17 @@ const TeamHome = () => {
   }, [teams, teamId]);
 
   const tests = [
-    { label: "First Test", venue: "Perth", key: "firstTest", status: "Open" },
+    {
+      label: "First Test",
+      venue: "Perth",
+      key: "firstTest",
+      status: "Completed",
+    },
     {
       label: "Second Test",
       venue: "Brisbane",
       key: "secondTest",
-      status: "Unavailable",
+      status: "Open",
     },
     {
       label: "Third Test",
