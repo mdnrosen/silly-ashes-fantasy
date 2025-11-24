@@ -24,7 +24,7 @@ Amplify.configure(outputs);
 
 function App() {
   return (
-    <div className="min-w-xs max-w-3xl mx-auto bg-off-white min-h-screen font-roboto">
+    <div className="min-w-xs max-w-md mx-auto bg-off-white min-h-screen font-roboto shadow-xl">
       <Router>
         <Navbar />
         <ScrollToTop />

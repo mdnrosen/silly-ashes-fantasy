@@ -24,7 +24,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="fixed flex justify-between items-center h-15 md:h-20 w-full mx-auto p-4 bg-dark-blue text-off-white z-50 border-b-2 mb-150 md:mb-20">
+      <div className="fixed flex justify-between items-center h-15 md:h-20 w-full max-w-md mx-auto left-0 right-0 p-4 bg-dark-blue text-off-white z-50 border-b-2 mb-150 md:mb-20">
         <Link to="/" className="h-full">
           <img
             src="/assets/sillyAshesLogo.jpeg"
@@ -58,7 +58,7 @@ const Navbar = () => {
       </div>
 
       <div
-        className={`fixed top-0 left-0 w-full bg-dark-blue text-off-white transform transition-transform duration-300 ease-in-out z-40 ${
+        className={`fixed top-0 left-0 right-0 max-w-md mx-auto bg-dark-blue text-off-white transform transition-transform duration-300 ease-in-out z-40 ${
           isMenuOpen ? "translate-y-0" : "-translate-y-full"
         }`}
       >
