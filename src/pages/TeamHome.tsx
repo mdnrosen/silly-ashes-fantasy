@@ -1,11 +1,19 @@
 import { useContext, useMemo } from "react";
 import TestSummary from "../modules/TestSummary";
 import Spinner from "../components/Spinner";
-import { getPositionSuffix, calculateTeamTotalPoints } from "../lib/helpers";
+import {
+  getPositionSuffix,
+  calculateTeamTotalPoints,
+  calculateSquadScoreForTest,
+  TestKey,
+  hydrateSquadWithPlayers,
+} from "../lib/helpers";
 import { useNavigate, useParams } from "react-router-dom";
 import { TeamContext } from "../context/TeamContext";
 import { PlayersContext } from "../context/PlayersContext";
 import { IoArrowBack } from "react-icons/io5";
+import { TeamRolesIds } from "../types";
+
 const TeamHome = () => {
   const { teams } = useContext(TeamContext) ?? { teams: null };
   const players = useContext(PlayersContext);
@@ -75,6 +83,13 @@ const TeamHome = () => {
               label={test.label}
               venue={test.venue}
               status={test.status}
+              points={calculateSquadScoreForTest(
+                hydrateSquadWithPlayers(
+                  team.squad[test.key as TestKey] as unknown as TeamRolesIds,
+                  players
+                ),
+                test.key as TestKey
+              )}
             />
           ))}
         </div>

@@ -5,9 +5,16 @@ type Props = {
   label: string;
   venue: string;
   status?: string;
+  points?: number;
 };
 
-const TestSummary = ({ test, label, venue, status = "Open" }: Props) => {
+const TestSummary = ({
+  test,
+  label,
+  venue,
+  status = "Open",
+  points = 0,
+}: Props) => {
   const isUnavailable = status === "Unavailable";
 
   if (isUnavailable) {
@@ -19,7 +26,10 @@ const TestSummary = ({ test, label, venue, status = "Open" }: Props) => {
             {venue}
           </small>
         </div>
-        <small className="text-xs text-gray-400 mt-1">Unavailable</small>
+        <div className="flex justify-between items-center mt-1">
+          <small className="text-xs text-gray-400">{status}</small>
+          <small className="text-xs text-gray-400">{points} pts</small>
+        </div>
       </div>
     );
   }
@@ -33,7 +43,12 @@ const TestSummary = ({ test, label, venue, status = "Open" }: Props) => {
         <p className="font-semibold">{label}</p>
         <small className="font-extralight uppercase text-sm">{venue}</small>
       </div>
-      <small className="text-xs text-gray-600 mt-1">{status}</small>
+      <div className="flex justify-between items-center mt-1">
+        <small className="text-xs text-gray-600">{status}</small>
+        <small className="text-xs text-gray-600 font-semibold">
+          {points} pts
+        </small>
+      </div>
     </Link>
   );
 };
