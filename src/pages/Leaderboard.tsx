@@ -35,7 +35,7 @@ const Leaderboard = () => {
 
   return (
     <>
-      <div className="h-[calc(100vh-6.5rem)] bg-off-white p-2">
+      <div className="bg-off-white p-2 pb-16">
         <div className="p-4 bg-off-white">
           <h1 className=" text-2xl uppercase">LEADERBOARD</h1>
         </div>

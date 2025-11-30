@@ -14,8 +14,8 @@ const Home: React.FC = (): JSX.Element => {
     }
   };
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-4">
-      <div className="text-center mb-8">
+    <div className="flex flex-col items-center p-4 pt-8">
+      <div className="text-center mb-6">
         <h1 className="text-4xl uppercase font-semibold text-dark-blue">
           SILLY ASHES
         </h1>
@@ -23,7 +23,14 @@ const Home: React.FC = (): JSX.Element => {
           FANTASY EDITION
         </h2>
       </div>
-      <div className="w-full max-w-md">
+      <div className="w-1/2 mb-6">
+        <img
+          src="/assets/hero.png"
+          alt="A pencil sketch of Stuart Broad bowling Marnus Labuschagne in the 2023 Ashes"
+          className="w-full h-auto"
+        />
+      </div>
+      <div className="w-2/3 max-w-md">
         <button
           onClick={getStarted}
           className="w-full bg-blue-50 p-2 border-2 rounded-lg"
