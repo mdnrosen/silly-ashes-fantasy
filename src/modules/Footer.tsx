@@ -2,9 +2,9 @@ const byMeACoffeeURL = import.meta.env.VITE_BMAC_URL;
 
 const Footer = () => {
   return (
-    <footer className="fixed h-10 bottom-0 left-0 right-0 max-w-md mx-auto bg-dark-blue p-2 text-off-white flex flex-col justify-center align-between items-center text-center space-y-1">
+    <footer className="fixed h-10 bottom-0 left-0 right-0 max-w-md mx-auto bg-dark-blue p-2 text-off-white flex flex-col justify-center align-between items-center text-center space-y-1 z-50">
       <p className="text-xs">
-        Like it?{".. "}
+        Like it?{"... "}
         <a
           className="hover:underline text-blue-400"
           href={byMeACoffeeURL}

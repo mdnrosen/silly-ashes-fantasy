@@ -26,12 +26,6 @@ const TeamHome = () => {
 
   const tests = [
     {
-      label: "First Test",
-      venue: "Perth",
-      key: "firstTest",
-      status: "Completed",
-    },
-    {
       label: "Second Test",
       venue: "Brisbane",
       key: "secondTest",

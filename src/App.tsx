@@ -28,7 +28,7 @@ function App() {
       <Router>
         <Navbar />
         <ScrollToTop />
-        <div className="pt-15 md:pt-20 pb-10">
+        <div className="pt-15 md:pt-20 pb-16">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/register" element={<Auth />} />
