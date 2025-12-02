@@ -61,7 +61,7 @@ const PlayerSelection = ({
   };
 
   return (
-    <div className="fixed inset-2 bg-white border-2 border-gray-300 rounded-lg p-4 shadow-lg z-50 overflow-auto">
+    <div className="fixed inset-2 max-w-md mx-auto bg-white border-2 border-gray-300 rounded-lg p-4 shadow-lg z-50 overflow-auto">
       <div className="flex justify-between mb-4">
         <h2 className="text-lg font-bold text-dark-blue uppercase">
           SELECT {role}
