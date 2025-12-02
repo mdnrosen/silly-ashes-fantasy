@@ -50,6 +50,7 @@ const TeamHome = () => {
       status: "Unavailable",
     },
   ];
+
   return (
     <>
       {!team && <Spinner />}
