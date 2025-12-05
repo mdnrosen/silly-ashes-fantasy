@@ -25,8 +25,9 @@ export const addToDB = async (player: Player): Promise<void> => {
 
 export const saveTeam = async (team: any) => {
   try {
-    const docRef = await addDoc(collection(db, "teams"), team);
-    console.log("Document written with ID: ", docRef.id);
+    console.log("Saving team:", team);
+    // const docRef = await addDoc(collection(db, "teams"), team);
+    // console.log("Document written with ID: ", docRef.id);
   } catch (error) {
     console.error("Error saving team: ", error);
   }

@@ -1,5 +1,6 @@
 import { db } from "./config";
 import { updateDoc, doc } from "firebase/firestore";
+import { testTimes } from "../lib/helpers";
 
 import { TeamRoles, TeamRolesIds } from "../types";
 
@@ -26,7 +27,12 @@ export const saveTestSquad = async (
       throw new Error("Invalid team ID");
     }
 
-    // Convert Player objects to just IDs before saving
+    const time = testTimes(test);
+
+    if (time && Date.now() >= time.start.getTime()) {
+      throw new Error("Cannot save squad after Test has started");
+    }
+
     const squadIds = convertSquadToIds(squad);
 
     const docRef = doc(db, "teams", teamId);
@@ -36,6 +42,8 @@ export const saveTestSquad = async (
     });
   } catch (error) {
     console.error("Error saving test squad:", error);
-    throw new Error("Failed to save test squad");
+    throw new Error(
+      error instanceof Error ? error.message : "Failed to save test squad"
+    );
   }
 };

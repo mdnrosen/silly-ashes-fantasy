@@ -74,7 +74,9 @@ const TeamSquad = () => {
       _toast?.success("Team saved successfully!");
       // to do we need to find a way to refresh the get teams context
     } catch (error) {
-      _toast?.error(error as string);
+      const errorMessage =
+        error instanceof Error ? error.message : "Failed to save team";
+      _toast?.error(errorMessage);
     } finally {
       setLoading(false);
     }
