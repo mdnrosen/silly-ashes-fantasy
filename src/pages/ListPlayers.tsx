@@ -21,12 +21,16 @@ const ListPlayers = () => {
   return (
     <>
       {_loading.active && <Spinner />}
-
-      <div className="flex flex-wrap justify-center items-center p-2 mb-4">
-        {!!sortedPlayers.length &&
-          sortedPlayers.map((player) => (
-            <PlayerCard key={player.id} player={player as Player} />
-          ))}
+      <div className="bg-off-white p-2 pb-16">
+        <div className="p-2 flex">
+          <h1 className="text-2xl uppercase">PLAYERS</h1>
+        </div>
+        <div className="flex flex-col justify-center items-center p-2">
+          {!!sortedPlayers.length &&
+            sortedPlayers.map((player) => (
+              <PlayerCard key={player.id} player={player as Player} />
+            ))}
+        </div>
       </div>
     </>
   );

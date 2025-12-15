@@ -1,49 +1,28 @@
 import type { JSX } from "react";
 import { Player } from "../types";
 import { Link } from "react-router-dom";
-import {
-  firstName,
-  getBorderColor,
-  lastName,
-  calculatePlayerScore,
-} from "../lib/helpers";
+import { calculatePlayerScore } from "../lib/helpers";
 
 const PlayerCard: React.FC<{ player: Player }> = ({ player }): JSX.Element => {
   const backgroundStyle = player.team === "AUS" ? "bg-green-50" : "bg-blue-50";
 
   return (
-    <Link to={`/player/${player.id}`} className="no-underline w-full block">
-      <div
-        className={`animate-fade-in w-full min-h-28 md:min-h-32 grid grid-cols-4 border-2 ${getBorderColor(
-          player.team as string
-        )} rounded-lg shadow-md mb-2 md:mb-3 ${backgroundStyle}`}
-      >
-        <div className="col-span-1 bg-white rounded-lg">
-          <img
-            src={player.imageUrl}
-            alt={player.name}
-            className="w-full h-full object-cover rounded-l-md"
-          />
-        </div>
-        <div
-          className={`rounded-r-lg col-span-3 flex flex-col justify-between px-4 py-3 text-dark-blue`}
-        >
-          <h3 className="text-lg md:text-2xl text-dark-blue font-medium">
-            {firstName(player.name)}{" "}
-            <span className="font-bold">
-              {lastName(player.name).toUpperCase()}
-            </span>
-          </h3>
-          <small className="text-xs md:text-base font-extralight text-dark-blue opacity-60">
-            {player.role}
-          </small>
-          <div className="flex justify-end items-center">
-            <span className="text-lg md:text-2xl font-bold text-dark-blue">
-              {calculatePlayerScore(player)}
-              <span className="font-extralight">pts</span>
-            </span>
-          </div>
-        </div>
+    <Link
+      to={`/player/${player.id}`}
+      className={`animate-fade-in border-1 h-20 rounded-md grid grid-cols-5 mb-2 pr-2 ${backgroundStyle}`}
+    >
+      <img
+        src={player.imageUrl}
+        alt={player.name}
+        className="col-span-1 h-full object-contain rounded-md"
+      />
+      <div className="col-span-3 flex flex-col align-start justify-center">
+        <span className="text-sm font-bold">{player.name}</span>
+        <span className="text-xs font-light italic">{player.role}</span>
+      </div>
+      <div className="col-span-1 flex justify-end items-center">
+        {calculatePlayerScore(player)}{" "}
+        <span className="font-extralight">pts</span>
       </div>
     </Link>
   );
