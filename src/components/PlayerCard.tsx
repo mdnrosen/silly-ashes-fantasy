@@ -9,20 +9,22 @@ const PlayerCard: React.FC<{ player: Player }> = ({ player }): JSX.Element => {
   return (
     <Link
       to={`/player/${player.id}`}
-      className={`animate-fade-in border-1 h-20 rounded-md grid grid-cols-5 mb-2 pr-2 ${backgroundStyle}`}
+      className={`animate-fade-in border-1 h-20 rounded-md grid grid-cols-5 mb-2 pr-2 w-full ${backgroundStyle}`}
     >
       <img
         src={player.imageUrl}
         alt={player.name}
-        className="col-span-1 h-full object-contain rounded-md"
+        className="col-span-1 h-full w-full object-cover rounded-l-md"
       />
-      <div className="col-span-3 flex flex-col align-start justify-center">
+      <div className="col-span-3 flex flex-col align-start justify-center pl-2">
         <span className="text-sm font-bold">{player.name}</span>
         <span className="text-xs font-light italic">{player.role}</span>
       </div>
       <div className="col-span-1 flex justify-end items-center">
-        {calculatePlayerScore(player)}{" "}
-        <span className="font-extralight">pts</span>
+        <span className="text-sm font-semibold">
+          {calculatePlayerScore(player)}{" "}
+          <span className="font-extralight text-xs">pts</span>
+        </span>
       </div>
     </Link>
   );
