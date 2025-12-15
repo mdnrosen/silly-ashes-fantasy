@@ -97,6 +97,39 @@ export const sortByPoints = <T extends Player | Team>(record: T[]): T[] => {
   });
 };
 
+export const sortByTestPoints = <T extends Player | Team>(
+  record: T[],
+  test: TestKey
+): T[] => {
+  if (!test) {
+    return sortByPoints(record);
+  }
+
+  return record.sort((a, b) => {
+    const aPoints =
+      "runs" in a
+        ? calculateScoreForTest(a as Player, test)
+        : calculateSquadScoreForTest(
+            hydrateSquadWithPlayers(
+              (a as Team).squad[test] as unknown as TeamRolesIds,
+              []
+            ),
+            test
+          );
+    const bPoints =
+      "runs" in b
+        ? calculateScoreForTest(b as Player, test)
+        : calculateSquadScoreForTest(
+            hydrateSquadWithPlayers(
+              (b as Team).squad[test] as unknown as TeamRolesIds,
+              []
+            ),
+            test
+          );
+    return bPoints - aPoints;
+  });
+};
+
 export const getBgColor = (team: string): string => {
   return team === "AUS" ? "bg-green-50" : "bg-blue-50";
 };
@@ -190,6 +223,25 @@ export const getPositionSuffix = (position: number | undefined): string => {
 
 export const toSnakeCase = (name: string) => {
   return name.split(" ").join("_").toLowerCase();
+};
+
+export const formatFilterLabel = (filter: string): string => {
+  if (filter === "overall") return "Overall";
+
+  switch (filter) {
+    case "firstTest":
+      return "First Test";
+    case "secondTest":
+      return "Second Test";
+    case "thirdTest":
+      return "Third Test";
+    case "fourthTest":
+      return "Fourth Test";
+    case "fifthTest":
+      return "Fifth Test";
+    default:
+      return "Overall";
+  }
 };
 
 export const testTimes = (test: string) => {
