@@ -30,94 +30,100 @@ const PlayerProfile = (): JSX.Element => {
   }
 
   return (
-    <div className="h-[calc(100vh-6.5rem)] w-full grid grid-rows-18">
-      {/* First row for name and points total */}
-      <div
-        className={`p-2 row-span-2 flex justify-between ${getBgColor(
-          player.team
-        )}`}
-      >
-        <div className="flex flex-col">
-          <span className="text-lg">{first}</span>
-          <span className="font-bold uppercase text-lg">{last}</span>
-        </div>
-        <div className="flex flex-col text-right justify-center">
-          <span className="font-extralight uppercase">{player.role}</span>
-        </div>
-      </div>
-      <div className="row-span-9 overflow-hidden">
-        <img
-          src={player.imageUrl}
-          alt={`${first} ${last} headshot`}
-          className="w-full h-full object-cover"
-        />
-      </div>
-      <div
-        className={`row-span-2 flex justify-around align-middle ${getBgColor(
-          player.team
-        )}`}
-      >
-        <StatBox
-          statName="Points"
-          statValue={calculatePlayerScore(player)}
-          emphasis={true}
-        />
-        <StatBox
-          statName="Runs"
-          statValue={sumStat(player, "runs")}
-          emphasis={false}
-        />
-        <StatBox
-          statName="Wickets"
-          statValue={sumStat(player, "wickets")}
-          emphasis={false}
-        />
-      </div>
-      <div
-        className={`row-span-2 flex justify-around align-middle ${getBgColor(
-          player.team
-        )}`}
-      >
-        <StatBox
-          statName="Catches"
-          statValue={sumStat(player, "catches")}
-          emphasis={false}
-        />
-        <StatBox
-          statName="Runouts"
-          statValue={sumStat(player, "runouts")}
-          emphasis={false}
-        />
-        <StatBox
-          statName="Stumpings"
-          statValue={sumStat(player, "stumpings")}
-          emphasis={false}
-        />
-      </div>
-      <div
-        className={`row-span-2 flex justify-around align-middle ${getBgColor(
-          player.team
-        )}`}
-      >
-        <StatBox
-          statName="Hundreds"
-          statValue={sumStat(player, "centuries")}
-          emphasis={false}
-        />
-        <StatBox
-          statName="Five-fors"
-          statValue={sumStat(player, "fivewickets")}
-          emphasis={false}
-        />
-      </div>
-      <div
-        className={`row-span-2 flex px-2 justify-start align-middle ${getBgColor(
-          player.team
-        )}`}
-      >
+    <div className="bg-off-white p-2 pb-16">
+      {/* Header with back button */}
+      <div className="p-2 mb-2">
         <button onClick={handleBack}>
           <IoArrowBack size={24} />
         </button>
+      </div>
+
+      {/* Player Card - Image, Name, Role, Points */}
+      <div
+        className={`rounded-lg overflow-hidden mb-4 p-4 flex gap-4 ${getBgColor(
+          player.team
+        )}`}
+      >
+        <div className="w-1/4">
+          <img
+            src={player.imageUrl}
+            alt={`${first} ${last} headshot`}
+            className="w-full h-full object-cover rounded-md"
+          />
+        </div>
+        <div className="flex-1 flex flex-col justify-between">
+          <div>
+            <h1 className="text-xl font-medium">
+              {first} <span className="font-bold uppercase">{last}</span>
+            </h1>
+            <p className="text-sm font-light italic mt-1">{player.role}</p>
+          </div>
+          <div className="text-right">
+            <p className="text-xs font-light uppercase">Total Points</p>
+            <p className="text-3xl font-bold">{calculatePlayerScore(player)}</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Stats Grid */}
+      <div className="space-y-1">
+        {/* Primary Stats */}
+        <div className={`rounded-lg p-4 ${getBgColor(player.team)}`}>
+          <div className="grid grid-cols-3 gap-4 text-center">
+            <div>
+              <p className="text-xs font-light uppercase mb-1">Runs</p>
+              <p className="text-xl font-semibold">{sumStat(player, "runs")}</p>
+            </div>
+            <div>
+              <p className="text-xs font-light uppercase mb-1">Wickets</p>
+              <p className="text-xl font-semibold">
+                {sumStat(player, "wickets")}
+              </p>
+            </div>
+            <div>
+              <p className="text-xs font-light uppercase mb-1">Catches</p>
+              <p className="text-xl font-semibold">
+                {sumStat(player, "catches")}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Secondary Stats */}
+        <div className={`rounded-lg p-4 ${getBgColor(player.team)}`}>
+          <div className="grid grid-cols-2 gap-4 text-center">
+            <div>
+              <p className="text-xs font-light uppercase mb-1">Hundreds</p>
+              <p className="text-xl font-semibold">
+                {sumStat(player, "centuries")}
+              </p>
+            </div>
+            <div>
+              <p className="text-xs font-light uppercase mb-1">Five-fors</p>
+              <p className="text-xl font-semibold">
+                {sumStat(player, "fivewickets")}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Tertiary Stats */}
+        <div className={`rounded-lg p-4 ${getBgColor(player.team)}`}>
+          <div className="grid grid-cols-2 gap-4 text-center">
+            <div>
+              <p className="text-xs font-light uppercase mb-1">Runouts</p>
+              <p className="text-xl font-semibold">
+                {sumStat(player, "runouts")}
+              </p>
+            </div>
+            <div>
+              <p className="text-xs font-light uppercase mb-1">Stumpings</p>
+              <p className="text-xl font-semibold">
+                {sumStat(player, "stumpings")}
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
