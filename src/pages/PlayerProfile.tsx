@@ -9,7 +9,6 @@ import {
   calculatePlayerScore,
 } from "../lib/helpers";
 import { IoArrowBack } from "react-icons/io5";
-import StatBox from "../components/StatBox";
 
 const PlayerProfile = (): JSX.Element => {
   const { id } = useParams<{ id: string }>();
