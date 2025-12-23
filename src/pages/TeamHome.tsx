@@ -35,13 +35,13 @@ const TeamHome = () => {
       label: "Third Test",
       venue: "Adelaide",
       key: "thirdTest",
-      status: "Open",
+      status: "Completed",
     },
     {
       label: "Fourth Test",
       venue: "Melbourne",
       key: "fourthTest",
-      status: "Unavailable",
+      status: "Open",
     },
     {
       label: "Fifth Test",
