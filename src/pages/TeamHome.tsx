@@ -41,13 +41,13 @@ const TeamHome = () => {
       label: "Fourth Test",
       venue: "Melbourne",
       key: "fourthTest",
-      status: "Open",
+      status: "Completed",
     },
     {
       label: "Fifth Test",
       venue: "Sydney",
       key: "fifthTest",
-      status: "Unavailable",
+      status: "Open",
     },
   ];
 
